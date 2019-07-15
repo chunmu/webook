@@ -1,0 +1,80 @@
+---
+description: mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。
+---
+
+<p align="center">
+  <a href="https://didi.github.io/mpx/">
+    <img alt="babel" src="data:image/jpeg;base64,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" width="150">
+  </a>
+</p>
+
+<p align="center" title="有人住高楼，有人在深沟，有人光万丈，有人一身锈。世人万千种，浮云莫去求，斯人若彩虹，遇上方知有。">
+    Some of us get dipped in flat, some in satin, some in gloss.... But every once in a while you find someone who's iridescent, and when you do, nothing will ever compare.
+</p>
+
+## 简介
+
+Mpx是一款致力于提高小程序开发体验的增强型小程序框架，通过Mpx，我们能够最先进的web开发体验(Vue + Webpack)来开发生产性能深度优化的小程序，Mpx具有以下一些优秀特性：
+* 数据响应特性([watch](single/script-enhance.md#watch) / [computed](single/script-enhance.md#computed))
+* 增强的模板语法([动态组件](single/template-enhance.md#动态组件) / [样式绑定 / 类名绑定 ](single/template-enhance.md#class与style绑定) / [内联事件函数](single/template-enhance.md#内联事件绑定) / [双向绑定](single/template-enhance.md#双向绑定) 等)
+* [深度性能优化](understanding/understanding.html#数据响应与性能优化)(原生自定义组件/基于依赖收集和数据变化的setData)
+* Webpack编译(npm/循环依赖/Babel/ESLint/css预编译/代码优化等)
+* [单文件组件开发](single/what-is-single-file.md)
+* [渐进接入 / 原生组件支持](progressive.md)
+* [状态管理](store/index.md#数据管理)(Vuex规范/多实例/可合并)
+* 跨团队合作([packages](single/json-enhance.md#packages))
+* 逻辑复用能力([mixins](single/script-enhance.md#mixins))
+* 脚手架支持
+* 小程序自身规范的完全支持
+* [多平台支持](platform.md#多平台支持)(微信、支付宝、百度、qq、头条)
+* [跨平台编译](platform.md#跨平台编译)(支持将微信小程序转换为支付宝、百度、qq、头条小程序)
+
+Mpx2.0正式发布！支持目前业内全部小程序平台及跨小程序平台编译，[点此查看详情](https://github.com/didi/mpx/releases/tag/v2.0.0)，[点此查看迁移指南](migrate.md)
+
+## 安装使用
+
+```bash
+# 安装mpx命令行工具
+npm i -g @mpxjs/cli
+
+# 初始化项目
+mpx init <project-name>
+
+# 进入项目目录
+cd <project-name>
+
+# 安装依赖
+npm i
+
+# development
+npm run watch
+
+# production
+npm run prod
+```
+
+使用微信开发者工具打开 项目目录下生成的dist文件夹 即可进行预览调试和发布。
+
+也可以查看 [官方示例项目](https://github.com/didi/mpx/tree/master/examples) 做进一步了解
+
+## 设计思路
+
+目前业界主流的小程序框架主要有WePY，mpvue和Taro，这三者都是将其他的语法规范转译为小程序语法规范，我们称其为转译型框架。不同于上述三者，Mpx是一款基于小程序语法规范的增强型框架，我们使用Vue中优秀的语法特性增强了小程序，而不是让用户直接使用vue语法来开发小程序，之所以采用这种设计主要是基于如下考虑：
+
+- 转译型框架无法支持源框架的所有语法特性(如Vue模板中的动态特性或React中动态生成的jsx)，用户在使用源框架语法进行开发时可能会遇到不可预期的错误，具有不确定性
+- 小程序本身的技术规范在不断地更新进步，许多新的技术规范在转译型框架中无法支持或需要很高的支持成本，而对于增强型框架来说只要新的技术规范不与增强特性冲突，就能够直接支持
+
+## 生态周边
+
+|包名|版本|描述|
+|-----|----|----|
+|@mpxjs/core|[![npm version](https://badge.fury.io/js/%40mpxjs%2Fcore.svg)](https://badge.fury.io/js/%40mpxjs%2Fcore)|mpx微信运行时核心|
+|@mpxjs/webpack-plugin|[![npm version](https://badge.fury.io/js/%40mpxjs%2Fwebpack-plugin.svg)](https://badge.fury.io/js/%40mpxjs%2Fwebpack-plugin)|mpx编译核心|
+|@mpxjs/cli|[![npm version](https://badge.fury.io/js/%40mpxjs%2Fcli.svg)](https://badge.fury.io/js/%40mpxjs%2Fcli)|mpx脚手架命令行工具|
+|@mpxjs/fetch|[![npm version](https://badge.fury.io/js/%40mpxjs%2Ffetch.svg)](https://badge.fury.io/js/%40mpxjs%2Ffetch)|mpx网络请求库，处理wx并发请求限制|
+|@mpxjs/url-loader|[![npm version](https://badge.fury.io/js/%40mpxjs%2Furl-loader.svg)](https://badge.fury.io/js/%40mpxjs%2Furl-loader)|处理wxss中图像资源只能用base64引用|
+|@mpxjs/api-proxy|[![npm version](https://badge.fury.io/js/%40mpxjs%2Fapi-proxy.svg)](https://badge.fury.io/js/%40mpxjs%2Fapi-proxy)|将各个平台的 api 进行转换，也可以将 api 转为 promise 格式|
+
+## 交流
+
+打开链接扫码进入微信群或QQ群：https://s.didi.cn/rod

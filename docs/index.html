@@ -1,0 +1,372 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Introduction · mpx文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="滴滴出行webapp团队">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Introduction</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p align="center">
+  <a href="https://didi.github.io/mpx/" target="_blank">
+    <img alt="babel" src="data:image/jpeg;base64,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" width="150">
+  </a>
+</p>
+
+<p align="center" title="&#x6709;&#x4EBA;&#x4F4F;&#x9AD8;&#x697C;&#xFF0C;&#x6709;&#x4EBA;&#x5728;&#x6DF1;&#x6C9F;&#xFF0C;&#x6709;&#x4EBA;&#x5149;&#x4E07;&#x4E08;&#xFF0C;&#x6709;&#x4EBA;&#x4E00;&#x8EAB;&#x9508;&#x3002;&#x4E16;&#x4EBA;&#x4E07;&#x5343;&#x79CD;&#xFF0C;&#x6D6E;&#x4E91;&#x83AB;&#x53BB;&#x6C42;&#xFF0C;&#x65AF;&#x4EBA;&#x82E5;&#x5F69;&#x8679;&#xFF0C;&#x9047;&#x4E0A;&#x65B9;&#x77E5;&#x6709;&#x3002;">
+    Some of us get dipped in flat, some in satin, some in gloss.... But every once in a while you find someone who&apos;s iridescent, and when you do, nothing will ever compare.
+</p>
+
+<h2 id="&#x7B80;&#x4ECB;"><a name="&#x7B80;&#x4ECB;" class="plugin-anchor" href="#&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B80;&#x4ECB;</h2>
+<p>Mpx&#x662F;&#x4E00;&#x6B3E;&#x81F4;&#x529B;&#x4E8E;&#x63D0;&#x9AD8;&#x5C0F;&#x7A0B;&#x5E8F;&#x5F00;&#x53D1;&#x4F53;&#x9A8C;&#x7684;&#x589E;&#x5F3A;&#x578B;&#x5C0F;&#x7A0B;&#x5E8F;&#x6846;&#x67B6;&#xFF0C;&#x901A;&#x8FC7;Mpx&#xFF0C;&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x6700;&#x5148;&#x8FDB;&#x7684;web&#x5F00;&#x53D1;&#x4F53;&#x9A8C;(Vue + Webpack)&#x6765;&#x5F00;&#x53D1;&#x751F;&#x4EA7;&#x6027;&#x80FD;&#x6DF1;&#x5EA6;&#x4F18;&#x5316;&#x7684;&#x5C0F;&#x7A0B;&#x5E8F;&#xFF0C;Mpx&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x4E00;&#x4E9B;&#x4F18;&#x79C0;&#x7279;&#x6027;&#xFF1A;</p>
+<ul>
+<li>&#x6570;&#x636E;&#x54CD;&#x5E94;&#x7279;&#x6027;(<a href="single/script-enhance.md#watch">watch</a> / <a href="single/script-enhance.md#computed">computed</a>)</li>
+<li>&#x589E;&#x5F3A;&#x7684;&#x6A21;&#x677F;&#x8BED;&#x6CD5;(<a href="single/template-enhance.md#&#x52A8;&#x6001;&#x7EC4;&#x4EF6;">&#x52A8;&#x6001;&#x7EC4;&#x4EF6;</a> / <a href="single/template-enhance.md#class&#x4E0E;style&#x7ED1;&#x5B9A;">&#x6837;&#x5F0F;&#x7ED1;&#x5B9A; / &#x7C7B;&#x540D;&#x7ED1;&#x5B9A; </a> / <a href="single/template-enhance.md#&#x5185;&#x8054;&#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;">&#x5185;&#x8054;&#x4E8B;&#x4EF6;&#x51FD;&#x6570;</a> / <a href="single/template-enhance.md#&#x53CC;&#x5411;&#x7ED1;&#x5B9A;">&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</a> &#x7B49;)</li>
+<li><a href="understanding/understanding.html#&#x6570;&#x636E;&#x54CD;&#x5E94;&#x4E0E;&#x6027;&#x80FD;&#x4F18;&#x5316;">&#x6DF1;&#x5EA6;&#x6027;&#x80FD;&#x4F18;&#x5316;</a>(&#x539F;&#x751F;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;/&#x57FA;&#x4E8E;&#x4F9D;&#x8D56;&#x6536;&#x96C6;&#x548C;&#x6570;&#x636E;&#x53D8;&#x5316;&#x7684;setData)</li>
+<li>Webpack&#x7F16;&#x8BD1;(npm/&#x5FAA;&#x73AF;&#x4F9D;&#x8D56;/Babel/ESLint/css&#x9884;&#x7F16;&#x8BD1;/&#x4EE3;&#x7801;&#x4F18;&#x5316;&#x7B49;)</li>
+<li><a href="single/what-is-single-file.md">&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x5F00;&#x53D1;</a></li>
+<li><a href="progressive.md">&#x6E10;&#x8FDB;&#x63A5;&#x5165; / &#x539F;&#x751F;&#x7EC4;&#x4EF6;&#x652F;&#x6301;</a></li>
+<li><a href="store/index.md#&#x6570;&#x636E;&#x7BA1;&#x7406;">&#x72B6;&#x6001;&#x7BA1;&#x7406;</a>(Vuex&#x89C4;&#x8303;/&#x591A;&#x5B9E;&#x4F8B;/&#x53EF;&#x5408;&#x5E76;)</li>
+<li>&#x8DE8;&#x56E2;&#x961F;&#x5408;&#x4F5C;(<a href="single/json-enhance.md#packages">packages</a>)</li>
+<li>&#x903B;&#x8F91;&#x590D;&#x7528;&#x80FD;&#x529B;(<a href="single/script-enhance.md#mixins">mixins</a>)</li>
+<li>&#x811A;&#x624B;&#x67B6;&#x652F;&#x6301;</li>
+<li>&#x5C0F;&#x7A0B;&#x5E8F;&#x81EA;&#x8EAB;&#x89C4;&#x8303;&#x7684;&#x5B8C;&#x5168;&#x652F;&#x6301;</li>
+<li><a href="platform.md#&#x591A;&#x5E73;&#x53F0;&#x652F;&#x6301;">&#x591A;&#x5E73;&#x53F0;&#x652F;&#x6301;</a>(&#x5FAE;&#x4FE1;&#x3001;&#x652F;&#x4ED8;&#x5B9D;&#x3001;&#x767E;&#x5EA6;&#x3001;qq&#x3001;&#x5934;&#x6761;)</li>
+<li><a href="platform.md#&#x8DE8;&#x5E73;&#x53F0;&#x7F16;&#x8BD1;">&#x8DE8;&#x5E73;&#x53F0;&#x7F16;&#x8BD1;</a>(&#x652F;&#x6301;&#x5C06;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x8F6C;&#x6362;&#x4E3A;&#x652F;&#x4ED8;&#x5B9D;&#x3001;&#x767E;&#x5EA6;&#x3001;qq&#x3001;&#x5934;&#x6761;&#x5C0F;&#x7A0B;&#x5E8F;)</li>
+</ul>
+<p>Mpx2.0&#x6B63;&#x5F0F;&#x53D1;&#x5E03;&#xFF01;&#x652F;&#x6301;&#x76EE;&#x524D;&#x4E1A;&#x5185;&#x5168;&#x90E8;&#x5C0F;&#x7A0B;&#x5E8F;&#x5E73;&#x53F0;&#x53CA;&#x8DE8;&#x5C0F;&#x7A0B;&#x5E8F;&#x5E73;&#x53F0;&#x7F16;&#x8BD1;&#xFF0C;<a href="https://github.com/didi/mpx/releases/tag/v2.0.0" target="_blank">&#x70B9;&#x6B64;&#x67E5;&#x770B;&#x8BE6;&#x60C5;</a>&#xFF0C;<a href="migrate.md">&#x70B9;&#x6B64;&#x67E5;&#x770B;&#x8FC1;&#x79FB;&#x6307;&#x5357;</a></p>
+<h2 id="&#x5B89;&#x88C5;&#x4F7F;&#x7528;"><a name="&#x5B89;&#x88C5;&#x4F7F;&#x7528;" class="plugin-anchor" href="#&#x5B89;&#x88C5;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x88C5;&#x4F7F;&#x7528;</h2>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x5B89;&#x88C5;mpx&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</span>
+npm i -g @mpxjs/cli
+
+<span class="hljs-comment"># &#x521D;&#x59CB;&#x5316;&#x9879;&#x76EE;</span>
+mpx init &lt;project-name&gt;
+
+<span class="hljs-comment"># &#x8FDB;&#x5165;&#x9879;&#x76EE;&#x76EE;&#x5F55;</span>
+<span class="hljs-built_in">cd</span> &lt;project-name&gt;
+
+<span class="hljs-comment"># &#x5B89;&#x88C5;&#x4F9D;&#x8D56;</span>
+npm i
+
+<span class="hljs-comment"># development</span>
+npm run watch
+
+<span class="hljs-comment"># production</span>
+npm run prod
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x5FAE;&#x4FE1;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x6253;&#x5F00; &#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;&#x751F;&#x6210;&#x7684;dist&#x6587;&#x4EF6;&#x5939; &#x5373;&#x53EF;&#x8FDB;&#x884C;&#x9884;&#x89C8;&#x8C03;&#x8BD5;&#x548C;&#x53D1;&#x5E03;&#x3002;</p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x67E5;&#x770B; <a href="https://github.com/didi/mpx/tree/master/examples" target="_blank">&#x5B98;&#x65B9;&#x793A;&#x4F8B;&#x9879;&#x76EE;</a> &#x505A;&#x8FDB;&#x4E00;&#x6B65;&#x4E86;&#x89E3;</p>
+<h2 id="&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;"><a name="&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;" class="plugin-anchor" href="#&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;</h2>
+<p>&#x76EE;&#x524D;&#x4E1A;&#x754C;&#x4E3B;&#x6D41;&#x7684;&#x5C0F;&#x7A0B;&#x5E8F;&#x6846;&#x67B6;&#x4E3B;&#x8981;&#x6709;WePY&#xFF0C;mpvue&#x548C;Taro&#xFF0C;&#x8FD9;&#x4E09;&#x8005;&#x90FD;&#x662F;&#x5C06;&#x5176;&#x4ED6;&#x7684;&#x8BED;&#x6CD5;&#x89C4;&#x8303;&#x8F6C;&#x8BD1;&#x4E3A;&#x5C0F;&#x7A0B;&#x5E8F;&#x8BED;&#x6CD5;&#x89C4;&#x8303;&#xFF0C;&#x6211;&#x4EEC;&#x79F0;&#x5176;&#x4E3A;&#x8F6C;&#x8BD1;&#x578B;&#x6846;&#x67B6;&#x3002;&#x4E0D;&#x540C;&#x4E8E;&#x4E0A;&#x8FF0;&#x4E09;&#x8005;&#xFF0C;Mpx&#x662F;&#x4E00;&#x6B3E;&#x57FA;&#x4E8E;&#x5C0F;&#x7A0B;&#x5E8F;&#x8BED;&#x6CD5;&#x89C4;&#x8303;&#x7684;&#x589E;&#x5F3A;&#x578B;&#x6846;&#x67B6;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;Vue&#x4E2D;&#x4F18;&#x79C0;&#x7684;&#x8BED;&#x6CD5;&#x7279;&#x6027;&#x589E;&#x5F3A;&#x4E86;&#x5C0F;&#x7A0B;&#x5E8F;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8BA9;&#x7528;&#x6237;&#x76F4;&#x63A5;&#x4F7F;&#x7528;vue&#x8BED;&#x6CD5;&#x6765;&#x5F00;&#x53D1;&#x5C0F;&#x7A0B;&#x5E8F;&#xFF0C;&#x4E4B;&#x6240;&#x4EE5;&#x91C7;&#x7528;&#x8FD9;&#x79CD;&#x8BBE;&#x8BA1;&#x4E3B;&#x8981;&#x662F;&#x57FA;&#x4E8E;&#x5982;&#x4E0B;&#x8003;&#x8651;&#xFF1A;</p>
+<ul>
+<li>&#x8F6C;&#x8BD1;&#x578B;&#x6846;&#x67B6;&#x65E0;&#x6CD5;&#x652F;&#x6301;&#x6E90;&#x6846;&#x67B6;&#x7684;&#x6240;&#x6709;&#x8BED;&#x6CD5;&#x7279;&#x6027;(&#x5982;Vue&#x6A21;&#x677F;&#x4E2D;&#x7684;&#x52A8;&#x6001;&#x7279;&#x6027;&#x6216;React&#x4E2D;&#x52A8;&#x6001;&#x751F;&#x6210;&#x7684;jsx)&#xFF0C;&#x7528;&#x6237;&#x5728;&#x4F7F;&#x7528;&#x6E90;&#x6846;&#x67B6;&#x8BED;&#x6CD5;&#x8FDB;&#x884C;&#x5F00;&#x53D1;&#x65F6;&#x53EF;&#x80FD;&#x4F1A;&#x9047;&#x5230;&#x4E0D;&#x53EF;&#x9884;&#x671F;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x5177;&#x6709;&#x4E0D;&#x786E;&#x5B9A;&#x6027;</li>
+<li>&#x5C0F;&#x7A0B;&#x5E8F;&#x672C;&#x8EAB;&#x7684;&#x6280;&#x672F;&#x89C4;&#x8303;&#x5728;&#x4E0D;&#x65AD;&#x5730;&#x66F4;&#x65B0;&#x8FDB;&#x6B65;&#xFF0C;&#x8BB8;&#x591A;&#x65B0;&#x7684;&#x6280;&#x672F;&#x89C4;&#x8303;&#x5728;&#x8F6C;&#x8BD1;&#x578B;&#x6846;&#x67B6;&#x4E2D;&#x65E0;&#x6CD5;&#x652F;&#x6301;&#x6216;&#x9700;&#x8981;&#x5F88;&#x9AD8;&#x7684;&#x652F;&#x6301;&#x6210;&#x672C;&#xFF0C;&#x800C;&#x5BF9;&#x4E8E;&#x589E;&#x5F3A;&#x578B;&#x6846;&#x67B6;&#x6765;&#x8BF4;&#x53EA;&#x8981;&#x65B0;&#x7684;&#x6280;&#x672F;&#x89C4;&#x8303;&#x4E0D;&#x4E0E;&#x589E;&#x5F3A;&#x7279;&#x6027;&#x51B2;&#x7A81;&#xFF0C;&#x5C31;&#x80FD;&#x591F;&#x76F4;&#x63A5;&#x652F;&#x6301;</li>
+</ul>
+<h2 id="&#x751F;&#x6001;&#x5468;&#x8FB9;"><a name="&#x751F;&#x6001;&#x5468;&#x8FB9;" class="plugin-anchor" href="#&#x751F;&#x6001;&#x5468;&#x8FB9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x751F;&#x6001;&#x5468;&#x8FB9;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x5305;&#x540D;</th>
+<th>&#x7248;&#x672C;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@mpxjs/core</td>
+<td><a href="https://badge.fury.io/js/%40mpxjs%2Fcore" target="_blank"><img src="https://badge.fury.io/js/%40mpxjs%2Fcore.svg" alt="npm version"></a></td>
+<td>mpx&#x5FAE;&#x4FE1;&#x8FD0;&#x884C;&#x65F6;&#x6838;&#x5FC3;</td>
+</tr>
+<tr>
+<td>@mpxjs/webpack-plugin</td>
+<td><a href="https://badge.fury.io/js/%40mpxjs%2Fwebpack-plugin" target="_blank"><img src="https://badge.fury.io/js/%40mpxjs%2Fwebpack-plugin.svg" alt="npm version"></a></td>
+<td>mpx&#x7F16;&#x8BD1;&#x6838;&#x5FC3;</td>
+</tr>
+<tr>
+<td>@mpxjs/cli</td>
+<td><a href="https://badge.fury.io/js/%40mpxjs%2Fcli" target="_blank"><img src="https://badge.fury.io/js/%40mpxjs%2Fcli.svg" alt="npm version"></a></td>
+<td>mpx&#x811A;&#x624B;&#x67B6;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</td>
+</tr>
+<tr>
+<td>@mpxjs/fetch</td>
+<td><a href="https://badge.fury.io/js/%40mpxjs%2Ffetch" target="_blank"><img src="https://badge.fury.io/js/%40mpxjs%2Ffetch.svg" alt="npm version"></a></td>
+<td>mpx&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x5E93;&#xFF0C;&#x5904;&#x7406;wx&#x5E76;&#x53D1;&#x8BF7;&#x6C42;&#x9650;&#x5236;</td>
+</tr>
+<tr>
+<td>@mpxjs/url-loader</td>
+<td><a href="https://badge.fury.io/js/%40mpxjs%2Furl-loader" target="_blank"><img src="https://badge.fury.io/js/%40mpxjs%2Furl-loader.svg" alt="npm version"></a></td>
+<td>&#x5904;&#x7406;wxss&#x4E2D;&#x56FE;&#x50CF;&#x8D44;&#x6E90;&#x53EA;&#x80FD;&#x7528;base64&#x5F15;&#x7528;</td>
+</tr>
+<tr>
+<td>@mpxjs/api-proxy</td>
+<td><a href="https://badge.fury.io/js/%40mpxjs%2Fapi-proxy" target="_blank"><img src="https://badge.fury.io/js/%40mpxjs%2Fapi-proxy.svg" alt="npm version"></a></td>
+<td>&#x5C06;&#x5404;&#x4E2A;&#x5E73;&#x53F0;&#x7684; api &#x8FDB;&#x884C;&#x8F6C;&#x6362;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06; api &#x8F6C;&#x4E3A; promise &#x683C;&#x5F0F;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x4EA4;&#x6D41;"><a name="&#x4EA4;&#x6D41;" class="plugin-anchor" href="#&#x4EA4;&#x6D41;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EA4;&#x6D41;</h2>
+<p>&#x6253;&#x5F00;&#x94FE;&#x63A5;&#x626B;&#x7801;&#x8FDB;&#x5165;&#x5FAE;&#x4FE1;&#x7FA4;&#x6216;QQ&#x7FA4;&#xFF1A;<a href="https://s.didi.cn/rod" target="_blank">https://s.didi.cn/rod</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。","title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"plugins":["expandable-chapters","github","edit-link","anchors","copy-code-button","github-buttons","expandable-chapters-small","insert-logo","custom-favicon"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"custom-favicon":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/didi/mpx/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"insert-logo":{"style":"background: none; width: 200px","url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png"},"expandable-chapters":{}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"intro.md","mtime":"2019-07-15T10:00:27.573Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-15T10:09:04.968Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
