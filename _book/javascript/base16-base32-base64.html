@@ -1,0 +1,420 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>base16&base32&base64 · mpx文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="滴滴出行webapp团队">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="apply-call-bind.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../how-to-use-jira.html">
+            
+                <a href="../how-to-use-jira.html">
+            
+                    
+                    关于jira使用记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    javascript杂记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="apply-call-bind.html">
+            
+                <a href="apply-call-bind.html">
+            
+                    
+                    apply&call&bind解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="base16-base32-base64.html">
+            
+                <a href="base16-base32-base64.html">
+            
+                    
+                    base16&base32&base64
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >base16&base32&base64</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <blockquote>
+<p>&#x6765;&#x81EA; &#x6398;&#x91D1;&#x6280;&#x672F;&#x6587;&#x7AE0; <a href="https://juejin.im/post/5c0a2407f265da611f0780c7" target="_blank">https://juejin.im/post/5c0a2407f265da611f0780c7</a></p>
+<p>&#x6211;&#x4E2A;&#x4EBA;&#x611F;&#x89C9;base&#x7F16;&#x7801; &#x672C;&#x8D28;&#x5C31;&#x662F;&#x628A;&#x9AD8;&#x4F4D;&#x7684;&#x503C;(&#x76F8;&#x5BF9;&#x7684;code&#x7F16;&#x7801;&#x4E5F;&#x6BD4;&#x8F83;&#x957F;&#x6216;&#x8005;&#x503C;&#x6BD4;&#x8F83;&#x5927; &#x6BD4;&#x5982;&#x8BF4;&#x4E2D;&#x6587;unicode&#x8FC7;&#x4E07;&#x7684;code&#x503C; &#x8F6C;&#x6362;&#x6210;&#x4E8C;&#x8FDB;&#x5236;&#x7F16;&#x7801;&#x662F;&#x56DB;&#x4E2A;&#x5B57;&#x8282;),&#x7528;&#x4F4E;&#x4F4D;&#x8868;&#x73B0;&#x51FA;&#x6765; &#x9650;&#x5B9A;&#x8F83;&#x4F4E;&#x4F4D;&#x7684;&#x7801;&#x503C;&#x6765;&#x8868;&#x73B0;
+base16 &#x5C31;&#x662F;16&#x4E2A;&#x7801;&#x503C;(0-9, A-F) base32 32&#x4E2A;&#x7801;&#x503C; base64 64&#x4E2A;&#x7801;&#x503C;</p>
+</blockquote>
+<h3 id="&#x7F16;&#x7801;&#x6D41;&#x7A0B;"><a name="&#x7F16;&#x7801;&#x6D41;&#x7A0B;" class="plugin-anchor" href="#&#x7F16;&#x7801;&#x6D41;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F16;&#x7801;&#x6D41;&#x7A0B;</h3>
+<ul>
+<li><ol>
+<li>ILU &#x5BF9;&#x5E94;ascii 73, 76, 85</li>
+</ol>
+</li>
+<li><ol>
+<li>&#x4E8C;&#x8FDB;&#x5236;&#x8F6C;&#x6362; 1 = 0000 00001   73 = 0100 1001 ...</li>
+</ol>
+</li>
+<li><ol>
+<li>base16&#x89C4;&#x5219;4&#x4E2A;bit&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x4E0B;&#x6807; &#x4E5F;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x503C;  &#x4E00;&#x4E2A;&#x5355;&#x4F4D;  76 = 0100 1001 = 4 9  ILU = 494C55(base16&#x7F16;&#x7801;&#x540E;&#x7684;&#x7ED3;&#x679C;)</li>
+</ol>
+</li>
+<li><ol>
+<li>&#x89E3;&#x7801;  &#x5C31;&#x53CD;&#x8FC7;&#x6765;</li>
+</ol>
+</li>
+<li><ol>
+<li>&#x5982;&#x679C;&#x81EA;&#x5B9A;&#x4E49;&#x7801;&#x503C;&#x96C6;&#x5408;</li>
+<li>base16&#x7801;&#x503C;&#x8303;&#x56F4; 0000 - 1111  = 0 - 15 = 0 - F</li>
+<li>base32&#x7801;&#x503C;&#x8303;&#x56F4; 00000 - 11111 = 0 - 31 = &#x5982;&#x4E0B;</li>
+<li>base64&#x7801;&#x503C;&#x8303;&#x56F4; 000000 - 111111 = 0 - 65</li>
+</ol>
+</li>
+</ul>
+<pre><code>// &#x81EA;&#x5B9A;&#x4E49;base32&#x5B57;&#x7B26;&#x96C6;  &#x5404;&#x4E2A;&#x4F4D;&#x7F6E;&#x548C;&#x7801;&#x503C;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;
+var encoding = base32.NewEncoding(&quot;ybndrfg8ejkmcpqxot1uwisza345h769&quot;)  A-F 2 - 7
+</code></pre><h3 id="&#x5F52;&#x7C7B;"><a name="&#x5F52;&#x7C7B;" class="plugin-anchor" href="#&#x5F52;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5F52;&#x7C7B;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x540D;&#x79F0;</th>
+<th style="text-align:center">&#x4E0B;&#x6807;&#x6570;&#x5B57;&#x7684;&#x4F4D;&#x4E2A;&#x6570;</th>
+<th style="text-align:left">&#x7F16;&#x7801;&#x8868;&#x5B57;&#x7B26;&#x4E32;</th>
+<th style="text-align:left">&#x4F4D;&#x6570;&#x4E0D;&#x8DB3;&#x662F;&#x5426;&#x4F1A;&#x4E0D;&#x5168; =</th>
+<th style="text-align:left">&#x7F16;&#x7801;&#x540E; &#x6570;&#x636E;&#x91CF;&#x53D8;&#x5316;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">base16</td>
+<td style="text-align:center">4</td>
+<td style="text-align:left">&#x6570;&#x5B57;0~9 &#x548C; &#x5B57;&#x6BCD; A~F</td>
+<td style="text-align:left">&#x4E0D;&#x4F1A;&#xFF0C;&#x4F4D;&#x6570;&#x521A;&#x597D;&#x662F; 4 &#x7684;&#x500D;&#x6570;</td>
+<td style="text-align:left">&#x7531;&#x4E00;&#x4E2A;8&#x4F4D;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26; &#x53D8;&#x6210; 4&#x4F4D;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x6570;&#x636E;&#x91CF;&#x53D8; 2 &#x500D;</td>
+</tr>
+<tr>
+<td style="text-align:center">base32</td>
+<td style="text-align:center">5</td>
+<td style="text-align:left">&#x5927;&#x5199;&#x5B57;&#x6BCD;A~Z &#x548C; &#x6570;&#x5B57;2~7</td>
+<td style="text-align:left">&#x4F1A;</td>
+<td style="text-align:left">&#x53D8;&#x4E3A; 8/5 &#x500D;</td>
+</tr>
+<tr>
+<td style="text-align:center">base64</td>
+<td style="text-align:center">6</td>
+<td style="text-align:left">&#x5927;&#x5199;&#x5B57;&#x6BCD;A~Z&#xFF0C;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;a~z&#xFF0C;&#x6570;&#x5B57;0~9&#x4EE5;&#x53CA;&quot;+&quot;&#xFF0C;&quot;/&quot;</td>
+<td style="text-align:left">&#x4F1A;</td>
+<td style="text-align:left">&#x53D8;&#x4E3A; 8/6=4/3 &#x500D;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x603B;&#x7ED3;"><a name="&#x603B;&#x7ED3;" class="plugin-anchor" href="#&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x603B;&#x7ED3;</h3>
+<ul>
+<li><ol>
+<li>&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x6240;&#x5BF9;&#x5E94;&#x8868;&#x683C;&#x4E2D;&#x7684;&#x4E0B;&#x6807;&#x7684; bit &#x4F4D;&#x662F;&#x591A;&#x5C11;&#x4E2A;</li>
+</ol>
+</li>
+<li><ol>
+<li>&#x5BF9;&#x5E94;&#x7684;&#x7F16;&#x7801;&#x8868;&#x683C;&#x662F;&#x591A;&#x5C11;</li>
+</ol>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="apply-call-bind.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: apply&call&bind解析">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"base16&base32&base64","level":"1.3.2","depth":2,"previous":{"title":"apply&call&bind解析","level":"1.3.1","depth":2,"path":"javascript/apply-call-bind.md","ref":"javascript/apply-call-bind.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","github","edit-link","anchors","copy-code-button","github-buttons","expandable-chapters-small","insert-logo","custom-favicon","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"custom-favicon":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/didi/mpx/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"insert-logo":{"style":"background: none; width: 200px","url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png"},"expandable-chapters":{}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"javascript/base16-base32-base64.md","mtime":"2019-07-18T07:32:48.394Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-18T07:29:49.899Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
