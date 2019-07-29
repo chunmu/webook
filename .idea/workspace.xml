@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="076c93de-40dc-4c59-83d9-f04706d0be71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/SUMMARY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/how-to-use-jira.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/how-to-use-jira.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/javascript/apply-call-bind.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/javascript/apply-call-bind.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/search_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/search_index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/how-to-use-jira.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/how-to-use-jira.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/javascript/apply-call-bind.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/javascript/apply-call-bind.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/javascript/base16-base32-base64.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/javascript/base16-base32-base64.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/search_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/_book/search_index.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -153,12 +144,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564385142186</updated>
-      <workItem from="1564385143813" duration="5344000" />
+      <workItem from="1564385143813" duration="5511000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5344000" />
+    <option name="totallyTimeSpent" value="5511000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1643" y="129" width="1440" height="834" extended-state="0" />
