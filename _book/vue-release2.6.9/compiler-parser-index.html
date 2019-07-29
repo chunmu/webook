@@ -1,0 +1,1360 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>compiler-parser-index · mpx文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="滴滴出行webapp团队">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="compiler-helpers.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../how-to-use-jira.html">
+            
+                <a href="../how-to-use-jira.html">
+            
+                    
+                    关于jira使用记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    javascript杂记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../javascript/apply-call-bind.html">
+            
+                <a href="../javascript/apply-call-bind.html">
+            
+                    
+                    apply&call&bind解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../javascript/base16-base32-base64.html">
+            
+                <a href="../javascript/base16-base32-base64.html">
+            
+                    
+                    base16&base32&base64
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    vue-release2.6.9()
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="compiler-helpers.html">
+            
+                <a href="compiler-helpers.html">
+            
+                    
+                    compiler-helpers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="compiler-parser-index.html">
+            
+                <a href="compiler-parser-index.html">
+            
+                    
+                    compiler-parser-index
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >compiler-parser-index</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="parser"><a name="parser" class="plugin-anchor" href="#parser"><i class="fa fa-link" aria-hidden="true"></i></a>parser</h1>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> he <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;he&apos;</span>
+<span class="hljs-keyword">import</span> { parseHTML } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./html-parser&apos;</span>
+<span class="hljs-keyword">import</span> { parseText } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./text-parser&apos;</span>
+<span class="hljs-keyword">import</span> { parseFilters } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./filter-parser&apos;</span>
+<span class="hljs-keyword">import</span> { genAssignmentCode } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../directives/model&apos;</span>
+<span class="hljs-keyword">import</span> { extend, cached, no, camelize, hyphenate } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;shared/util&apos;</span>
+<span class="hljs-keyword">import</span> { isIE, isEdge, isServerRendering } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;core/util/env&apos;</span>
+
+<span class="hljs-keyword">import</span> {
+  addProp,
+  addAttr,
+  baseWarn,
+  addHandler,
+  addDirective,
+  getBindingAttr,
+  getAndRemoveAttr,
+  getRawBindingAttr,
+  pluckModuleFunction,
+  getAndRemoveAttrByRegex
+} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../helpers&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> onRE = <span class="hljs-regexp">/^@|^v-on:/</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> dirRE = process.env.VBIND_PROP_SHORTHAND
+  ? <span class="hljs-regexp">/^v-|^@|^:|^\./</span>
+  : <span class="hljs-regexp">/^v-|^@|^:/</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> forAliasRE = <span class="hljs-regexp">/([\s\S]*?)\s+(?:in|of)\s+([\s\S]*)/</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> forIteratorRE = <span class="hljs-regexp">/,([^,\}\]]*)(?:,([^,\}\]]*))?$/</span>
+<span class="hljs-keyword">const</span> stripParensRE = <span class="hljs-regexp">/^\(|\)$/g</span>
+<span class="hljs-keyword">const</span> dynamicArgRE = <span class="hljs-regexp">/^\[.*\]$/</span>
+
+<span class="hljs-keyword">const</span> argRE = <span class="hljs-regexp">/:(.*)$/</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> bindRE = <span class="hljs-regexp">/^:|^\.|^v-bind:/</span>
+<span class="hljs-keyword">const</span> propBindRE = <span class="hljs-regexp">/^\./</span>
+<span class="hljs-keyword">const</span> modifierRE = <span class="hljs-regexp">/\.[^.\]]+(?=[^\]]*$)/g</span>
+
+<span class="hljs-keyword">const</span> slotRE = <span class="hljs-regexp">/^v-slot(:|$)|^#/</span>
+
+<span class="hljs-keyword">const</span> lineBreakRE = <span class="hljs-regexp">/[\r\n]/</span>
+<span class="hljs-keyword">const</span> whitespaceRE = <span class="hljs-regexp">/\s+/g</span>
+
+<span class="hljs-keyword">const</span> invalidAttributeRE = <span class="hljs-regexp">/[\s&quot;&apos;&lt;&gt;\/=]/</span>
+
+<span class="hljs-keyword">const</span> decodeHTMLCached = cached(he.decode)
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> emptySlotScopeToken = <span class="hljs-string">`_empty_`</span>
+
+<span class="hljs-comment">// configurable state</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> warn: any
+<span class="hljs-keyword">let</span> delimiters
+<span class="hljs-keyword">let</span> transforms
+<span class="hljs-keyword">let</span> preTransforms
+<span class="hljs-keyword">let</span> postTransforms
+<span class="hljs-keyword">let</span> platformIsPreTag
+<span class="hljs-keyword">let</span> platformMustUseProp
+<span class="hljs-keyword">let</span> platformGetTagNamespace
+<span class="hljs-keyword">let</span> maybeComponent
+
+<span class="hljs-comment">// &#x751F;&#x6210;AST&#x8282;&#x70B9;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createASTElement</span> (<span class="hljs-params">
+  tag: string,
+  attrs: Array&lt;ASTAttr&gt;,
+  parent: ASTElement | void
+</span>): <span class="hljs-title">ASTElement</span> </span>{
+  <span class="hljs-keyword">return</span> {
+    type: <span class="hljs-number">1</span>,
+    tag,
+    attrsList: attrs,
+    attrsMap: makeAttrsMap(attrs),
+    rawAttrsMap: {},
+    parent,
+    children: []
+  }
+}
+
+<span class="hljs-comment">/**
+ * Convert HTML string to AST.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parse</span> (<span class="hljs-params">
+  template: string,
+  options: CompilerOptions
+</span>): <span class="hljs-title">ASTElement</span> | <span class="hljs-title">void</span> </span>{
+  warn = options.warn || baseWarn
+
+  <span class="hljs-comment">// &#x662F;&#x5426;&#x662F;&#x5728;pre&#x6807;&#x7B7E;&#x5185;</span>
+  platformIsPreTag = options.isPreTag || no
+  <span class="hljs-comment">// &#x7528;&#x6765;&#x68C0;&#x6D4B;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x5728;&#x6807;&#x7B7E;&#x4E2D;&#x662F;&#x5426;&#x8981;&#x4F7F;&#x7528;&#x5143;&#x7D20;&#x5BF9;&#x8C61;&#x539F;&#x751F;&#x7684; prop &#x8FDB;&#x884C;&#x7ED1;&#x5B9A;  &#x539F;&#x751F;&#x5C5E;&#x6027;&#x5982;&#x679C;&#x6709;&#x7684;&#x8BDD;  &#x5C31;&#x7528;&#x539F;&#x751F;&#x7684;&#x7ED1;&#x5B9A;</span>
+  platformMustUseProp = options.mustUseProp || no
+  <span class="hljs-comment">// &#x5143;&#x7D20;&#x547D;&#x540D;&#x7A7A;&#x95F4;</span>
+  platformGetTagNamespace = options.getTagNamespace || no
+  <span class="hljs-keyword">const</span> isReservedTag = options.isReservedTag || no
+  maybeComponent = (el: ASTElement) =&gt; !!el.component || !isReservedTag(el.tag)
+
+  transforms = pluckModuleFunction(options.modules, <span class="hljs-string">&apos;transformNode&apos;</span>)
+  preTransforms = pluckModuleFunction(options.modules, <span class="hljs-string">&apos;preTransformNode&apos;</span>)
+  postTransforms = pluckModuleFunction(options.modules, <span class="hljs-string">&apos;postTransformNode&apos;</span>)
+
+  delimiters = options.delimiters
+
+  <span class="hljs-keyword">const</span> stack = []
+  <span class="hljs-keyword">const</span> preserveWhitespace = options.preserveWhitespace !== <span class="hljs-literal">false</span>
+  <span class="hljs-keyword">const</span> whitespaceOption = options.whitespace
+  <span class="hljs-keyword">let</span> root
+  <span class="hljs-keyword">let</span> currentParent
+  <span class="hljs-keyword">let</span> inVPre = <span class="hljs-literal">false</span>
+  <span class="hljs-keyword">let</span> inPre = <span class="hljs-literal">false</span>
+  <span class="hljs-keyword">let</span> warned = <span class="hljs-literal">false</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">warnOnce</span> (<span class="hljs-params">msg, range</span>) </span>{
+    <span class="hljs-keyword">if</span> (!warned) {
+      warned = <span class="hljs-literal">true</span>
+      warn(msg, range)
+    }
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">closeElement</span> (<span class="hljs-params">element</span>) </span>{
+    trimEndingWhitespace(element)
+    <span class="hljs-keyword">if</span> (!inVPre &amp;&amp; !element.processed) {
+      element = processElement(element, options)
+    }
+    <span class="hljs-comment">// tree management</span>
+    <span class="hljs-keyword">if</span> (!stack.length &amp;&amp; element !== root) {
+      <span class="hljs-comment">// allow root elements with v-if, v-else-if and v-else</span>
+      <span class="hljs-keyword">if</span> (root.if &amp;&amp; (element.elseif || element.else)) {
+        <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+          checkRootConstraints(element)
+        }
+        addIfCondition(root, {
+          exp: element.elseif,
+          block: element
+        })
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+        warnOnce(
+          <span class="hljs-string">`Component template should contain exactly one root element. `</span> +
+          <span class="hljs-string">`If you are using v-if on multiple elements, `</span> +
+          <span class="hljs-string">`use v-else-if to chain them instead.`</span>,
+          { start: element.start }
+        )
+      }
+    }
+    <span class="hljs-keyword">if</span> (currentParent &amp;&amp; !element.forbidden) {
+      <span class="hljs-keyword">if</span> (element.elseif || element.else) {
+        processIfConditions(element, currentParent)
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">if</span> (element.slotScope) {
+          <span class="hljs-comment">// scoped slot</span>
+          <span class="hljs-comment">// keep it in the children list so that v-else(-if) conditions can</span>
+          <span class="hljs-comment">// find it as the prev node.</span>
+          <span class="hljs-keyword">const</span> name = element.slotTarget || <span class="hljs-string">&apos;&quot;default&quot;&apos;</span>
+          ;(currentParent.scopedSlots || (currentParent.scopedSlots = {}))[name] = element
+        }
+        currentParent.children.push(element)
+        element.parent = currentParent
+      }
+    }
+
+    <span class="hljs-comment">// final children cleanup</span>
+    <span class="hljs-comment">// filter out scoped slots</span>
+    element.children = element.children.filter(c =&gt; !(c: any).slotScope)
+    <span class="hljs-comment">// remove trailing whitespace node again</span>
+    trimEndingWhitespace(element)
+
+    <span class="hljs-comment">// check pre state</span>
+    <span class="hljs-keyword">if</span> (element.pre) {
+      inVPre = <span class="hljs-literal">false</span>
+    }
+    <span class="hljs-keyword">if</span> (platformIsPreTag(element.tag)) {
+      inPre = <span class="hljs-literal">false</span>
+    }
+    <span class="hljs-comment">// apply post-transforms</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; postTransforms.length; i++) {
+      postTransforms[i](element, options)
+    }
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">trimEndingWhitespace</span> (<span class="hljs-params">el</span>) </span>{
+    <span class="hljs-comment">// remove trailing whitespace node</span>
+    <span class="hljs-keyword">if</span> (!inPre) {
+      <span class="hljs-keyword">let</span> lastNode
+      <span class="hljs-keyword">while</span> (
+        (lastNode = el.children[el.children.length - <span class="hljs-number">1</span>]) &amp;&amp;
+        lastNode.type === <span class="hljs-number">3</span> &amp;&amp;
+        lastNode.text === <span class="hljs-string">&apos; &apos;</span>
+      ) {
+        el.children.pop()
+      }
+    }
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkRootConstraints</span> (<span class="hljs-params">el</span>) </span>{
+    <span class="hljs-keyword">if</span> (el.tag === <span class="hljs-string">&apos;slot&apos;</span> || el.tag === <span class="hljs-string">&apos;template&apos;</span>) {
+      warnOnce(
+        <span class="hljs-string">`Cannot use &lt;<span class="hljs-subst">${el.tag}</span>&gt; as component root element because it may `</span> +
+        <span class="hljs-string">&apos;contain multiple nodes.&apos;</span>,
+        { start: el.start }
+      )
+    }
+    <span class="hljs-keyword">if</span> (el.attrsMap.hasOwnProperty(<span class="hljs-string">&apos;v-for&apos;</span>)) {
+      warnOnce(
+        <span class="hljs-string">&apos;Cannot use v-for on stateful component root element because &apos;</span> +
+        <span class="hljs-string">&apos;it renders multiple elements.&apos;</span>,
+        el.rawAttrsMap[<span class="hljs-string">&apos;v-for&apos;</span>]
+      )
+    }
+  }
+
+  parseHTML(template, {
+    warn,
+    expectHTML: options.expectHTML,
+    isUnaryTag: options.isUnaryTag,
+    canBeLeftOpenTag: options.canBeLeftOpenTag,
+    shouldDecodeNewlines: options.shouldDecodeNewlines,
+    shouldDecodeNewlinesForHref: options.shouldDecodeNewlinesForHref,
+    shouldKeepComment: options.comments,
+    outputSourceRange: options.outputSourceRange,
+    start (tag, attrs, unary, start, end) {
+      <span class="hljs-comment">// check namespace.</span>
+      <span class="hljs-comment">// inherit parent ns if there is one</span>
+      <span class="hljs-keyword">const</span> ns = (currentParent &amp;&amp; currentParent.ns) || platformGetTagNamespace(tag)
+
+      <span class="hljs-comment">// handle IE svg bug</span>
+      <span class="hljs-comment">/* istanbul ignore if */</span>
+      <span class="hljs-comment">// &#x5904;&#x7406;IE&#x4E0B;&#x7684;svg&#x76F8;&#x5173;&#x5177;&#x4F53;&#x67E5;&#x770B; http://hcysun.me/vue-design/art/82vue-parsing.html</span>
+      <span class="hljs-keyword">if</span> (isIE &amp;&amp; ns === <span class="hljs-string">&apos;svg&apos;</span>) {
+        attrs = guardIESVGBug(attrs)
+      }
+
+      <span class="hljs-keyword">let</span> element: ASTElement = createASTElement(tag, attrs, currentParent)
+      <span class="hljs-keyword">if</span> (ns) {
+        element.ns = ns
+      }
+
+      <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+        <span class="hljs-keyword">if</span> (options.outputSourceRange) {
+          element.start = start
+          element.end = end
+          element.rawAttrsMap = element.attrsList.reduce((cumulated, attr) =&gt; {
+            cumulated[attr.name] = attr
+            <span class="hljs-keyword">return</span> cumulated
+          }, {})
+        }
+        attrs.forEach(attr =&gt; {
+          <span class="hljs-keyword">if</span> (invalidAttributeRE.test(attr.name)) {
+            warn(
+              <span class="hljs-string">`Invalid dynamic argument expression: attribute names cannot contain `</span> +
+              <span class="hljs-string">`spaces, quotes, &lt;, &gt;, / or =.`</span>,
+              {
+                start: attr.start + attr.name.indexOf(<span class="hljs-string">`[`</span>),
+                end: attr.start + attr.name.length
+              }
+            )
+          }
+        })
+      }
+
+      <span class="hljs-keyword">if</span> (isForbiddenTag(element) &amp;&amp; !isServerRendering()) {
+        element.forbidden = <span class="hljs-literal">true</span>
+        process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span> &amp;&amp; warn(
+          <span class="hljs-string">&apos;Templates should only be responsible for mapping the state to the &apos;</span> +
+          <span class="hljs-string">&apos;UI. Avoid placing tags with side-effects in your templates, such as &apos;</span> +
+          <span class="hljs-string">`&lt;<span class="hljs-subst">${tag}</span>&gt;`</span> + <span class="hljs-string">&apos;, as they will not be parsed.&apos;</span>,
+          { start: element.start }
+        )
+      }
+
+      <span class="hljs-comment">// apply pre-transforms</span>
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; preTransforms.length; i++) {
+        element = preTransforms[i](element, options) || element
+      }
+
+      <span class="hljs-keyword">if</span> (!inVPre) {
+        processPre(element)
+        <span class="hljs-keyword">if</span> (element.pre) {
+          inVPre = <span class="hljs-literal">true</span>
+        }
+      }
+      <span class="hljs-keyword">if</span> (platformIsPreTag(element.tag)) {
+        inPre = <span class="hljs-literal">true</span>
+      }
+      <span class="hljs-keyword">if</span> (inVPre) {
+        processRawAttrs(element)
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!element.processed) {
+        <span class="hljs-comment">// structural directives</span>
+        processFor(element)
+        processIf(element)
+        processOnce(element)
+      }
+
+      <span class="hljs-keyword">if</span> (!root) {
+        root = element
+        <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+          checkRootConstraints(root)
+        }
+      }
+
+      <span class="hljs-keyword">if</span> (!unary) {
+        currentParent = element
+        stack.push(element)
+      } <span class="hljs-keyword">else</span> {
+        closeElement(element)
+      }
+    },
+
+    end (tag, start, end) {
+      <span class="hljs-keyword">const</span> element = stack[stack.length - <span class="hljs-number">1</span>]
+      <span class="hljs-comment">// pop stack</span>
+      stack.length -= <span class="hljs-number">1</span>
+      currentParent = stack[stack.length - <span class="hljs-number">1</span>]
+      <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span> &amp;&amp; options.outputSourceRange) {
+        element.end = end
+      }
+      closeElement(element)
+    },
+
+    chars (text: string, start: number, end: number) {
+      <span class="hljs-keyword">if</span> (!currentParent) {
+        <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+          <span class="hljs-keyword">if</span> (text === template) {
+            warnOnce(
+              <span class="hljs-string">&apos;Component template requires a root element, rather than just text.&apos;</span>,
+              { start }
+            )
+          } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ((text = text.trim())) {
+            warnOnce(
+              <span class="hljs-string">`text &quot;<span class="hljs-subst">${text}</span>&quot; outside root element will be ignored.`</span>,
+              { start }
+            )
+          }
+        }
+        <span class="hljs-keyword">return</span>
+      }
+      <span class="hljs-comment">// IE textarea placeholder bug</span>
+      <span class="hljs-comment">/* istanbul ignore if */</span>
+      <span class="hljs-keyword">if</span> (isIE &amp;&amp;
+        currentParent.tag === <span class="hljs-string">&apos;textarea&apos;</span> &amp;&amp;
+        currentParent.attrsMap.placeholder === text
+      ) {
+        <span class="hljs-keyword">return</span>
+      }
+      <span class="hljs-keyword">const</span> children = currentParent.children
+      <span class="hljs-keyword">if</span> (inPre || text.trim()) {
+        text = isTextTag(currentParent) ? text : decodeHTMLCached(text)
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!children.length) {
+        <span class="hljs-comment">// remove the whitespace-only node right after an opening tag</span>
+        text = <span class="hljs-string">&apos;&apos;</span>
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (whitespaceOption) {
+        <span class="hljs-keyword">if</span> (whitespaceOption === <span class="hljs-string">&apos;condense&apos;</span>) {
+          <span class="hljs-comment">// in condense mode, remove the whitespace node if it contains</span>
+          <span class="hljs-comment">// line break, otherwise condense to a single space</span>
+          text = lineBreakRE.test(text) ? <span class="hljs-string">&apos;&apos;</span> : <span class="hljs-string">&apos; &apos;</span>
+        } <span class="hljs-keyword">else</span> {
+          text = <span class="hljs-string">&apos; &apos;</span>
+        }
+      } <span class="hljs-keyword">else</span> {
+        text = preserveWhitespace ? <span class="hljs-string">&apos; &apos;</span> : <span class="hljs-string">&apos;&apos;</span>
+      }
+      <span class="hljs-keyword">if</span> (text) {
+        <span class="hljs-keyword">if</span> (!inPre &amp;&amp; whitespaceOption === <span class="hljs-string">&apos;condense&apos;</span>) {
+          <span class="hljs-comment">// condense consecutive whitespaces into single space</span>
+          text = text.replace(whitespaceRE, <span class="hljs-string">&apos; &apos;</span>)
+        }
+        <span class="hljs-keyword">let</span> res
+        <span class="hljs-keyword">let</span> child: ?ASTNode
+        <span class="hljs-keyword">if</span> (!inVPre &amp;&amp; text !== <span class="hljs-string">&apos; &apos;</span> &amp;&amp; (res = parseText(text, delimiters))) {
+          child = {
+            type: <span class="hljs-number">2</span>,
+            expression: res.expression,
+            tokens: res.tokens,
+            text
+          }
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (text !== <span class="hljs-string">&apos; &apos;</span> || !children.length || children[children.length - <span class="hljs-number">1</span>].text !== <span class="hljs-string">&apos; &apos;</span>) {
+          child = {
+            type: <span class="hljs-number">3</span>,
+            text
+          }
+        }
+        <span class="hljs-keyword">if</span> (child) {
+          <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span> &amp;&amp; options.outputSourceRange) {
+            child.start = start
+            child.end = end
+          }
+          children.push(child)
+        }
+      }
+    },
+    comment (text: string, start, end) {
+      <span class="hljs-comment">// adding anyting as a sibling to the root node is forbidden</span>
+      <span class="hljs-comment">// comments should still be allowed, but ignored</span>
+      <span class="hljs-keyword">if</span> (currentParent) {
+        <span class="hljs-keyword">const</span> child: ASTText = {
+          type: <span class="hljs-number">3</span>,
+          text,
+          isComment: <span class="hljs-literal">true</span>
+        }
+        <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span> &amp;&amp; options.outputSourceRange) {
+          child.start = start
+          child.end = end
+        }
+        currentParent.children.push(child)
+      }
+    }
+  })
+  <span class="hljs-keyword">return</span> root
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processPre</span> (<span class="hljs-params">el</span>) </span>{
+  <span class="hljs-keyword">if</span> (getAndRemoveAttr(el, <span class="hljs-string">&apos;v-pre&apos;</span>) != <span class="hljs-literal">null</span>) {
+    el.pre = <span class="hljs-literal">true</span>
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processRawAttrs</span> (<span class="hljs-params">el</span>) </span>{
+  <span class="hljs-keyword">const</span> list = el.attrsList
+  <span class="hljs-keyword">const</span> len = list.length
+  <span class="hljs-keyword">if</span> (len) {
+    <span class="hljs-keyword">const</span> attrs: <span class="hljs-built_in">Array</span>&lt;ASTAttr&gt; = el.attrs = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(len)
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+      attrs[i] = {
+        name: list[i].name,
+        value: <span class="hljs-built_in">JSON</span>.stringify(list[i].value)
+      }
+      <span class="hljs-keyword">if</span> (list[i].start != <span class="hljs-literal">null</span>) {
+        attrs[i].start = list[i].start
+        attrs[i].end = list[i].end
+      }
+    }
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!el.pre) {
+    <span class="hljs-comment">// non root node in pre blocks with no attributes</span>
+    el.plain = <span class="hljs-literal">true</span>
+  }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processElement</span> (<span class="hljs-params">
+  element: ASTElement,
+  options: CompilerOptions
+</span>) </span>{
+  processKey(element)
+
+  <span class="hljs-comment">// determine whether this is a plain element after</span>
+  <span class="hljs-comment">// removing structural attributes</span>
+  element.plain = (
+    !element.key &amp;&amp;
+    !element.scopedSlots &amp;&amp;
+    !element.attrsList.length
+  )
+
+  processRef(element)
+  processSlotContent(element)
+  processSlotOutlet(element)
+  processComponent(element)
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; transforms.length; i++) {
+    element = transforms[i](element, options) || element
+  }
+  processAttrs(element)
+  <span class="hljs-keyword">return</span> element
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processKey</span> (<span class="hljs-params">el</span>) </span>{
+  <span class="hljs-keyword">const</span> exp = getBindingAttr(el, <span class="hljs-string">&apos;key&apos;</span>)
+  <span class="hljs-keyword">if</span> (exp) {
+    <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+      <span class="hljs-keyword">if</span> (el.tag === <span class="hljs-string">&apos;template&apos;</span>) {
+        warn(
+          <span class="hljs-string">`&lt;template&gt; cannot be keyed. Place the key on real elements instead.`</span>,
+          getRawBindingAttr(el, <span class="hljs-string">&apos;key&apos;</span>)
+        )
+      }
+      <span class="hljs-keyword">if</span> (el.for) {
+        <span class="hljs-keyword">const</span> iterator = el.iterator2 || el.iterator1
+        <span class="hljs-keyword">const</span> parent = el.parent
+        <span class="hljs-keyword">if</span> (iterator &amp;&amp; iterator === exp &amp;&amp; parent &amp;&amp; parent.tag === <span class="hljs-string">&apos;transition-group&apos;</span>) {
+          warn(
+            <span class="hljs-string">`Do not use v-for index as key on &lt;transition-group&gt; children, `</span> +
+            <span class="hljs-string">`this is the same as not using keys.`</span>,
+            getRawBindingAttr(el, <span class="hljs-string">&apos;key&apos;</span>),
+            <span class="hljs-literal">true</span> <span class="hljs-comment">/* tip */</span>
+          )
+        }
+      }
+    }
+    el.key = exp
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processRef</span> (<span class="hljs-params">el</span>) </span>{
+  <span class="hljs-keyword">const</span> ref = getBindingAttr(el, <span class="hljs-string">&apos;ref&apos;</span>)
+  <span class="hljs-keyword">if</span> (ref) {
+    el.ref = ref
+    el.refInFor = checkInFor(el)
+  }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processFor</span> (<span class="hljs-params">el: ASTElement</span>) </span>{
+  <span class="hljs-keyword">let</span> exp
+  <span class="hljs-keyword">if</span> ((exp = getAndRemoveAttr(el, <span class="hljs-string">&apos;v-for&apos;</span>))) {
+    <span class="hljs-keyword">const</span> res = parseFor(exp)
+    <span class="hljs-keyword">if</span> (res) {
+      extend(el, res)
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+      warn(
+        <span class="hljs-string">`Invalid v-for expression: <span class="hljs-subst">${exp}</span>`</span>,
+        el.rawAttrsMap[<span class="hljs-string">&apos;v-for&apos;</span>]
+      )
+    }
+  }
+}
+
+type ForParseResult = {
+  <span class="hljs-keyword">for</span>: string;
+  alias: string;
+  iterator1?: string;
+  iterator2?: string;
+};
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseFor</span> (<span class="hljs-params">exp: string</span>): ?<span class="hljs-title">ForParseResult</span> </span>{
+  <span class="hljs-keyword">const</span> inMatch = exp.match(forAliasRE)
+  <span class="hljs-keyword">if</span> (!inMatch) <span class="hljs-keyword">return</span>
+  <span class="hljs-keyword">const</span> res = {}
+  res.for = inMatch[<span class="hljs-number">2</span>].trim()
+  <span class="hljs-keyword">const</span> alias = inMatch[<span class="hljs-number">1</span>].trim().replace(stripParensRE, <span class="hljs-string">&apos;&apos;</span>)
+  <span class="hljs-keyword">const</span> iteratorMatch = alias.match(forIteratorRE)
+  <span class="hljs-keyword">if</span> (iteratorMatch) {
+    res.alias = alias.replace(forIteratorRE, <span class="hljs-string">&apos;&apos;</span>).trim()
+    res.iterator1 = iteratorMatch[<span class="hljs-number">1</span>].trim()
+    <span class="hljs-keyword">if</span> (iteratorMatch[<span class="hljs-number">2</span>]) {
+      res.iterator2 = iteratorMatch[<span class="hljs-number">2</span>].trim()
+    }
+  } <span class="hljs-keyword">else</span> {
+    res.alias = alias
+  }
+  <span class="hljs-keyword">return</span> res
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processIf</span> (<span class="hljs-params">el</span>) </span>{
+  <span class="hljs-keyword">const</span> exp = getAndRemoveAttr(el, <span class="hljs-string">&apos;v-if&apos;</span>)
+  <span class="hljs-keyword">if</span> (exp) {
+    el.if = exp
+    addIfCondition(el, {
+      exp: exp,
+      block: el
+    })
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">if</span> (getAndRemoveAttr(el, <span class="hljs-string">&apos;v-else&apos;</span>) != <span class="hljs-literal">null</span>) {
+      el.else = <span class="hljs-literal">true</span>
+    }
+    <span class="hljs-keyword">const</span> elseif = getAndRemoveAttr(el, <span class="hljs-string">&apos;v-else-if&apos;</span>)
+    <span class="hljs-keyword">if</span> (elseif) {
+      el.elseif = elseif
+    }
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processIfConditions</span> (<span class="hljs-params">el, parent</span>) </span>{
+  <span class="hljs-keyword">const</span> prev = findPrevElement(parent.children)
+  <span class="hljs-keyword">if</span> (prev &amp;&amp; prev.if) {
+    addIfCondition(prev, {
+      exp: el.elseif,
+      block: el
+    })
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+    warn(
+      <span class="hljs-string">`v-<span class="hljs-subst">${el.elseif ? (&apos;else-if=&quot;&apos; + el.elseif + &apos;&quot;&apos;) : &apos;else&apos;}</span> `</span> +
+      <span class="hljs-string">`used on element &lt;<span class="hljs-subst">${el.tag}</span>&gt; without corresponding v-if.`</span>,
+      el.rawAttrsMap[el.elseif ? <span class="hljs-string">&apos;v-else-if&apos;</span> : <span class="hljs-string">&apos;v-else&apos;</span>]
+    )
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findPrevElement</span> (<span class="hljs-params">children: Array&lt;any&gt;</span>): <span class="hljs-title">ASTElement</span> | <span class="hljs-title">void</span> </span>{
+  <span class="hljs-keyword">let</span> i = children.length
+  <span class="hljs-keyword">while</span> (i--) {
+    <span class="hljs-keyword">if</span> (children[i].type === <span class="hljs-number">1</span>) {
+      <span class="hljs-keyword">return</span> children[i]
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span> &amp;&amp; children[i].text !== <span class="hljs-string">&apos; &apos;</span>) {
+        warn(
+          <span class="hljs-string">`text &quot;<span class="hljs-subst">${children[i].text.trim()}</span>&quot; between v-if and v-else(-if) `</span> +
+          <span class="hljs-string">`will be ignored.`</span>,
+          children[i]
+        )
+      }
+      children.pop()
+    }
+  }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addIfCondition</span> (<span class="hljs-params">el: ASTElement, condition: ASTIfCondition</span>) </span>{
+  <span class="hljs-keyword">if</span> (!el.ifConditions) {
+    el.ifConditions = []
+  }
+  el.ifConditions.push(condition)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processOnce</span> (<span class="hljs-params">el</span>) </span>{
+  <span class="hljs-keyword">const</span> once = getAndRemoveAttr(el, <span class="hljs-string">&apos;v-once&apos;</span>)
+  <span class="hljs-keyword">if</span> (once != <span class="hljs-literal">null</span>) {
+    el.once = <span class="hljs-literal">true</span>
+  }
+}
+
+<span class="hljs-comment">// handle content being passed to a component as slot,</span>
+<span class="hljs-comment">// e.g. &lt;template slot=&quot;xxx&quot;&gt;, &lt;div slot-scope=&quot;xxx&quot;&gt;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processSlotContent</span> (<span class="hljs-params">el</span>) </span>{
+  <span class="hljs-keyword">let</span> slotScope
+  <span class="hljs-keyword">if</span> (el.tag === <span class="hljs-string">&apos;template&apos;</span>) {
+    slotScope = getAndRemoveAttr(el, <span class="hljs-string">&apos;scope&apos;</span>)
+    <span class="hljs-comment">/* istanbul ignore if */</span>
+    <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span> &amp;&amp; slotScope) {
+      warn(
+        <span class="hljs-string">`the &quot;scope&quot; attribute for scoped slots have been deprecated and `</span> +
+        <span class="hljs-string">`replaced by &quot;slot-scope&quot; since 2.5. The new &quot;slot-scope&quot; attribute `</span> +
+        <span class="hljs-string">`can also be used on plain elements in addition to &lt;template&gt; to `</span> +
+        <span class="hljs-string">`denote scoped slots.`</span>,
+        el.rawAttrsMap[<span class="hljs-string">&apos;scope&apos;</span>],
+        <span class="hljs-literal">true</span>
+      )
+    }
+    el.slotScope = slotScope || getAndRemoveAttr(el, <span class="hljs-string">&apos;slot-scope&apos;</span>)
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ((slotScope = getAndRemoveAttr(el, <span class="hljs-string">&apos;slot-scope&apos;</span>))) {
+    <span class="hljs-comment">/* istanbul ignore if */</span>
+    <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span> &amp;&amp; el.attrsMap[<span class="hljs-string">&apos;v-for&apos;</span>]) {
+      warn(
+        <span class="hljs-string">`Ambiguous combined usage of slot-scope and v-for on &lt;<span class="hljs-subst">${el.tag}</span>&gt; `</span> +
+        <span class="hljs-string">`(v-for takes higher priority). Use a wrapper &lt;template&gt; for the `</span> +
+        <span class="hljs-string">`scoped slot to make it clearer.`</span>,
+        el.rawAttrsMap[<span class="hljs-string">&apos;slot-scope&apos;</span>],
+        <span class="hljs-literal">true</span>
+      )
+    }
+    el.slotScope = slotScope
+  }
+
+  <span class="hljs-comment">// slot=&quot;xxx&quot;</span>
+  <span class="hljs-keyword">const</span> slotTarget = getBindingAttr(el, <span class="hljs-string">&apos;slot&apos;</span>)
+  <span class="hljs-keyword">if</span> (slotTarget) {
+    el.slotTarget = slotTarget === <span class="hljs-string">&apos;&quot;&quot;&apos;</span> ? <span class="hljs-string">&apos;&quot;default&quot;&apos;</span> : slotTarget
+    el.slotTargetDynamic = !!(el.attrsMap[<span class="hljs-string">&apos;:slot&apos;</span>] || el.attrsMap[<span class="hljs-string">&apos;v-bind:slot&apos;</span>])
+    <span class="hljs-comment">// preserve slot as an attribute for native shadow DOM compat</span>
+    <span class="hljs-comment">// only for non-scoped slots.</span>
+    <span class="hljs-keyword">if</span> (el.tag !== <span class="hljs-string">&apos;template&apos;</span> &amp;&amp; !el.slotScope) {
+      addAttr(el, <span class="hljs-string">&apos;slot&apos;</span>, slotTarget, getRawBindingAttr(el, <span class="hljs-string">&apos;slot&apos;</span>))
+    }
+  }
+
+  <span class="hljs-comment">// 2.6 v-slot syntax</span>
+  <span class="hljs-keyword">if</span> (process.env.NEW_SLOT_SYNTAX) {
+    <span class="hljs-keyword">if</span> (el.tag === <span class="hljs-string">&apos;template&apos;</span>) {
+      <span class="hljs-comment">// v-slot on &lt;template&gt;</span>
+      <span class="hljs-keyword">const</span> slotBinding = getAndRemoveAttrByRegex(el, slotRE)
+      <span class="hljs-keyword">if</span> (slotBinding) {
+        <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+          <span class="hljs-keyword">if</span> (el.slotTarget || el.slotScope) {
+            warn(
+              <span class="hljs-string">`Unexpected mixed usage of different slot syntaxes.`</span>,
+              el
+            )
+          }
+          <span class="hljs-keyword">if</span> (el.parent &amp;&amp; !maybeComponent(el.parent)) {
+            warn(
+              <span class="hljs-string">`&lt;template v-slot&gt; can only appear at the root level inside `</span> +
+              <span class="hljs-string">`the receiving the component`</span>,
+              el
+            )
+          }
+        }
+        <span class="hljs-keyword">const</span> { name, dynamic } = getSlotName(slotBinding)
+        el.slotTarget = name
+        el.slotTargetDynamic = dynamic
+        el.slotScope = slotBinding.value || emptySlotScopeToken <span class="hljs-comment">// force it into a scoped slot for perf</span>
+      }
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">// v-slot on component, denotes default slot</span>
+      <span class="hljs-keyword">const</span> slotBinding = getAndRemoveAttrByRegex(el, slotRE)
+      <span class="hljs-keyword">if</span> (slotBinding) {
+        <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+          <span class="hljs-keyword">if</span> (!maybeComponent(el)) {
+            warn(
+              <span class="hljs-string">`v-slot can only be used on components or &lt;template&gt;.`</span>,
+              slotBinding
+            )
+          }
+          <span class="hljs-keyword">if</span> (el.slotScope || el.slotTarget) {
+            warn(
+              <span class="hljs-string">`Unexpected mixed usage of different slot syntaxes.`</span>,
+              el
+            )
+          }
+          <span class="hljs-keyword">if</span> (el.scopedSlots) {
+            warn(
+              <span class="hljs-string">`To avoid scope ambiguity, the default slot should also use `</span> +
+              <span class="hljs-string">`&lt;template&gt; syntax when there are other named slots.`</span>,
+              slotBinding
+            )
+          }
+        }
+        <span class="hljs-comment">// add the component&apos;s children to its default slot</span>
+        <span class="hljs-keyword">const</span> slots = el.scopedSlots || (el.scopedSlots = {})
+        <span class="hljs-keyword">const</span> { name, dynamic } = getSlotName(slotBinding)
+        <span class="hljs-keyword">const</span> slotContainer = slots[name] = createASTElement(<span class="hljs-string">&apos;template&apos;</span>, [], el)
+        slotContainer.slotTarget = name
+        slotContainer.slotTargetDynamic = dynamic
+        slotContainer.children = el.children.filter((c: any) =&gt; {
+          <span class="hljs-keyword">if</span> (!c.slotScope) {
+            c.parent = slotContainer
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+          }
+        })
+        slotContainer.slotScope = slotBinding.value || emptySlotScopeToken
+        <span class="hljs-comment">// remove children as they are returned from scopedSlots now</span>
+        el.children = []
+        <span class="hljs-comment">// mark el non-plain so data gets generated</span>
+        el.plain = <span class="hljs-literal">false</span>
+      }
+    }
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSlotName</span> (<span class="hljs-params">binding</span>) </span>{
+  <span class="hljs-keyword">let</span> name = binding.name.replace(slotRE, <span class="hljs-string">&apos;&apos;</span>)
+  <span class="hljs-keyword">if</span> (!name) {
+    <span class="hljs-keyword">if</span> (binding.name[<span class="hljs-number">0</span>] !== <span class="hljs-string">&apos;#&apos;</span>) {
+      name = <span class="hljs-string">&apos;default&apos;</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+      warn(
+        <span class="hljs-string">`v-slot shorthand syntax requires a slot name.`</span>,
+        binding
+      )
+    }
+  }
+  <span class="hljs-keyword">return</span> dynamicArgRE.test(name)
+    <span class="hljs-comment">// dynamic [name]</span>
+    ? { name: name.slice(<span class="hljs-number">1</span>, <span class="hljs-number">-1</span>), dynamic: <span class="hljs-literal">true</span> }
+    <span class="hljs-comment">// static name</span>
+    : { name: <span class="hljs-string">`&quot;<span class="hljs-subst">${name}</span>&quot;`</span>, dynamic: <span class="hljs-literal">false</span> }
+}
+
+<span class="hljs-comment">// handle &lt;slot/&gt; outlets</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processSlotOutlet</span> (<span class="hljs-params">el</span>) </span>{
+  <span class="hljs-keyword">if</span> (el.tag === <span class="hljs-string">&apos;slot&apos;</span>) {
+    el.slotName = getBindingAttr(el, <span class="hljs-string">&apos;name&apos;</span>)
+    <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span> &amp;&amp; el.key) {
+      warn(
+        <span class="hljs-string">`\`key\` does not work on &lt;slot&gt; because slots are abstract outlets `</span> +
+        <span class="hljs-string">`and can possibly expand into multiple elements. `</span> +
+        <span class="hljs-string">`Use the key on a wrapping element instead.`</span>,
+        getRawBindingAttr(el, <span class="hljs-string">&apos;key&apos;</span>)
+      )
+    }
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processComponent</span> (<span class="hljs-params">el</span>) </span>{
+  <span class="hljs-keyword">let</span> binding
+  <span class="hljs-keyword">if</span> ((binding = getBindingAttr(el, <span class="hljs-string">&apos;is&apos;</span>))) {
+    el.component = binding
+  }
+  <span class="hljs-keyword">if</span> (getAndRemoveAttr(el, <span class="hljs-string">&apos;inline-template&apos;</span>) != <span class="hljs-literal">null</span>) {
+    el.inlineTemplate = <span class="hljs-literal">true</span>
+  }
+}
+</code></pre>
+<h5 id="processattrs"><a name="processattrs" class="plugin-anchor" href="#processattrs"><i class="fa fa-link" aria-hidden="true"></i></a>processAttrs</h5>
+<blockquote>
+<p>&#x5BF9;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x7684;&#x5904;&#x7406;
+<code>``js
+function processAttrs (el) {
+  const list = el.attrsList
+  let i, l, name, rawName, value, modifiers, syncGen, isDynamic
+  for (i = 0, l = list.length; i &lt; l; i++) {
+    name = rawName = list[i].name
+    value = list[i].value
+    if (dirRE.test(name)) {
+      // mark element as dynamic
+      el.hasBindings = true
+      // modifiers
+      modifiers = parseModifiers(name.replace(dirRE, &apos;&apos;))
+      // support .foo shorthand syntax for the .prop modifier
+      if (process.env.VBIND_PROP_SHORTHAND &amp;&amp; propBindRE.test(name)) {
+        (modifiers || (modifiers = {})).prop = true
+        name =</code>.<code>+ name.slice(1).replace(modifierRE, &apos;&apos;)
+      } else if (modifiers) {
+        name = name.replace(modifierRE, &apos;&apos;)
+      }
+      if (bindRE.test(name)) { // v-bind
+        name = name.replace(bindRE, &apos;&apos;)
+        // filter&#x6709;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x5728;&#x5C5E;&#x6027;&#x7ED1;&#x5B9A;&#x4E2D; &#x6240;&#x4EE5;&#x8FC7;&#x4E00;&#x904D;parsefilters
+        // &#x6240;&#x6709;&#x5C5E;&#x6027;attrs&#x90FD;&#x5F53;&#x6210;filter&#x7684;&#x4E00;&#x79CD;&#x5F62;&#x5F0F;&#x5904;&#x7406; &#x666E;&#x901A;attrs&#x7ED1;&#x5B9A;&#x5C31;&#x5F53;&#x6210;&#x662F;&#x6CA1;&#x6709;&#x7BA1;&#x9053;&#x64CD;&#x4F5C;&#x7B26;&#x7684;filter&#x6765;&#x5904;&#x7406;
+        value = parseFilters(value)
+        isDynamic = dynamicArgRE.test(name)
+        if (isDynamic) {
+          name = name.slice(1, -1)
+        }
+        if (
+          process.env.NODE_ENV !== &apos;production&apos; &amp;&amp;
+          value.trim().length === 0
+        ) {
+          warn(</code>The value for a v-bind expression cannot be empty. Found in &quot;v-bind:${name}&quot;<code>)
+        }
+        if (modifiers) {
+          if (modifiers.prop &amp;&amp; !isDynamic) {
+            name = camelize(name)
+            if (name === &apos;innerHtml&apos;) name = &apos;innerHTML&apos;
+          }
+          if (modifiers.camel &amp;&amp; !isDynamic) {
+            name = camelize(name)
+          }
+          if (modifiers.sync) {
+            syncGen = genAssignmentCode(value,</code>$event<code>)
+            if (!isDynamic) {
+              addHandler(
+                el,</code>update:${camelize(name)}<code>,
+                syncGen,
+                null,
+                false,
+                warn,
+                list[i]
+              )
+              if (hyphenate(name) !== camelize(name)) {
+                addHandler(
+                  el,</code>update:${hyphenate(name)}<code>,
+                  syncGen,
+                  null,
+                  false,
+                  warn,
+                  list[i]
+                )
+              }
+            } else {
+              // handler w/ dynamic event name
+              addHandler(
+                el,</code>&quot;update:&quot;+(${name})<code>,
+                syncGen,
+                null,
+                false,
+                warn,
+                list[i],
+                true // dynamic
+              )
+            }
+          }
+        }
+        if ((modifiers &amp;&amp; modifiers.prop) || (
+          !el.component &amp;&amp; platformMustUseProp(el.tag, el.attrsMap.type, name)
+        )) {
+          addProp(el, name, value, list[i], isDynamic)
+        } else {
+          addAttr(el, name, value, list[i], isDynamic)
+        }
+      } else if (onRE.test(name)) { // v-on
+        name = name.replace(onRE, &apos;&apos;)
+        isDynamic = dynamicArgRE.test(name)
+        if (isDynamic) {
+          name = name.slice(1, -1)
+        }
+        addHandler(el, name, value, modifiers, false, warn, list[i], isDynamic)
+      } else { // normal directives
+        name = name.replace(dirRE, &apos;&apos;)
+        // parse arg
+        const argMatch = name.match(argRE)
+        let arg = argMatch &amp;&amp; argMatch[1]
+        isDynamic = false
+        if (arg) {
+          name = name.slice(0, -(arg.length + 1))
+          if (dynamicArgRE.test(arg)) {
+            arg = arg.slice(1, -1)
+            isDynamic = true
+          }
+        }
+        addDirective(el, name, rawName, value, arg, isDynamic, modifiers, list[i])
+        if (process.env.NODE_ENV !== &apos;production&apos; &amp;&amp; name === &apos;model&apos;) {
+          checkForAliasModel(el, value)
+        }
+      }
+    } else {
+      // literal attribute
+      if (process.env.NODE_ENV !== &apos;production&apos;) {
+        const res = parseText(value, delimiters)
+        if (res) {
+          warn(</code>${name}=&quot;${value}&quot;: ` +
+            &apos;Interpolation inside attributes has been removed. &apos; +
+            &apos;Use v-bind or the colon shorthand instead. For example, &apos; +
+            &apos;instead of <div id="">, use <div :id="val">.&apos;,
+            list[i]
+          )
+        }
+      }
+      addAttr(el, name, JSON.stringify(value), list[i])
+      // #6887 firefox doesn&apos;t update muted state if set via attribute
+      // even immediately after element creation
+      if (!el.component &amp;&amp;
+          name === &apos;muted&apos; &amp;&amp;
+          platformMustUseProp(el.tag, el.attrsMap.type, name)) {
+        addProp(el, name, &apos;true&apos;, list[i])
+      }
+    }
+  }
+}</div></div></p>
+</blockquote>
+<p>function checkInFor (el: ASTElement): boolean {
+  let parent = el
+  while (parent) {
+    if (parent.for !== undefined) {
+      return true
+    }
+    parent = parent.parent
+  }
+  return false
+}</p>
+<p>function parseModifiers (name: string): Object | void {
+  const match = name.match(modifierRE)
+  if (match) {
+    const ret = {}
+    match.forEach(m =&gt; { ret[m.slice(1)] = true })
+    return ret
+  }
+}</p>
+<p>// &#x751F;&#x6210;&#x4E00;&#x4E2A;attrs map
+function makeAttrsMap (attrs: Array<object>): Object {
+  const map = {}
+  for (let i = 0, l = attrs.length; i &lt; l; i++) {
+    if (
+      process.env.NODE_ENV !== &apos;production&apos; &amp;&amp;
+      map[attrs[i].name] &amp;&amp; !isIE &amp;&amp; !isEdge
+    ) {
+      warn(&apos;duplicate attribute: &apos; + attrs[i].name, attrs[i])
+    }
+    map[attrs[i].name] = attrs[i].value
+  }
+  return map
+}</object></p>
+<p>// for script (e.g. type=&quot;x/template&quot;) or style, do not decode content
+function isTextTag (el): boolean {
+  return el.tag === &apos;script&apos; || el.tag === &apos;style&apos;
+}</p>
+<p>function isForbiddenTag (el): boolean {
+  return (
+    el.tag === &apos;style&apos; ||
+    (el.tag === &apos;script&apos; &amp;&amp; (
+      !el.attrsMap.type ||
+      el.attrsMap.type === &apos;text/javascript&apos;
+    ))
+  )
+}</p>
+<p>const ieNSBug = /^xmlns:NS\d+/
+const ieNSPrefix = /^NS\d+:/</p>
+<p>/<em> istanbul ignore next </em>/
+function guardIESVGBug (attrs) {
+  const res = []
+  for (let i = 0; i &lt; attrs.length; i++) {
+    const attr = attrs[i]
+    if (!ieNSBug.test(attr.name)) {
+      attr.name = attr.name.replace(ieNSPrefix, &apos;&apos;)
+      res.push(attr)
+    }
+  }
+  return res
+}</p>
+<p>function checkForAliasModel (el, value) {
+  let _el = el
+  while (_el) {
+    if (_el.for &amp;&amp; _el.alias === value) {
+      warn(
+        <code>&lt;${el.tag} v-model=&quot;${value}&quot;&gt;:</code> +
+        <code>You are binding v-model directly to a v-for iteration alias.</code> +
+        <code>This will not be able to modify the v-for source array because</code> +
+        <code>writing to the alias is like modifying a function local variable.</code> +
+        <code>Consider using an array of objects and use v-model on an object property instead.</code>,
+        el.rawAttrsMap[&apos;v-model&apos;]
+      )
+    }
+    _el = _el.parent
+  }
+}</p>
+<p>```</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="compiler-helpers.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: compiler-helpers">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"compiler-parser-index","level":"1.4.2","depth":2,"previous":{"title":"compiler-helpers","level":"1.4.1","depth":2,"path":"vue-release2.6.9/compiler-helpers.md","ref":"vue-release2.6.9/compiler-helpers.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","github","edit-link","anchors","copy-code-button","github-buttons","expandable-chapters-small","insert-logo","custom-favicon","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"custom-favicon":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/didi/mpx/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"insert-logo":{"style":"background: none; width: 200px","url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png"},"expandable-chapters":{}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"vue-release2.6.9/compiler-parser-index.md","mtime":"2019-07-29T06:55:55.102Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-29T12:03:52.886Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

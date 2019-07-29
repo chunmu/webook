@@ -1,0 +1,631 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>compiler-helpers · mpx文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="滴滴出行webapp团队">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="compiler-parser-index.html" />
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../how-to-use-jira.html">
+            
+                <a href="../how-to-use-jira.html">
+            
+                    
+                    关于jira使用记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    javascript杂记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../javascript/apply-call-bind.html">
+            
+                <a href="../javascript/apply-call-bind.html">
+            
+                    
+                    apply&call&bind解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../javascript/base16-base32-base64.html">
+            
+                <a href="../javascript/base16-base32-base64.html">
+            
+                    
+                    base16&base32&base64
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    vue-release2.6.9()
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="compiler-helpers.html">
+            
+                <a href="compiler-helpers.html">
+            
+                    
+                    compiler-helpers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="compiler-parser-index.html">
+            
+                <a href="compiler-parser-index.html">
+            
+                    
+                    compiler-parser-index
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >compiler-helpers</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <pre><code class="lang-javascript">
+<span class="hljs-keyword">import</span> { emptyObject } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;shared/util&apos;</span>
+<span class="hljs-keyword">import</span> { parseFilters } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./parser/filter-parser&apos;</span>
+
+type Range = { start?: number, end?: number };
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">baseWarn</span> (<span class="hljs-params">msg: string, range?: Range</span>) </span>{
+  <span class="hljs-built_in">console</span>.error(<span class="hljs-string">`[Vue compiler]: <span class="hljs-subst">${msg}</span>`</span>)
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pluckModuleFunction</span>&lt;<span class="hljs-title">F</span>: <span class="hljs-title">Function</span>&gt; (<span class="hljs-params">
+  modules: ?Array&lt;Object&gt;,
+  key: string
+</span>): <span class="hljs-title">Array</span>&lt;<span class="hljs-title">F</span>&gt; </span>{
+  <span class="hljs-keyword">return</span> modules
+    ? modules.map(m =&gt; m[key]).filter(_ =&gt; _)
+    : []
+    <span class="hljs-comment">// modules.map(m =&gt; m[key]).filter(_ =&gt; _)</span>
+    <span class="hljs-comment">// pdd: &#x8FC7;&#x6EE4;&#x51FA;&#x771F;&#x503C;&#x5C5E;&#x6027;</span>
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addProp</span> (<span class="hljs-params">el: ASTElement, name: string, value: string, range?: Range, dynamic?: boolean</span>) </span>{
+  (el.props || (el.props = [])).push(rangeSetItem({ name, value, dynamic }, range))
+  el.plain = <span class="hljs-literal">false</span>
+  <span class="hljs-comment">// (el.props || (el.props = []))</span>
+  <span class="hljs-comment">// pdd: props&#x975E;&#x7A7A;&#x5224;&#x65AD;&#x6216;&#x521D;&#x59CB;&#x5316;</span>
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x975E;&#x539F;&#x751F;attrs&#x7528;&#x7684;&#x662F;dynamicAttrs/attrs  &#x539F;&#x751F;&#x7684;&#x662F;attrsList</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addAttr</span> (<span class="hljs-params">el: ASTElement, name: string, value: any, range?: Range, dynamic?: boolean</span>) </span>{
+  <span class="hljs-keyword">const</span> attrs = dynamic
+    ? (el.dynamicAttrs || (el.dynamicAttrs = []))
+    : (el.attrs || (el.attrs = []))
+  attrs.push(rangeSetItem({ name, value, dynamic }, range))
+  el.plain = <span class="hljs-literal">false</span>
+    <span class="hljs-comment">// (el.attrs || (el.attrs = []))</span>
+    <span class="hljs-comment">// pdd: attrs&#x975E;&#x7A7A;&#x5224;&#x65AD;&#x6216;&#x521D;&#x59CB;&#x5316;</span>
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// add a raw attr (use this in preTransforms)</span>
+<span class="hljs-comment">// &#x975E;&#x539F;&#x751F;attrs&#x7528;&#x7684;&#x662F;dynamicAttrs/attrs  &#x539F;&#x751F;&#x7684;&#x662F;attrsList</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addRawAttr</span> (<span class="hljs-params">el: ASTElement, name: string, value: any, range?: Range</span>) </span>{
+  el.attrsMap[name] = value
+  el.attrsList.push(rangeSetItem({ name, value }, range))
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addDirective</span> (<span class="hljs-params">
+  el: ASTElement,
+  name: string,
+  rawName: string,
+  value: string,
+  arg: ?string,
+  isDynamicArg: boolean,
+  modifiers: ?ASTModifiers,
+  range?: Range
+</span>) </span>{
+  (el.directives || (el.directives = [])).push(rangeSetItem({
+    name,
+    rawName,
+    value,
+    arg,
+    isDynamicArg,
+    modifiers
+  }, range))
+  el.plain = <span class="hljs-literal">false</span>
+  <span class="hljs-comment">// &#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x6765;&#x6307;&#x4EE4;&#x662F;&#x7ED1;&#x5B9A;&#x5728;el&#x4E0A;&#x7684;</span>
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x6682;&#x65F6;&#x4E0D;&#x77E5;&#x9053;&#x6709;&#x5565;&#x7528;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prependModifierMarker</span> (<span class="hljs-params">symbol: string, name: string, dynamic?: boolean</span>): <span class="hljs-title">string</span> </span>{
+  <span class="hljs-keyword">return</span> dynamic
+    ? <span class="hljs-string">`_p(<span class="hljs-subst">${name}</span>,&quot;<span class="hljs-subst">${symbol}</span>&quot;)`</span>
+    : symbol + name <span class="hljs-comment">// mark the event as captured</span>
+}
+</code></pre>
+<pre><code class="lang-javascript">
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addHandler</span> (<span class="hljs-params">
+  el: ASTElement,
+  name: string,
+  value: string,
+  modifiers: ?ASTModifiers,
+  important?: boolean,
+  warn?: ?Function,
+  range?: Range,
+  dynamic?: boolean
+</span>) </span>{
+  modifiers = modifiers || emptyObject
+  <span class="hljs-comment">// warn prevent and passive modifier</span>
+  <span class="hljs-comment">/* istanbul ignore if */</span>
+  <span class="hljs-comment">// pdd: passive &#x66FE;&#x7ECF;&#x6709;&#x770B;&#x5230;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x63D0;&#x53CA;&#x8FD9;&#x4E2A;&#x7684;&#x4F5C;&#x7528; &#x5C31;&#x662F;&#x544A;&#x8BC9;&#x6D4F;&#x89C8;&#x5668;&#x6211;&#x4E0D;&#x4F1A;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x5192;&#x6CE1;</span>
+  <span class="hljs-comment">// pdd: &#x5728;&#x6027;&#x80FD;&#x4E0A;&#x6709;&#x6BD4;&#x8F83;&#x660E;&#x663E;&#x7684;&#x63D0;&#x5347;</span>
+  <span class="hljs-comment">// pdd: &#x6709;&#x4E9B;&#x4E8B;&#x4EF6;&#x9700;&#x8981;&#x53CA;&#x65F6;&#x5192;&#x6CE1; &#x4F46;&#x662F;&#x5982;&#x679C;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;&#x5904;&#x7406;&#x4E8B;&#x4EF6; &#x6D4F;&#x89C8;&#x5668;&#x5C31;&#x4E0D;&#x80FD;&#x786E;&#x5B9A;&#x4EE3;&#x7801;&#x5757;&#x4E2D;&#x662F;&#x5426;&#x6709;prevent&#x963B;&#x6B62;&#x5192;&#x6CE1;&#x7684;&#x4EE3;&#x7801;</span>
+  <span class="hljs-comment">// pdd: &#x6240;&#x4EE5;passive&#x901A;&#x77E5;&#x6D4F;&#x89C8;&#x5668;&#x660E;&#x786E;&#x4E0D;&#x4F1A;&#x6709;&#x963B;&#x6B62;&#x7684;&#x903B;&#x8F91; &#x5219;&#x53EF;&#x4EE5;&#x53CA;&#x65F6;&#x5192;&#x6CE1; &#x81EA;&#x5B9A;&#x4E49;&#x5904;&#x7406;&#x53EF;&#x4EE5;&#x5EF6;&#x540E;</span>
+  <span class="hljs-keyword">if</span> (
+    process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span> &amp;&amp; warn &amp;&amp;
+    modifiers.prevent &amp;&amp; modifiers.passive
+  ) {
+    warn(
+      <span class="hljs-string">&apos;passive and prevent can\&apos;t be used together. &apos;</span> +
+      <span class="hljs-string">&apos;Passive handler can\&apos;t prevent default event.&apos;</span>,
+      range
+    )
+  }
+
+  <span class="hljs-comment">// normalize click.right and click.middle since they don&apos;t actually fire</span>
+  <span class="hljs-comment">// this is technically browser-specific, but at least for now browsers are</span>
+  <span class="hljs-comment">// the only target envs that have right/middle clicks.</span>
+  <span class="hljs-keyword">if</span> (modifiers.right) {
+    <span class="hljs-keyword">if</span> (dynamic) {
+      name = <span class="hljs-string">`(<span class="hljs-subst">${name}</span>)===&apos;click&apos;?&apos;contextmenu&apos;:(<span class="hljs-subst">${name}</span>)`</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (name === <span class="hljs-string">&apos;click&apos;</span>) {
+      name = <span class="hljs-string">&apos;contextmenu&apos;</span>
+      <span class="hljs-keyword">delete</span> modifiers.right
+    }
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (modifiers.middle) {
+    <span class="hljs-keyword">if</span> (dynamic) {
+      name = <span class="hljs-string">`(<span class="hljs-subst">${name}</span>)===&apos;click&apos;?&apos;mouseup&apos;:(<span class="hljs-subst">${name}</span>)`</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (name === <span class="hljs-string">&apos;click&apos;</span>) {
+      name = <span class="hljs-string">&apos;mouseup&apos;</span>
+    }
+  }
+
+  <span class="hljs-comment">// check capture modifier</span>
+  <span class="hljs-keyword">if</span> (modifiers.capture) {
+    <span class="hljs-keyword">delete</span> modifiers.capture
+    name = prependModifierMarker(<span class="hljs-string">&apos;!&apos;</span>, name, dynamic)
+  }
+  <span class="hljs-keyword">if</span> (modifiers.once) {
+    <span class="hljs-keyword">delete</span> modifiers.once
+    name = prependModifierMarker(<span class="hljs-string">&apos;~&apos;</span>, name, dynamic)
+  }
+  <span class="hljs-comment">/* istanbul ignore if */</span>
+  <span class="hljs-keyword">if</span> (modifiers.passive) {
+    <span class="hljs-keyword">delete</span> modifiers.passive
+    name = prependModifierMarker(<span class="hljs-string">&apos;&amp;&apos;</span>, name, dynamic)
+  }
+
+  <span class="hljs-keyword">let</span> events
+  <span class="hljs-keyword">if</span> (modifiers.native) {
+    <span class="hljs-keyword">delete</span> modifiers.native
+    events = el.nativeEvents || (el.nativeEvents = {})
+  } <span class="hljs-keyword">else</span> {
+    events = el.events || (el.events = {})
+  }
+
+  <span class="hljs-keyword">const</span> newHandler: any = rangeSetItem({ value: value.trim(), dynamic }, range)
+  <span class="hljs-keyword">if</span> (modifiers !== emptyObject) {
+    newHandler.modifiers = modifiers
+  }
+
+  <span class="hljs-keyword">const</span> handlers = events[name]
+  <span class="hljs-comment">/* istanbul ignore if */</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Array</span>.isArray(handlers)) {
+    important ? handlers.unshift(newHandler) : handlers.push(newHandler)
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (handlers) {
+    events[name] = important ? [newHandler, handlers] : [handlers, newHandler]
+  } <span class="hljs-keyword">else</span> {
+    events[name] = newHandler
+  }
+
+  el.plain = <span class="hljs-literal">false</span>
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRawBindingAttr</span> (<span class="hljs-params">
+  el: ASTElement,
+  name: string
+</span>) </span>{
+  <span class="hljs-keyword">return</span> el.rawAttrsMap[<span class="hljs-string">&apos;:&apos;</span> + name] ||
+    el.rawAttrsMap[<span class="hljs-string">&apos;v-bind:&apos;</span> + name] ||
+    el.rawAttrsMap[name]
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBindingAttr</span> (<span class="hljs-params">
+  el: ASTElement,
+  name: string,
+  getStatic?: boolean
+</span>): ?<span class="hljs-title">string</span> </span>{
+  <span class="hljs-keyword">const</span> dynamicValue =
+    getAndRemoveAttr(el, <span class="hljs-string">&apos;:&apos;</span> + name) ||
+    getAndRemoveAttr(el, <span class="hljs-string">&apos;v-bind:&apos;</span> + name)
+  <span class="hljs-keyword">if</span> (dynamicValue != <span class="hljs-literal">null</span>) {
+    <span class="hljs-keyword">return</span> parseFilters(dynamicValue)
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (getStatic !== <span class="hljs-literal">false</span>) {
+    <span class="hljs-keyword">const</span> staticValue = getAndRemoveAttr(el, name)
+    <span class="hljs-keyword">if</span> (staticValue != <span class="hljs-literal">null</span>) {
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">JSON</span>.stringify(staticValue)
+    }
+  }
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// note: this only removes the attr from the Array (attrsList) so that it</span>
+<span class="hljs-comment">// doesn&apos;t get processed by processAttrs.</span>
+<span class="hljs-comment">// By default it does NOT remove it from the map (attrsMap) because the map is</span>
+<span class="hljs-comment">// needed during codegen.</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAndRemoveAttr</span> (<span class="hljs-params">
+  el: ASTElement,
+  name: string,
+  removeFromMap?: boolean
+</span>): ?<span class="hljs-title">string</span> </span>{
+  <span class="hljs-keyword">let</span> val
+  <span class="hljs-keyword">if</span> ((val = el.attrsMap[name]) != <span class="hljs-literal">null</span>) {
+    <span class="hljs-keyword">const</span> list = el.attrsList
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, l = list.length; i &lt; l; i++) {
+      <span class="hljs-keyword">if</span> (list[i].name === name) {
+        list.splice(i, <span class="hljs-number">1</span>)
+        <span class="hljs-keyword">break</span>
+      }
+    }
+  }
+  <span class="hljs-keyword">if</span> (removeFromMap) {
+    <span class="hljs-keyword">delete</span> el.attrsMap[name]
+  }
+  <span class="hljs-keyword">return</span> val
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAndRemoveAttrByRegex</span> (<span class="hljs-params">
+  el: ASTElement,
+  name: RegExp
+</span>) </span>{
+  <span class="hljs-keyword">const</span> list = el.attrsList
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, l = list.length; i &lt; l; i++) {
+    <span class="hljs-keyword">const</span> attr = list[i]
+    <span class="hljs-keyword">if</span> (name.test(attr.name)) {
+      list.splice(i, <span class="hljs-number">1</span>)
+      <span class="hljs-keyword">return</span> attr
+    }
+  }
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x8D77;&#x6B62;&#x7D22;&#x5F15;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rangeSetItem</span> (<span class="hljs-params">
+  item: any,
+  range?: { start?: number, end?: number }
+</span>) </span>{
+  <span class="hljs-keyword">if</span> (range) {
+    <span class="hljs-keyword">if</span> (range.start != <span class="hljs-literal">null</span>) {
+      item.start = range.start
+    }
+    <span class="hljs-keyword">if</span> (range.end != <span class="hljs-literal">null</span>) {
+      item.end = range.end
+    }
+  }
+  <span class="hljs-keyword">return</span> item
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="compiler-parser-index.html" class="navigation navigation-next navigation-unique" aria-label="Next page: compiler-parser-index">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"compiler-helpers","level":"1.4.1","depth":2,"next":{"title":"compiler-parser-index","level":"1.4.2","depth":2,"path":"vue-release2.6.9/compiler-parser-index.md","ref":"vue-release2.6.9/compiler-parser-index.md","articles":[]},"previous":{"title":"vue-release2.6.9()","level":"1.4","depth":1,"ref":"","articles":[{"title":"compiler-helpers","level":"1.4.1","depth":2,"path":"vue-release2.6.9/compiler-helpers.md","ref":"vue-release2.6.9/compiler-helpers.md","articles":[]},{"title":"compiler-parser-index","level":"1.4.2","depth":2,"path":"vue-release2.6.9/compiler-parser-index.md","ref":"vue-release2.6.9/compiler-parser-index.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","github","edit-link","anchors","copy-code-button","github-buttons","expandable-chapters-small","insert-logo","custom-favicon","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"custom-favicon":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/didi/mpx/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"insert-logo":{"style":"background: none; width: 200px","url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png"},"expandable-chapters":{}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"vue-release2.6.9/compiler-helpers.md","mtime":"2019-07-29T11:57:07.235Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-29T12:03:52.886Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
