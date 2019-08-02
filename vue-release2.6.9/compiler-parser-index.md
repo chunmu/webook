@@ -1,6 +1,6 @@
 # parser
 
-```js
+```javascript
 import he from 'he'
 import { parseHTML } from './html-parser'
 import { parseText } from './text-parser'
@@ -23,7 +23,7 @@ import {
 } from '../helpers'
 
 export const onRE = /^@|^v-on:/
-export const dirRE = process.env.VBIND_PROP_SHORTHAND
+export const dirRE = process.env.VBIND_PROP_SHORTHAND  // pdd: 如果为true 则类似.stop也是合法的指令
   ? /^v-|^@|^:|^\./
   : /^v-|^@|^:/
 export const forAliasRE = /([\s\S]*?)\s+(?:in|of)\s+([\s\S]*)/
@@ -57,8 +57,12 @@ let platformIsPreTag
 let platformMustUseProp
 let platformGetTagNamespace
 let maybeComponent
+```
 
-// 生成AST节点
+#### createASTElement
+
+```javascript
+// pdd: 生成AST节点
 export function createASTElement (
   tag: string,
   attrs: Array<ASTAttr>,
@@ -74,7 +78,10 @@ export function createASTElement (
     children: []
   }
 }
+```
+#### parse
 
+```javascript
 /**
  * Convert HTML string to AST.
  */
@@ -163,6 +170,7 @@ export function parse (
     trimEndingWhitespace(element)
 
     // check pre state
+    // pdd: v-pre 不处理变量行为  <span>{{message}}</span>  ===> 表现为 <span>{{message}}</span>  不做编译
     if (element.pre) {
       inVPre = false
     }
@@ -227,6 +235,7 @@ export function parse (
         attrs = guardIESVGBug(attrs)
       }
 
+      // 放置了attrsList
       let element: ASTElement = createASTElement(tag, attrs, currentParent)
       if (ns) {
         element.ns = ns
@@ -405,12 +414,21 @@ export function parse (
   return root
 }
 
+```
+#### processPre
+
+```javascript
 function processPre (el) {
   if (getAndRemoveAttr(el, 'v-pre') != null) {
     el.pre = true
   }
 }
 
+```
+
+#### processRawAttrs
+
+```javascript
 function processRawAttrs (el) {
   const list = el.attrsList
   const len = list.length
@@ -431,7 +449,11 @@ function processRawAttrs (el) {
     el.plain = true
   }
 }
+```
 
+#### processElement
+
+```javascript
 export function processElement (
   element: ASTElement,
   options: CompilerOptions
@@ -457,6 +479,13 @@ export function processElement (
   return element
 }
 
+```
+
+#### processKey
+
+```javascript
+
+// pdd: 解析key  最终结果是el上挂载key属性
 function processKey (el) {
   const exp = getBindingAttr(el, 'key')
   if (exp) {
@@ -483,15 +512,25 @@ function processKey (el) {
     el.key = exp
   }
 }
+```
+#### processRef
 
+```javascript
+// pdd: 目前来看这个process只是把ref字符串获取到了 
+// pdd: 使用的时候this.$refs怎么放进去的还需要观察
 function processRef (el) {
   const ref = getBindingAttr(el, 'ref')
   if (ref) {
     el.ref = ref
-    el.refInFor = checkInFor(el)
+    el.refInFor = checkInFor(el) // pdd: 是否在for循环中的标记
   }
 }
 
+```
+
+#### processFor
+
+```javascript
 export function processFor (el: ASTElement) {
   let exp
   if ((exp = getAndRemoveAttr(el, 'v-for'))) {
@@ -505,7 +544,13 @@ export function processFor (el: ASTElement) {
       )
     }
   }
+  
 }
+```
+
+#### ForParseResult
+
+```javascript
 
 type ForParseResult = {
   for: string;
@@ -513,7 +558,11 @@ type ForParseResult = {
   iterator1?: string;
   iterator2?: string;
 };
+```
 
+#### parseFor
+
+```javascript
 export function parseFor (exp: string): ?ForParseResult {
   const inMatch = exp.match(forAliasRE)
   if (!inMatch) return
@@ -530,9 +579,20 @@ export function parseFor (exp: string): ?ForParseResult {
   } else {
     res.alias = alias
   }
+  // pdd: todos = [{}, {}]
+  // pdd: v-for="(todo, index) in todos"
+  // pdd: 返回的数据格式为{ alias: 'todo', for: 'todos', iterator1: 'index' }
+   
+  // pdd: 当遍历一个对象的时候的处理
+  // pdd: todos = {}
+  // pdd: v-for="(todo, key, index) in todos"
+  // pdd: 返回的数据格式为{ alias: 'todo', for: 'todos', iterator1: 'key', iterator2: 'index' } 
   return res
 }
+```
+#### processIf
 
+```javascript
 function processIf (el) {
   const exp = getAndRemoveAttr(el, 'v-if')
   if (exp) {
@@ -551,7 +611,11 @@ function processIf (el) {
     }
   }
 }
+```
 
+#### processIfConditions
+
+```javascript
 function processIfConditions (el, parent) {
   const prev = findPrevElement(parent.children)
   if (prev && prev.if) {
@@ -567,7 +631,10 @@ function processIfConditions (el, parent) {
     )
   }
 }
+```
+#### findPrevElement
 
+```javascript
 function findPrevElement (children: Array<any>): ASTElement | void {
   let i = children.length
   while (i--) {
@@ -585,21 +652,33 @@ function findPrevElement (children: Array<any>): ASTElement | void {
     }
   }
 }
+```
+#### addIfCondition
 
+```javascript
 export function addIfCondition (el: ASTElement, condition: ASTIfCondition) {
   if (!el.ifConditions) {
     el.ifConditions = []
   }
   el.ifConditions.push(condition)
 }
+```
 
+#### processOnce
+
+```javascript
 function processOnce (el) {
   const once = getAndRemoveAttr(el, 'v-once')
   if (once != null) {
     el.once = true
   }
 }
+```
+#### processSlotContent
 
+```javascript
+
+// pdd: el.slotScope获取scope的字段名称而已
 // handle content being passed to a component as slot,
 // e.g. <template slot="xxx">, <div slot-scope="xxx">
 function processSlotContent (el) {
@@ -716,7 +795,10 @@ function processSlotContent (el) {
     }
   }
 }
+```
+#### getSlotName
 
+```javascript
 function getSlotName (binding) {
   let name = binding.name.replace(slotRE, '')
   if (!name) {
@@ -735,7 +817,12 @@ function getSlotName (binding) {
     // static name
     : { name: `"${name}"`, dynamic: false }
 }
+```
 
+#### processSlotOutlet
+
+```javascript
+// pdd: slot标签处理  el.slotName获取
 // handle <slot/> outlets
 function processSlotOutlet (el) {
   if (el.tag === 'slot') {
@@ -750,7 +837,15 @@ function processSlotOutlet (el) {
     }
   }
 }
+```
 
+#### processComponent
+
+```javascript
+// pdd: 获取is属性 <div :is="custom-component"></div>
+// pdd: 获取inline-template属性 <custom-component inline-template></custom-component>
+// pdd: inline-template表示当做  当做模板处理 
+// pdd: 本质上是作为一种外部定义模板的方式 与.vue文件中<template>标签包裹效果相同 而且还有一个特性 如果父子变量名称相同  优先使用子组件的
 function processComponent (el) {
   let binding
   if ((binding = getBindingAttr(el, 'is'))) {
@@ -763,8 +858,7 @@ function processComponent (el) {
 ```
 ##### processAttrs
 
-> 对所有属性的处理
-```js
+```javascript
 function processAttrs (el) {
   const list = el.attrsList
   let i, l, name, rawName, value, modifiers, syncGen, isDynamic
@@ -775,21 +869,27 @@ function processAttrs (el) {
       // mark element as dynamic
       el.hasBindings = true
       // modifiers
+      // pdd: 获取修饰符集合 可以有多个修饰符 v-on:event.stop.once.xxx
       modifiers = parseModifiers(name.replace(dirRE, ''))
       // support .foo shorthand syntax for the .prop modifier
+      // pdd: 以下操作是获取指令属性的名称  如果是<div .foo="bar">  则把.foo解析成原生属性  .foo  document.setAttribute('.foo', 'bar')
       if (process.env.VBIND_PROP_SHORTHAND && propBindRE.test(name)) {
         (modifiers || (modifiers = {})).prop = true
+        // pdd: 如果是.foo.stop.xxx  则获取foo.stop.xxx  replace => foo
+        // pdd: name=.foo  替换掉修饰符
         name = `.` + name.slice(1).replace(modifierRE, '')
       } else if (modifiers) {
+        // pdd: <div :foo="xx">   name="foo"  替换掉修饰符
         name = name.replace(modifierRE, '')
       }
       if (bindRE.test(name)) { // v-bind
         name = name.replace(bindRE, '')
-        // filter有可能出现在属性绑定中 所以过一遍parsefilters
-        // 所有属性attrs都当成filter的一种形式处理 普通attrs绑定就当成是没有管道操作符的filter来处理
+        // pdd: filter有可能出现在属性绑定中 所以过一遍parsefilters
+        // pdd: 所有属性attrs都当成filter的一种形式处理 普通attrs绑定就当成是没有管道操作符的filter来处理
         value = parseFilters(value)
         isDynamic = dynamicArgRE.test(name)
         if (isDynamic) {
+          // pdd: 如果是动态属性  则v-bind:[foo] 取foo
           name = name.slice(1, -1)
         }
         if (
@@ -801,13 +901,17 @@ function processAttrs (el) {
           )
         }
         if (modifiers) {
+          // pdd: .prop修饰符 处理成原生属性  会通过这种形式处理  document.setAttribute('xxx', xxx)
           if (modifiers.prop && !isDynamic) {
             name = camelize(name)
+            // pdd: 普通的处理 直接驼峰处理  innerHtml比较特殊
             if (name === 'innerHtml') name = 'innerHTML'
           }
+          // pdd: camel   <div  :user-data.camel="xxx"></div> ===> userData
           if (modifiers.camel && !isDynamic) {
             name = camelize(name)
           }
+          // pdd: sync修饰符
           if (modifiers.sync) {
             syncGen = genAssignmentCode(value, `$event`)
             if (!isDynamic) {
@@ -903,6 +1007,11 @@ function processAttrs (el) {
     }
   }
 }
+```
+
+#### checkInFor
+
+```javascript
 
 function checkInFor (el: ASTElement): boolean {
   let parent = el
@@ -914,7 +1023,15 @@ function checkInFor (el: ASTElement): boolean {
   }
   return false
 }
+```
 
+#### parseModifiers
+
+```javascript
+
+// pdd: 解析修饰符   v-bind:foo.stop.once.prevent="" 
+// pdd: 参数name=".stop.once.prevent"
+// pdd: 解析结果 { stop: true, once: true, prevent: true }
 function parseModifiers (name: string): Object | void {
   const match = name.match(modifierRE)
   if (match) {
@@ -923,8 +1040,13 @@ function parseModifiers (name: string): Object | void {
     return ret
   }
 }
+```
 
-// 生成一个attrs map
+#### makeAttrsMap
+
+```javascript
+
+// pdd: 生成一个attrs map  属性key为键  值为value的map {v-show: 'ifShow', key: 'id'}
 function makeAttrsMap (attrs: Array<Object>): Object {
   const map = {}
   for (let i = 0, l = attrs.length; i < l; i++) {
@@ -938,12 +1060,20 @@ function makeAttrsMap (attrs: Array<Object>): Object {
   }
   return map
 }
+```
 
+#### isTextTag
+
+```javascript
 // for script (e.g. type="x/template") or style, do not decode content
 function isTextTag (el): boolean {
   return el.tag === 'script' || el.tag === 'style'
 }
+```
 
+#### isForbiddenTag
+
+```javascript
 function isForbiddenTag (el): boolean {
   return (
     el.tag === 'style' ||
@@ -953,6 +1083,11 @@ function isForbiddenTag (el): boolean {
     ))
   )
 }
+```
+
+#### guardIESVGBug
+
+```javascript
 
 const ieNSBug = /^xmlns:NS\d+/
 const ieNSPrefix = /^NS\d+:/
@@ -969,7 +1104,12 @@ function guardIESVGBug (attrs) {
   }
   return res
 }
+```
 
+#### checkForAliasModel
+
+
+```javascript
 function checkForAliasModel (el, value) {
   let _el = el
   while (_el) {

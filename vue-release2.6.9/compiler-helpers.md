@@ -7,11 +7,16 @@ type Range = { start?: number, end?: number };
 
 ```
 
+#### baseWarn
+
 ```javascript
 export function baseWarn (msg: string, range?: Range) {
   console.error(`[Vue compiler]: ${msg}`)
 }
 ```
+
+#### pluckModuleFunction
+
 ```javascript
 export function pluckModuleFunction<F: Function> (
   modules: ?Array<Object>,
@@ -25,6 +30,8 @@ export function pluckModuleFunction<F: Function> (
 }
 ```
 
+#### addProp
+
 ```javascript
 export function addProp (el: ASTElement, name: string, value: string, range?: Range, dynamic?: boolean) {
   (el.props || (el.props = [])).push(rangeSetItem({ name, value, dynamic }, range))
@@ -33,8 +40,11 @@ export function addProp (el: ASTElement, name: string, value: string, range?: Ra
   // pdd: props非空判断或初始化
 }
 ```
+
+#### addAttr
+
 ```javascript
-// 非原生attrs用的是dynamicAttrs/attrs  原生的是attrsList
+// pdd: 非原生attrs用的是dynamicAttrs/attrs  原生的是attrsList
 export function addAttr (el: ASTElement, name: string, value: any, range?: Range, dynamic?: boolean) {
   const attrs = dynamic
     ? (el.dynamicAttrs || (el.dynamicAttrs = []))
@@ -46,14 +56,18 @@ export function addAttr (el: ASTElement, name: string, value: any, range?: Range
 }
 ```
 
+#### addRawAttr
+
 ```javascript
 // add a raw attr (use this in preTransforms)
-// 非原生attrs用的是dynamicAttrs/attrs  原生的是attrsList
+// pdd: 非原生attrs用的是dynamicAttrs/attrs  原生的是attrsList
 export function addRawAttr (el: ASTElement, name: string, value: any, range?: Range) {
   el.attrsMap[name] = value
   el.attrsList.push(rangeSetItem({ name, value }, range))
 }
 ```
+
+#### addDirective
 
 ```javascript
 export function addDirective (
@@ -75,12 +89,14 @@ export function addDirective (
     modifiers
   }, range))
   el.plain = false
-  // 可以看出来指令是绑定在el上的
+  // pdd: 可以看出来指令是绑定在el上的
 }
 ```
 
+#### prependModifierMarker
+
 ```javascript
-// 暂时不知道有啥用
+// pdd: 暂时不知道有啥用
 function prependModifierMarker (symbol: string, name: string, dynamic?: boolean): string {
   return dynamic
     ? `_p(${name},"${symbol}")`
@@ -88,8 +104,11 @@ function prependModifierMarker (symbol: string, name: string, dynamic?: boolean)
 }
 ```
 
+#### addHandler
+
 ```javascript
 
+// pdd: 添加handler
 export function addHandler (
   el: ASTElement,
   name: string,
@@ -179,6 +198,8 @@ export function addHandler (
 
 ```
 
+#### getRawBindingAttr
+
 ```javascript
 export function getRawBindingAttr (
   el: ASTElement,
@@ -190,18 +211,23 @@ export function getRawBindingAttr (
 }
 ```
 
+#### getBindingAttr
+
 ```javascript
 export function getBindingAttr (
   el: ASTElement,
   name: string,
   getStatic?: boolean
 ): ?string {
+  // pdd: 通过 :key="xxx" v-bind:key="xx" 这种形式获取
   const dynamicValue =
     getAndRemoveAttr(el, ':' + name) ||
     getAndRemoveAttr(el, 'v-bind:' + name)
   if (dynamicValue != null) {
     return parseFilters(dynamicValue)
   } else if (getStatic !== false) {
+    // pdd: 获取原生属性  key="xxx"
+    // pdd: 把静态值json stringify处理一下
     const staticValue = getAndRemoveAttr(el, name)
     if (staticValue != null) {
       return JSON.stringify(staticValue)
@@ -209,6 +235,8 @@ export function getBindingAttr (
   }
 }
 ```
+
+#### getAndRemoveAttr
 
 ```javascript
 // note: this only removes the attr from the Array (attrsList) so that it
@@ -237,6 +265,8 @@ export function getAndRemoveAttr (
 }
 ```
 
+#### getAndRemoveAttrByRegex
+
 ```javascript
 export function getAndRemoveAttrByRegex (
   el: ASTElement,
@@ -253,8 +283,10 @@ export function getAndRemoveAttrByRegex (
 }
 ```
 
+#### rangeSetItem
+
 ```javascript
-// 设置起止索引
+// pdd: 设置起止索引
 function rangeSetItem (
   item: any,
   range?: { start?: number, end?: number }

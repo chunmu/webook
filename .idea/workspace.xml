@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="076c93de-40dc-4c59-83d9-f04706d0be71" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/vue-release2.6.9/compiler-directives-bind.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-release2.6.9/compiler-directives-index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-release2.6.9/compiler-directives-model.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-release2.6.9/compiler-directives-on.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-release2.6.9/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-release2.6.9/shared-util.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/SUMMARY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_book/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/how-to-use-jira.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/how-to-use-jira.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/javascript/apply-call-bind.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/javascript/apply-call-bind.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/javascript/base16-base32-base64.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/javascript/base16-base32-base64.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/search_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/_book/search_index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/vue-release2.6.9/compiler-helpers.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/vue-release2.6.9/compiler-helpers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/vue-release2.6.9/compiler-parser-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/vue-release2.6.9/compiler-parser-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-release2.6.9/compiler-helpers.md" beforeDir="false" afterPath="$PROJECT_DIR$/vue-release2.6.9/compiler-helpers.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-release2.6.9/compiler-parser-index.md" beforeDir="false" afterPath="$PROJECT_DIR$/vue-release2.6.9/compiler-parser-index.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -14,27 +31,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue-release2.6.9/compiler-parser-index.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="120">
-                <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue-release2.6.9/compiler-helpers.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="330">
-                <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="206">
+                <caret line="914" column="31" lean-forward="true" selection-start-line="914" selection-start-column="31" selection-end-line="914" selection-end-column="31" />
                 <folding>
-                  <element signature="e#0#41#0" expanded="true" />
+                  <element signature="e#0#19#0" expanded="true" />
+                  <element signature="n#!!doc" expanded="true" />
+                  <element signature="n#!!doc" expanded="true" />
+                  <element signature="n#!!doc" expanded="true" />
+                  <element signature="n#!!doc" expanded="true" />
+                  <element signature="n#!!doc" expanded="true" />
+                  <element signature="n#!!doc" expanded="true" />
+                  <element signature="n#!!doc" expanded="true" />
                   <element signature="n#!!doc" expanded="true" />
                   <element signature="n#!!doc" expanded="true" />
                 </folding>
@@ -44,12 +56,95 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SUMMARY.md">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue-release2.6.9/compiler-directives-model.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="236">
+                <caret line="45" column="16" lean-forward="true" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue-release2.6.9/compiler-directives-bind.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="165">
+                <caret line="11" selection-start-line="11" selection-end-line="11" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue-release2.6.9/compiler-directives-index.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="165">
+                <caret line="11" selection-start-line="11" selection-end-line="11" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue-release2.6.9/compiler-directives-on.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="150">
                 <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue-release2.6.9/shared-util.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue-release2.6.9/compiler-helpers.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="216">
+                <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+                <folding>
+                  <element signature="n#!!doc" expanded="true" />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue-release2.6.9/readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SUMMARY.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="210">
+                <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
               </first_editor>
               <second_editor />
             </state>
@@ -61,6 +156,28 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>rangeSetItem</find>
+      <find>parse</find>
+      <find>processRawAttrs</find>
+      <find>parseFor</find>
+      <find>parsefor</find>
+      <find>iteratorMatch</find>
+      <find>forIteratorRE</find>
+      <find>processFor</find>
+      <find>processIf</find>
+      <find>addIfCondition</find>
+      <find>processKey</find>
+      <find>getBindingAttr</find>
+      <find>makeAttrsMap</find>
+      <find>getAndRemoveAttr</find>
+      <find>processComponent</find>
+      <find>VBIND_PROP_SHORTHAND</find>
+      <find>processattrs</find>
+      <find>propBindRE</find>
+      <find>isDynamic</find>
+      <find>camel</find>
+      <find>parseModifiers</find>
+      <find>genAssignmentCode</find>
+      <find>processRef</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -69,25 +186,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/vue-release2.6.9/compiler-parser-index.md" />
+        <option value="$PROJECT_DIR$/vue-release2.6.9/compiler-directives-bind.md" />
+        <option value="$PROJECT_DIR$/vue-release2.6.9/compiler-directives-index.md" />
+        <option value="$PROJECT_DIR$/vue-release2.6.9/compiler-directives-on.md" />
+        <option value="$PROJECT_DIR$/vue-release2.6.9/compiler-directives-model.md" />
         <option value="$PROJECT_DIR$/vue-release2.6.9/compiler-helpers.md" />
         <option value="$PROJECT_DIR$/SUMMARY.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-        <option value="$PROJECT_DIR$/.idea/webook.iml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1643" />
-    <option name="y" value="129" />
+    <option name="y" value="66" />
     <option name="width" value="1440" />
     <option name="height" value="834" />
   </component>
@@ -144,24 +254,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564385142186</updated>
-      <workItem from="1564385143813" duration="5511000" />
+      <workItem from="1564385143813" duration="14269000" />
+      <workItem from="1564543983203" duration="12540000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5511000" />
+    <option name="totallyTimeSpent" value="26809000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1643" y="129" width="1440" height="834" extended-state="0" />
+    <frame x="0" y="66" width="1440" height="834" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13460183" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -169,6 +276,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -178,23 +289,28 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vue-release2.6.9/compiler-parser-index.md">
+    <entry file="file://$PROJECT_DIR$/vue-release2.6.9/shared-util.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="120">
-            <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          </first_editor>
+          <first_editor />
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue-release2.6.9/compiler-helpers.md">
+    <entry file="file://$PROJECT_DIR$/vue-release2.6.9/compiler-parser-index.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="330">
-            <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="206">
+            <caret line="914" column="31" lean-forward="true" selection-start-line="914" selection-start-column="31" selection-end-line="914" selection-end-column="31" />
             <folding>
-              <element signature="e#0#41#0" expanded="true" />
+              <element signature="e#0#19#0" expanded="true" />
+              <element signature="n#!!doc" expanded="true" />
+              <element signature="n#!!doc" expanded="true" />
+              <element signature="n#!!doc" expanded="true" />
+              <element signature="n#!!doc" expanded="true" />
+              <element signature="n#!!doc" expanded="true" />
+              <element signature="n#!!doc" expanded="true" />
+              <element signature="n#!!doc" expanded="true" />
               <element signature="n#!!doc" expanded="true" />
               <element signature="n#!!doc" expanded="true" />
             </folding>
@@ -203,11 +319,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SUMMARY.md">
+    <entry file="file://$PROJECT_DIR$/vue-release2.6.9/compiler-directives-bind.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="165">
+            <caret line="11" selection-start-line="11" selection-end-line="11" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-release2.6.9/compiler-directives-index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="165">
+            <caret line="11" selection-start-line="11" selection-end-line="11" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-release2.6.9/compiler-directives-on.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="150">
             <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-release2.6.9/compiler-directives-model.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="236">
+            <caret line="45" column="16" lean-forward="true" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-release2.6.9/compiler-helpers.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="216">
+            <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+            <folding>
+              <element signature="n#!!doc" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-release2.6.9/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SUMMARY.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="210">
+            <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           </first_editor>
           <second_editor />
         </state>
