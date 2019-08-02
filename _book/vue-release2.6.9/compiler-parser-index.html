@@ -74,6 +74,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="compiler-directives-bind.html" />
+    
     
     <link rel="prev" href="compiler-helpers.html" />
     
@@ -186,14 +188,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" >
+        <li class="chapter " data-level="1.4" data-path="readme.html">
             
-                <span>
+                <a href="readme.html">
             
                     
                     vue-release2.6.9
             
-                </span>
+                </a>
             
 
             
@@ -219,6 +221,58 @@
             
                     
                     compiler-parser-index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="compiler-directives-bind.html">
+            
+                <a href="compiler-directives-bind.html">
+            
+                    
+                    compiler-directives-bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="compiler-directives-index.html">
+            
+                <a href="compiler-directives-index.html">
+            
+                    
+                    compiler-directives-index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="compiler-directives-model.html">
+            
+                <a href="compiler-directives-model.html">
+            
+                    
+                    compiler-directives-model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="compiler-directives-on.html">
+            
+                <a href="compiler-directives-on.html">
+            
+                    
+                    compiler-directives-on
             
                 </a>
             
@@ -299,7 +353,7 @@
 } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../helpers&apos;</span>
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> onRE = <span class="hljs-regexp">/^@|^v-on:/</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> dirRE = process.env.VBIND_PROP_SHORTHAND
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> dirRE = process.env.VBIND_PROP_SHORTHAND  <span class="hljs-comment">// pdd: &#x5982;&#x679C;&#x4E3A;true &#x5219;&#x7C7B;&#x4F3C;.stop&#x4E5F;&#x662F;&#x5408;&#x6CD5;&#x7684;&#x6307;&#x4EE4;</span>
   ? <span class="hljs-regexp">/^v-|^@|^:|^\./</span>
   : <span class="hljs-regexp">/^v-|^@|^:/</span>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> forAliasRE = <span class="hljs-regexp">/([\s\S]*?)\s+(?:in|of)\s+([\s\S]*)/</span>
@@ -506,6 +560,7 @@
         attrs = guardIESVGBug(attrs)
       }
 
+      <span class="hljs-comment">// &#x653E;&#x7F6E;&#x4E86;attrsList</span>
       <span class="hljs-keyword">let</span> element: ASTElement = createASTElement(tag, attrs, currentParent)
       <span class="hljs-keyword">if</span> (ns) {
         element.ns = ns
@@ -740,7 +795,9 @@
 }
 </code></pre>
 <h4 id="processkey"><a name="processkey" class="plugin-anchor" href="#processkey"><i class="fa fa-link" aria-hidden="true"></i></a>processKey</h4>
-<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processKey</span> (<span class="hljs-params">el</span>) </span>{
+<pre><code class="lang-javascript">
+<span class="hljs-comment">// pdd: &#x89E3;&#x6790;key  &#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x662F;el&#x4E0A;&#x6302;&#x8F7D;key&#x5C5E;&#x6027;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processKey</span> (<span class="hljs-params">el</span>) </span>{
   <span class="hljs-keyword">const</span> exp = getBindingAttr(el, <span class="hljs-string">&apos;key&apos;</span>)
   <span class="hljs-keyword">if</span> (exp) {
     <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
@@ -768,12 +825,13 @@
 }
 </code></pre>
 <h4 id="processref"><a name="processref" class="plugin-anchor" href="#processref"><i class="fa fa-link" aria-hidden="true"></i></a>processRef</h4>
-<pre><code class="lang-javascript">
+<pre><code class="lang-javascript"><span class="hljs-comment">// pdd: &#x76EE;&#x524D;&#x6765;&#x770B;&#x8FD9;&#x4E2A;process&#x53EA;&#x662F;&#x628A;ref&#x5B57;&#x7B26;&#x4E32;&#x83B7;&#x53D6;&#x5230;&#x4E86; </span>
+<span class="hljs-comment">// pdd: &#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;this.$refs&#x600E;&#x4E48;&#x653E;&#x8FDB;&#x53BB;&#x7684;&#x8FD8;&#x9700;&#x8981;&#x89C2;&#x5BDF;</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processRef</span> (<span class="hljs-params">el</span>) </span>{
   <span class="hljs-keyword">const</span> ref = getBindingAttr(el, <span class="hljs-string">&apos;ref&apos;</span>)
   <span class="hljs-keyword">if</span> (ref) {
     el.ref = ref
-    el.refInFor = checkInFor(el)
+    el.refInFor = checkInFor(el) <span class="hljs-comment">// pdd: &#x662F;&#x5426;&#x5728;for&#x5FAA;&#x73AF;&#x4E2D;&#x7684;&#x6807;&#x8BB0;</span>
   }
 }
 </code></pre>
@@ -791,6 +849,7 @@
       )
     }
   }
+
 }
 </code></pre>
 <h4 id="forparseresult"><a name="forparseresult" class="plugin-anchor" href="#forparseresult"><i class="fa fa-link" aria-hidden="true"></i></a>ForParseResult</h4>
@@ -819,6 +878,14 @@ type ForParseResult = {
   } <span class="hljs-keyword">else</span> {
     res.alias = alias
   }
+  <span class="hljs-comment">// pdd: todos = [{}, {}]</span>
+  <span class="hljs-comment">// pdd: v-for=&quot;(todo, index) in todos&quot;</span>
+  <span class="hljs-comment">// pdd: &#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x4E3A;{ alias: &apos;todo&apos;, for: &apos;todos&apos;, iterator1: &apos;index&apos; }</span>
+
+  <span class="hljs-comment">// pdd: &#x5F53;&#x904D;&#x5386;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#x7684;&#x5904;&#x7406;</span>
+  <span class="hljs-comment">// pdd: todos = {}</span>
+  <span class="hljs-comment">// pdd: v-for=&quot;(todo, key, index) in todos&quot;</span>
+  <span class="hljs-comment">// pdd: &#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x4E3A;{ alias: &apos;todo&apos;, for: &apos;todos&apos;, iterator1: &apos;key&apos;, iterator2: &apos;index&apos; } </span>
   <span class="hljs-keyword">return</span> res
 }
 </code></pre>
@@ -895,7 +962,9 @@ type ForParseResult = {
 }
 </code></pre>
 <h4 id="processslotcontent"><a name="processslotcontent" class="plugin-anchor" href="#processslotcontent"><i class="fa fa-link" aria-hidden="true"></i></a>processSlotContent</h4>
-<pre><code class="lang-javascript"><span class="hljs-comment">// handle content being passed to a component as slot,</span>
+<pre><code class="lang-javascript">
+<span class="hljs-comment">// pdd: el.slotScope&#x83B7;&#x53D6;scope&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x79F0;&#x800C;&#x5DF2;</span>
+<span class="hljs-comment">// handle content being passed to a component as slot,</span>
 <span class="hljs-comment">// e.g. &lt;template slot=&quot;xxx&quot;&gt;, &lt;div slot-scope=&quot;xxx&quot;&gt;</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processSlotContent</span> (<span class="hljs-params">el</span>) </span>{
   <span class="hljs-keyword">let</span> slotScope
@@ -1033,7 +1102,8 @@ type ForParseResult = {
 }
 </code></pre>
 <h4 id="processslotoutlet"><a name="processslotoutlet" class="plugin-anchor" href="#processslotoutlet"><i class="fa fa-link" aria-hidden="true"></i></a>processSlotOutlet</h4>
-<pre><code class="lang-javascript"><span class="hljs-comment">// handle &lt;slot/&gt; outlets</span>
+<pre><code class="lang-javascript"><span class="hljs-comment">// pdd: slot&#x6807;&#x7B7E;&#x5904;&#x7406;  el.slotName&#x83B7;&#x53D6;</span>
+<span class="hljs-comment">// handle &lt;slot/&gt; outlets</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processSlotOutlet</span> (<span class="hljs-params">el</span>) </span>{
   <span class="hljs-keyword">if</span> (el.tag === <span class="hljs-string">&apos;slot&apos;</span>) {
     el.slotName = getBindingAttr(el, <span class="hljs-string">&apos;name&apos;</span>)
@@ -1049,7 +1119,11 @@ type ForParseResult = {
 }
 </code></pre>
 <h4 id="processcomponent"><a name="processcomponent" class="plugin-anchor" href="#processcomponent"><i class="fa fa-link" aria-hidden="true"></i></a>processComponent</h4>
-<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processComponent</span> (<span class="hljs-params">el</span>) </span>{
+<pre><code class="lang-javascript"><span class="hljs-comment">// pdd: &#x83B7;&#x53D6;is&#x5C5E;&#x6027; &lt;div :is=&quot;custom-component&quot;&gt;&lt;/div&gt;</span>
+<span class="hljs-comment">// pdd: &#x83B7;&#x53D6;inline-template&#x5C5E;&#x6027; &lt;custom-component inline-template&gt;&lt;/custom-component&gt;</span>
+<span class="hljs-comment">// pdd: inline-template&#x8868;&#x793A;&#x5F53;&#x505A;  &#x5F53;&#x505A;&#x6A21;&#x677F;&#x5904;&#x7406; </span>
+<span class="hljs-comment">// pdd: &#x672C;&#x8D28;&#x4E0A;&#x662F;&#x4F5C;&#x4E3A;&#x4E00;&#x79CD;&#x5916;&#x90E8;&#x5B9A;&#x4E49;&#x6A21;&#x677F;&#x7684;&#x65B9;&#x5F0F; &#x4E0E;.vue&#x6587;&#x4EF6;&#x4E2D;&lt;template&gt;&#x6807;&#x7B7E;&#x5305;&#x88F9;&#x6548;&#x679C;&#x76F8;&#x540C; &#x800C;&#x4E14;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x7279;&#x6027; &#x5982;&#x679C;&#x7236;&#x5B50;&#x53D8;&#x91CF;&#x540D;&#x79F0;&#x76F8;&#x540C;  &#x4F18;&#x5148;&#x4F7F;&#x7528;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processComponent</span> (<span class="hljs-params">el</span>) </span>{
   <span class="hljs-keyword">let</span> binding
   <span class="hljs-keyword">if</span> ((binding = getBindingAttr(el, <span class="hljs-string">&apos;is&apos;</span>))) {
     el.component = binding
@@ -1070,21 +1144,27 @@ type ForParseResult = {
       <span class="hljs-comment">// mark element as dynamic</span>
       el.hasBindings = <span class="hljs-literal">true</span>
       <span class="hljs-comment">// modifiers</span>
+      <span class="hljs-comment">// pdd: &#x83B7;&#x53D6;&#x4FEE;&#x9970;&#x7B26;&#x96C6;&#x5408; &#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x4FEE;&#x9970;&#x7B26; v-on:event.stop.once.xxx</span>
       modifiers = parseModifiers(name.replace(dirRE, <span class="hljs-string">&apos;&apos;</span>))
       <span class="hljs-comment">// support .foo shorthand syntax for the .prop modifier</span>
+      <span class="hljs-comment">// pdd: &#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;&#x662F;&#x83B7;&#x53D6;&#x6307;&#x4EE4;&#x5C5E;&#x6027;&#x7684;&#x540D;&#x79F0;  &#x5982;&#x679C;&#x662F;&lt;div .foo=&quot;bar&quot;&gt;  &#x5219;&#x628A;.foo&#x89E3;&#x6790;&#x6210;&#x539F;&#x751F;&#x5C5E;&#x6027;  .foo  document.setAttribute(&apos;.foo&apos;, &apos;bar&apos;)</span>
       <span class="hljs-keyword">if</span> (process.env.VBIND_PROP_SHORTHAND &amp;&amp; propBindRE.test(name)) {
         (modifiers || (modifiers = {})).prop = <span class="hljs-literal">true</span>
+        <span class="hljs-comment">// pdd: &#x5982;&#x679C;&#x662F;.foo.stop.xxx  &#x5219;&#x83B7;&#x53D6;foo.stop.xxx  replace =&gt; foo</span>
+        <span class="hljs-comment">// pdd: name=.foo  &#x66FF;&#x6362;&#x6389;&#x4FEE;&#x9970;&#x7B26;</span>
         name = <span class="hljs-string">`.`</span> + name.slice(<span class="hljs-number">1</span>).replace(modifierRE, <span class="hljs-string">&apos;&apos;</span>)
       } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (modifiers) {
+        <span class="hljs-comment">// pdd: &lt;div :foo=&quot;xx&quot;&gt;   name=&quot;foo&quot;  &#x66FF;&#x6362;&#x6389;&#x4FEE;&#x9970;&#x7B26;</span>
         name = name.replace(modifierRE, <span class="hljs-string">&apos;&apos;</span>)
       }
       <span class="hljs-keyword">if</span> (bindRE.test(name)) { <span class="hljs-comment">// v-bind</span>
         name = name.replace(bindRE, <span class="hljs-string">&apos;&apos;</span>)
-        <span class="hljs-comment">// filter&#x6709;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x5728;&#x5C5E;&#x6027;&#x7ED1;&#x5B9A;&#x4E2D; &#x6240;&#x4EE5;&#x8FC7;&#x4E00;&#x904D;parsefilters</span>
-        <span class="hljs-comment">// &#x6240;&#x6709;&#x5C5E;&#x6027;attrs&#x90FD;&#x5F53;&#x6210;filter&#x7684;&#x4E00;&#x79CD;&#x5F62;&#x5F0F;&#x5904;&#x7406; &#x666E;&#x901A;attrs&#x7ED1;&#x5B9A;&#x5C31;&#x5F53;&#x6210;&#x662F;&#x6CA1;&#x6709;&#x7BA1;&#x9053;&#x64CD;&#x4F5C;&#x7B26;&#x7684;filter&#x6765;&#x5904;&#x7406;</span>
+        <span class="hljs-comment">// pdd: filter&#x6709;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x5728;&#x5C5E;&#x6027;&#x7ED1;&#x5B9A;&#x4E2D; &#x6240;&#x4EE5;&#x8FC7;&#x4E00;&#x904D;parsefilters</span>
+        <span class="hljs-comment">// pdd: &#x6240;&#x6709;&#x5C5E;&#x6027;attrs&#x90FD;&#x5F53;&#x6210;filter&#x7684;&#x4E00;&#x79CD;&#x5F62;&#x5F0F;&#x5904;&#x7406; &#x666E;&#x901A;attrs&#x7ED1;&#x5B9A;&#x5C31;&#x5F53;&#x6210;&#x662F;&#x6CA1;&#x6709;&#x7BA1;&#x9053;&#x64CD;&#x4F5C;&#x7B26;&#x7684;filter&#x6765;&#x5904;&#x7406;</span>
         value = parseFilters(value)
         isDynamic = dynamicArgRE.test(name)
         <span class="hljs-keyword">if</span> (isDynamic) {
+          <span class="hljs-comment">// pdd: &#x5982;&#x679C;&#x662F;&#x52A8;&#x6001;&#x5C5E;&#x6027;  &#x5219;v-bind:[foo] &#x53D6;foo</span>
           name = name.slice(<span class="hljs-number">1</span>, <span class="hljs-number">-1</span>)
         }
         <span class="hljs-keyword">if</span> (
@@ -1096,13 +1176,17 @@ type ForParseResult = {
           )
         }
         <span class="hljs-keyword">if</span> (modifiers) {
+          <span class="hljs-comment">// pdd: .prop&#x4FEE;&#x9970;&#x7B26; &#x5904;&#x7406;&#x6210;&#x539F;&#x751F;&#x5C5E;&#x6027;  &#x4F1A;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x5904;&#x7406;  document.setAttribute(&apos;xxx&apos;, xxx)</span>
           <span class="hljs-keyword">if</span> (modifiers.prop &amp;&amp; !isDynamic) {
             name = camelize(name)
+            <span class="hljs-comment">// pdd: &#x666E;&#x901A;&#x7684;&#x5904;&#x7406; &#x76F4;&#x63A5;&#x9A7C;&#x5CF0;&#x5904;&#x7406;  innerHtml&#x6BD4;&#x8F83;&#x7279;&#x6B8A;</span>
             <span class="hljs-keyword">if</span> (name === <span class="hljs-string">&apos;innerHtml&apos;</span>) name = <span class="hljs-string">&apos;innerHTML&apos;</span>
           }
+          <span class="hljs-comment">// pdd: camel   &lt;div  :user-data.camel=&quot;xxx&quot;&gt;&lt;/div&gt; ===&gt; userData</span>
           <span class="hljs-keyword">if</span> (modifiers.camel &amp;&amp; !isDynamic) {
             name = camelize(name)
           }
+          <span class="hljs-comment">// pdd: sync&#x4FEE;&#x9970;&#x7B26;</span>
           <span class="hljs-keyword">if</span> (modifiers.sync) {
             syncGen = genAssignmentCode(value, <span class="hljs-string">`$event`</span>)
             <span class="hljs-keyword">if</span> (!isDynamic) {
@@ -1214,6 +1298,9 @@ type ForParseResult = {
 </code></pre>
 <h4 id="parsemodifiers"><a name="parsemodifiers" class="plugin-anchor" href="#parsemodifiers"><i class="fa fa-link" aria-hidden="true"></i></a>parseModifiers</h4>
 <pre><code class="lang-javascript">
+<span class="hljs-comment">// pdd: &#x89E3;&#x6790;&#x4FEE;&#x9970;&#x7B26;   v-bind:foo.stop.once.prevent=&quot;&quot; </span>
+<span class="hljs-comment">// pdd: &#x53C2;&#x6570;name=&quot;.stop.once.prevent&quot;</span>
+<span class="hljs-comment">// pdd: &#x89E3;&#x6790;&#x7ED3;&#x679C; { stop: true, once: true, prevent: true }</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseModifiers</span> (<span class="hljs-params">name: string</span>): <span class="hljs-title">Object</span> | <span class="hljs-title">void</span> </span>{
   <span class="hljs-keyword">const</span> match = name.match(modifierRE)
   <span class="hljs-keyword">if</span> (match) {
@@ -1225,7 +1312,7 @@ type ForParseResult = {
 </code></pre>
 <h4 id="makeattrsmap"><a name="makeattrsmap" class="plugin-anchor" href="#makeattrsmap"><i class="fa fa-link" aria-hidden="true"></i></a>makeAttrsMap</h4>
 <pre><code class="lang-javascript">
-<span class="hljs-comment">// &#x751F;&#x6210;&#x4E00;&#x4E2A;attrs map</span>
+<span class="hljs-comment">// pdd: &#x751F;&#x6210;&#x4E00;&#x4E2A;attrs map  &#x5C5E;&#x6027;key&#x4E3A;&#x952E;  &#x503C;&#x4E3A;value&#x7684;map {v-show: &apos;ifShow&apos;, key: &apos;id&apos;}</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeAttrsMap</span> (<span class="hljs-params">attrs: Array&lt;Object&gt;</span>): <span class="hljs-title">Object</span> </span>{
   <span class="hljs-keyword">const</span> map = {}
   <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, l = attrs.length; i &lt; l; i++) {
@@ -1320,10 +1407,14 @@ type ForParseResult = {
 
             
                 
-                <a href="compiler-helpers.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: compiler-helpers">
+                <a href="compiler-helpers.html" class="navigation navigation-prev " aria-label="Previous page: compiler-helpers">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="compiler-directives-bind.html" class="navigation navigation-next " aria-label="Next page: compiler-directives-bind">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -1332,7 +1423,7 @@ type ForParseResult = {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"compiler-parser-index","level":"1.4.2","depth":2,"previous":{"title":"compiler-helpers","level":"1.4.1","depth":2,"path":"vue-release2.6.9/compiler-helpers.md","ref":"vue-release2.6.9/compiler-helpers.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","github","edit-link","anchors","copy-code-button","github-buttons","expandable-chapters-small","insert-logo","custom-favicon","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"custom-favicon":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/didi/mpx/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"insert-logo":{"style":"background: none; width: 200px","url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png"},"expandable-chapters":{}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"vue-release2.6.9/compiler-parser-index.md","mtime":"2019-07-30T04:33:33.238Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-30T03:34:48.172Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"compiler-parser-index","level":"1.4.2","depth":2,"next":{"title":"compiler-directives-bind","level":"1.4.3","depth":2,"path":"vue-release2.6.9/compiler-directives-bind.md","ref":"vue-release2.6.9/compiler-directives-bind.md","articles":[]},"previous":{"title":"compiler-helpers","level":"1.4.1","depth":2,"path":"vue-release2.6.9/compiler-helpers.md","ref":"vue-release2.6.9/compiler-helpers.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","github","edit-link","anchors","copy-code-button","github-buttons","expandable-chapters-small","insert-logo","custom-favicon"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"custom-favicon":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/didi/mpx/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"insert-logo":{"style":"background: none; width: 200px","url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png"},"expandable-chapters":{}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"vue-release2.6.9/compiler-parser-index.md","mtime":"2019-07-31T12:16:54.032Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-02T03:33:45.460Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1367,10 +1458,6 @@ type ForParseResult = {
     
         
         <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

@@ -77,6 +77,8 @@
     <link rel="next" href="compiler-parser-index.html" />
     
     
+    <link rel="prev" href="readme.html" />
+    
 
     <style>
     @media only screen and (max-width: 640px) {
@@ -186,14 +188,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" >
+        <li class="chapter " data-level="1.4" data-path="readme.html">
             
-                <span>
+                <a href="readme.html">
             
                     
                     vue-release2.6.9
             
-                </span>
+                </a>
             
 
             
@@ -219,6 +221,58 @@
             
                     
                     compiler-parser-index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="compiler-directives-bind.html">
+            
+                <a href="compiler-directives-bind.html">
+            
+                    
+                    compiler-directives-bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="compiler-directives-index.html">
+            
+                <a href="compiler-directives-index.html">
+            
+                    
+                    compiler-directives-index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="compiler-directives-model.html">
+            
+                <a href="compiler-directives-model.html">
+            
+                    
+                    compiler-directives-model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="compiler-directives-on.html">
+            
+                <a href="compiler-directives-on.html">
+            
+                    
+                    compiler-directives-on
             
                 </a>
             
@@ -360,6 +414,7 @@ type Range = { start?: number, end?: number };
 </code></pre>
 <h4 id="addhandler"><a name="addhandler" class="plugin-anchor" href="#addhandler"><i class="fa fa-link" aria-hidden="true"></i></a>addHandler</h4>
 <pre><code class="lang-javascript">
+<span class="hljs-comment">// pdd: &#x6DFB;&#x52A0;handler</span>
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addHandler</span> (<span class="hljs-params">
   el: ASTElement,
   name: string,
@@ -463,12 +518,15 @@ type Range = { start?: number, end?: number };
   name: string,
   getStatic?: boolean
 </span>): ?<span class="hljs-title">string</span> </span>{
+  <span class="hljs-comment">// pdd: &#x901A;&#x8FC7; :key=&quot;xxx&quot; v-bind:key=&quot;xx&quot; &#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x83B7;&#x53D6;</span>
   <span class="hljs-keyword">const</span> dynamicValue =
     getAndRemoveAttr(el, <span class="hljs-string">&apos;:&apos;</span> + name) ||
     getAndRemoveAttr(el, <span class="hljs-string">&apos;v-bind:&apos;</span> + name)
   <span class="hljs-keyword">if</span> (dynamicValue != <span class="hljs-literal">null</span>) {
     <span class="hljs-keyword">return</span> parseFilters(dynamicValue)
   } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (getStatic !== <span class="hljs-literal">false</span>) {
+    <span class="hljs-comment">// pdd: &#x83B7;&#x53D6;&#x539F;&#x751F;&#x5C5E;&#x6027;  key=&quot;xxx&quot;</span>
+    <span class="hljs-comment">// pdd: &#x628A;&#x9759;&#x6001;&#x503C;json stringify&#x5904;&#x7406;&#x4E00;&#x4E0B;</span>
     <span class="hljs-keyword">const</span> staticValue = getAndRemoveAttr(el, name)
     <span class="hljs-keyword">if</span> (staticValue != <span class="hljs-literal">null</span>) {
       <span class="hljs-keyword">return</span> <span class="hljs-built_in">JSON</span>.stringify(staticValue)
@@ -561,8 +619,12 @@ type Range = { start?: number, end?: number };
 
             
                 
+                <a href="readme.html" class="navigation navigation-prev " aria-label="Previous page: vue-release2.6.9">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="compiler-parser-index.html" class="navigation navigation-next navigation-unique" aria-label="Next page: compiler-parser-index">
+                
+                <a href="compiler-parser-index.html" class="navigation navigation-next " aria-label="Next page: compiler-parser-index">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -573,7 +635,7 @@ type Range = { start?: number, end?: number };
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"compiler-helpers","level":"1.4.1","depth":2,"next":{"title":"compiler-parser-index","level":"1.4.2","depth":2,"path":"vue-release2.6.9/compiler-parser-index.md","ref":"vue-release2.6.9/compiler-parser-index.md","articles":[]},"previous":{"title":"vue-release2.6.9","level":"1.4","depth":1,"ref":"","articles":[{"title":"compiler-helpers","level":"1.4.1","depth":2,"path":"vue-release2.6.9/compiler-helpers.md","ref":"vue-release2.6.9/compiler-helpers.md","articles":[]},{"title":"compiler-parser-index","level":"1.4.2","depth":2,"path":"vue-release2.6.9/compiler-parser-index.md","ref":"vue-release2.6.9/compiler-parser-index.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","github","edit-link","anchors","copy-code-button","github-buttons","expandable-chapters-small","insert-logo","custom-favicon","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"custom-favicon":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/didi/mpx/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"insert-logo":{"style":"background: none; width: 200px","url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png"},"expandable-chapters":{}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"vue-release2.6.9/compiler-helpers.md","mtime":"2019-07-29T12:15:28.041Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-30T03:34:48.172Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"compiler-helpers","level":"1.4.1","depth":2,"next":{"title":"compiler-parser-index","level":"1.4.2","depth":2,"path":"vue-release2.6.9/compiler-parser-index.md","ref":"vue-release2.6.9/compiler-parser-index.md","articles":[]},"previous":{"title":"vue-release2.6.9","level":"1.4","depth":1,"path":"vue-release2.6.9/readme.md","ref":"vue-release2.6.9/readme.md","articles":[{"title":"compiler-helpers","level":"1.4.1","depth":2,"path":"vue-release2.6.9/compiler-helpers.md","ref":"vue-release2.6.9/compiler-helpers.md","articles":[]},{"title":"compiler-parser-index","level":"1.4.2","depth":2,"path":"vue-release2.6.9/compiler-parser-index.md","ref":"vue-release2.6.9/compiler-parser-index.md","articles":[]},{"title":"compiler-directives-bind","level":"1.4.3","depth":2,"path":"vue-release2.6.9/compiler-directives-bind.md","ref":"vue-release2.6.9/compiler-directives-bind.md","articles":[]},{"title":"compiler-directives-index","level":"1.4.4","depth":2,"path":"vue-release2.6.9/compiler-directives-index.md","ref":"vue-release2.6.9/compiler-directives-index.md","articles":[]},{"title":"compiler-directives-model","level":"1.4.5","depth":2,"path":"vue-release2.6.9/compiler-directives-model.md","ref":"vue-release2.6.9/compiler-directives-model.md","articles":[]},{"title":"compiler-directives-on","level":"1.4.6","depth":2,"path":"vue-release2.6.9/compiler-directives-on.md","ref":"vue-release2.6.9/compiler-directives-on.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","github","edit-link","anchors","copy-code-button","github-buttons","expandable-chapters-small","insert-logo","custom-favicon"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"custom-favicon":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/didi/mpx/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"insert-logo":{"style":"background: none; width: 200px","url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png"},"expandable-chapters":{}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"vue-release2.6.9/compiler-helpers.md","mtime":"2019-07-31T13:04:25.891Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-02T03:33:45.460Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -608,10 +670,6 @@ type Range = { start?: number, end?: number };
     
         
         <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
