@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>vue-release2.6.9 · mpx文档</title>
+        <title>shared-constants · mpx文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="compiler-helpers.html" />
     
-    
-    <link rel="prev" href="../javascript/base16-base32-base64.html" />
+    <link rel="prev" href="shared-util.html" />
     
 
     </head>
@@ -160,7 +158,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4" data-path="readme.html">
+        <li class="chapter " data-level="1.4" data-path="readme.html">
             
                 <a href="readme.html">
             
@@ -265,7 +263,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.8" data-path="shared-constants.html">
+        <li class="chapter active" data-level="1.4.8" data-path="shared-constants.html">
             
                 <a href="shared-constants.html">
             
@@ -313,7 +311,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >vue-release2.6.9</a>
+        <a href=".." >shared-constants</a>
     </h1>
 </div>
 
@@ -328,11 +326,34 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="vue&#x6E90;&#x7801;&#x9605;&#x8BFB;&#x8BB0;&#x5F55;">vue&#x6E90;&#x7801;&#x9605;&#x8BFB;&#x8BB0;&#x5F55;</h2>
-<h4 id="&#x8BB0;&#x5F55;&#x4E00;&#x4E9B;&#x53D1;&#x73B0;">&#x8BB0;&#x5F55;&#x4E00;&#x4E9B;&#x53D1;&#x73B0;</h4>
-<ul>
-<li>&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x5C06;&#x91CD;&#x590D;&#x7684;&#x5C5E;&#x6027;&#x79FB;&#x9664; &#x4E14;&#x4FDD;&#x7559;&#x7684;&#x662F;&#x9996;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x503C;</li>
-</ul>
+                                <h1 id="constants">constants</h1>
+<h4 id="ssrattr">SSR_ATTR</h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> SSR_ATTR = <span class="hljs-string">&apos;data-server-rendered&apos;</span>
+</code></pre>
+<h4 id="assettypes">ASSET_TYPES</h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ASSET_TYPES = [
+  <span class="hljs-string">&apos;component&apos;</span>,
+  <span class="hljs-string">&apos;directive&apos;</span>,
+  <span class="hljs-string">&apos;filter&apos;</span>
+]
+</code></pre>
+<h4 id="lifecyclehooks-&#x58F0;&#x660E;&#x5468;&#x671F;&#x94A9;&#x5B50;">LIFECYCLE_HOOKS &#x58F0;&#x660E;&#x5468;&#x671F;&#x94A9;&#x5B50;</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">// pdd: &#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> LIFECYCLE_HOOKS = [
+  <span class="hljs-string">&apos;beforeCreate&apos;</span>,
+  <span class="hljs-string">&apos;created&apos;</span>,
+  <span class="hljs-string">&apos;beforeMount&apos;</span>,
+  <span class="hljs-string">&apos;mounted&apos;</span>,
+  <span class="hljs-string">&apos;beforeUpdate&apos;</span>,
+  <span class="hljs-string">&apos;updated&apos;</span>,
+  <span class="hljs-string">&apos;beforeDestroy&apos;</span>,
+  <span class="hljs-string">&apos;destroyed&apos;</span>,
+  <span class="hljs-string">&apos;activated&apos;</span>, <span class="hljs-comment">// keep-alive&#x88AB;&#x6FC0;&#x6D3B;&#x65F6;&#x8C03;&#x7528;</span>
+  <span class="hljs-string">&apos;deactivated&apos;</span>, <span class="hljs-comment">// keep-alive&#x5931;&#x6D3B;&#x65F6;&#x8C03;&#x7528;</span>
+  <span class="hljs-string">&apos;errorCaptured&apos;</span>,
+  <span class="hljs-string">&apos;serverPrefetch&apos;</span>
+]
+</code></pre>
 
                                 
                                 </section>
@@ -360,14 +381,10 @@
 
             
                 
-                <a href="../javascript/base16-base32-base64.html" class="navigation navigation-prev " aria-label="Previous page: base16&base32&base64">
+                <a href="shared-util.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: shared-util">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="compiler-helpers.html" class="navigation navigation-next " aria-label="Next page: compiler-helpers">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -376,7 +393,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"vue-release2.6.9","level":"1.4","depth":1,"next":{"title":"compiler-helpers","level":"1.4.1","depth":2,"path":"vue-release2.6.9/compiler-helpers.md","ref":"vue-release2.6.9/compiler-helpers.md","articles":[]},"previous":{"title":"base16&base32&base64","level":"1.3.2","depth":2,"path":"javascript/base16-base32-base64.md","ref":"javascript/base16-base32-base64.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/didi/mpx/tree/master/docs","label":"完善文档"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png","style":"background: none; width: 200px"}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"vue-release2.6.9/readme.md","mtime":"2019-08-06T04:20:40.334Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-07T07:15:29.501Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"shared-constants","level":"1.4.8","depth":2,"previous":{"title":"shared-util","level":"1.4.7","depth":2,"path":"vue-release2.6.9/shared-util.md","ref":"vue-release2.6.9/shared-util.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/didi/mpx/tree/master/docs","label":"完善文档"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png","style":"background: none; width: 200px"}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"vue-release2.6.9/shared-constants.md","mtime":"2019-08-07T07:09:54.489Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-07T07:15:29.501Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

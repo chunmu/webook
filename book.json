@@ -5,7 +5,6 @@
   "structure": {
     "readme": "intro"
   },
-  "plugins": ["expandable-chapters", "github", "edit-link", "anchors", "copy-code-button", "github-buttons", "expandable-chapters-small", "insert-logo", "custom-favicon"],
   "pluginsConfig": {
     "favicon": "favicon.ico",
     "github": {

@@ -17,22 +17,6 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
-                
-            
-                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -65,7 +49,6 @@
         
     
     
-    
     <meta name="HandheldFriendly" content="true"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -79,17 +62,6 @@
     
     <link rel="prev" href="compiler-helpers.html" />
     
-
-    <style>
-    @media only screen and (max-width: 640px) {
-        .book-header .hidden-mobile {
-            display: none;
-        }
-    }
-    </style>
-    <script>
-        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]};
-    </script>
 
     </head>
     <body>
@@ -280,6 +252,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.7" data-path="shared-util.html">
+            
+                <a href="shared-util.html">
+            
+                    
+                    shared-util
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="shared-constants.html">
+            
+                <a href="shared-constants.html">
+            
+                    
+                    shared-constants
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -330,7 +328,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="parser"><a name="parser" class="plugin-anchor" href="#parser"><i class="fa fa-link" aria-hidden="true"></i></a>parser</h1>
+                                <h1 id="parser">parser</h1>
 <pre><code class="lang-javascript"><span class="hljs-keyword">import</span> he <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;he&apos;</span>
 <span class="hljs-keyword">import</span> { parseHTML } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./html-parser&apos;</span>
 <span class="hljs-keyword">import</span> { parseText } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./text-parser&apos;</span>
@@ -388,7 +386,7 @@
 <span class="hljs-keyword">let</span> platformGetTagNamespace
 <span class="hljs-keyword">let</span> maybeComponent
 </code></pre>
-<h4 id="createastelement"><a name="createastelement" class="plugin-anchor" href="#createastelement"><i class="fa fa-link" aria-hidden="true"></i></a>createASTElement</h4>
+<h4 id="createastelement">createASTElement</h4>
 <pre><code class="lang-javascript"><span class="hljs-comment">// pdd: &#x751F;&#x6210;AST&#x8282;&#x70B9;</span>
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createASTElement</span> (<span class="hljs-params">
   tag: string,
@@ -406,7 +404,7 @@
   }
 }
 </code></pre>
-<h4 id="parse"><a name="parse" class="plugin-anchor" href="#parse"><i class="fa fa-link" aria-hidden="true"></i></a>parse</h4>
+<h4 id="parse">parse</h4>
 <pre><code class="lang-javascript"><span class="hljs-comment">/**
  * Convert HTML string to AST.
  */</span>
@@ -548,7 +546,7 @@
     shouldDecodeNewlinesForHref: options.shouldDecodeNewlinesForHref,
     shouldKeepComment: options.comments,
     outputSourceRange: options.outputSourceRange,
-    start (tag, attrs, unary, start, end) {
+    start (tag, attrs, unary, start, end) {<span class="hljs-number">5</span>
       <span class="hljs-comment">// check namespace.</span>
       <span class="hljs-comment">// inherit parent ns if there is one</span>
       <span class="hljs-keyword">const</span> ns = (currentParent &amp;&amp; currentParent.ns) || platformGetTagNamespace(tag)
@@ -628,15 +626,17 @@
           checkRootConstraints(root)
         }
       }
-
+      <span class="hljs-comment">// pdd: &#x5982;&#x679C;&#x4E0D;&#x662F;&#x95ED;&#x5408;&#x6807;&#x7B7E; &#x5F80;&#x5806;&#x6808;&#x91CC;&#x9762;push &#x5E76;&#x4E14;&#x7ED1;&#x5B9A;currentParent</span>
       <span class="hljs-keyword">if</span> (!unary) {
         currentParent = element
         stack.push(element)
       } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// pdd: &#x5230;&#x7ED3;&#x5C3E;&#x7684;&#x65F6;&#x5019;&#x5904;&#x7406;&#x5BF9;&#x8C61;&#x7684;&#x5404;&#x79CD;&#x89E3;&#x6790; &#x8FD9;&#x8FB9;&#x5904;&#x7406;&#x7684;&#x662F;&#x81EA;&#x95ED;&#x5408;&#x6807;&#x7B7E;</span>
         closeElement(element)
       }
     },
-
+    <span class="hljs-comment">// pdd: stack=[] &#x5B58;&#x50A8;&#x4E86;&#x6240;&#x6709;&#x7684;&#x7684;&#x975E;&#x95ED;&#x5408;&#x5143;&#x7D20;</span>
+    <span class="hljs-comment">// pdd: &#x6BCF;&#x8C03;&#x7528;&#x4E00;&#x6B21;end &#x5904;&#x7406;&#x4E00;&#x4E2A;stack&#x4E2D;&#x6700;&#x540E;&#x65B0;&#x7684;&#x5143;&#x7D20; </span>
     end (tag, start, end) {
       <span class="hljs-keyword">const</span> element = stack[stack.length - <span class="hljs-number">1</span>]
       <span class="hljs-comment">// pop stack</span>
@@ -739,14 +739,14 @@
   <span class="hljs-keyword">return</span> root
 }
 </code></pre>
-<h4 id="processpre"><a name="processpre" class="plugin-anchor" href="#processpre"><i class="fa fa-link" aria-hidden="true"></i></a>processPre</h4>
+<h4 id="processpre">processPre</h4>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processPre</span> (<span class="hljs-params">el</span>) </span>{
   <span class="hljs-keyword">if</span> (getAndRemoveAttr(el, <span class="hljs-string">&apos;v-pre&apos;</span>) != <span class="hljs-literal">null</span>) {
     el.pre = <span class="hljs-literal">true</span>
   }
 }
 </code></pre>
-<h4 id="processrawattrs"><a name="processrawattrs" class="plugin-anchor" href="#processrawattrs"><i class="fa fa-link" aria-hidden="true"></i></a>processRawAttrs</h4>
+<h4 id="processrawattrs">processRawAttrs</h4>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processRawAttrs</span> (<span class="hljs-params">el</span>) </span>{
   <span class="hljs-keyword">const</span> list = el.attrsList
   <span class="hljs-keyword">const</span> len = list.length
@@ -768,8 +768,9 @@
   }
 }
 </code></pre>
-<h4 id="processelement"><a name="processelement" class="plugin-anchor" href="#processelement"><i class="fa fa-link" aria-hidden="true"></i></a>processElement</h4>
-<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processElement</span> (<span class="hljs-params">
+<h4 id="processelement">processElement</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">// pdd: &#x89E3;&#x6790;&#x5F00;&#x59CB;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processElement</span> (<span class="hljs-params">
   element: ASTElement,
   options: CompilerOptions
 </span>) </span>{
@@ -794,7 +795,7 @@
   <span class="hljs-keyword">return</span> element
 }
 </code></pre>
-<h4 id="processkey"><a name="processkey" class="plugin-anchor" href="#processkey"><i class="fa fa-link" aria-hidden="true"></i></a>processKey</h4>
+<h4 id="processkey">processKey</h4>
 <pre><code class="lang-javascript">
 <span class="hljs-comment">// pdd: &#x89E3;&#x6790;key  &#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x662F;el&#x4E0A;&#x6302;&#x8F7D;key&#x5C5E;&#x6027;</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processKey</span> (<span class="hljs-params">el</span>) </span>{
@@ -824,7 +825,7 @@
   }
 }
 </code></pre>
-<h4 id="processref"><a name="processref" class="plugin-anchor" href="#processref"><i class="fa fa-link" aria-hidden="true"></i></a>processRef</h4>
+<h4 id="processref">processRef</h4>
 <pre><code class="lang-javascript"><span class="hljs-comment">// pdd: &#x76EE;&#x524D;&#x6765;&#x770B;&#x8FD9;&#x4E2A;process&#x53EA;&#x662F;&#x628A;ref&#x5B57;&#x7B26;&#x4E32;&#x83B7;&#x53D6;&#x5230;&#x4E86; </span>
 <span class="hljs-comment">// pdd: &#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;this.$refs&#x600E;&#x4E48;&#x653E;&#x8FDB;&#x53BB;&#x7684;&#x8FD8;&#x9700;&#x8981;&#x89C2;&#x5BDF;</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processRef</span> (<span class="hljs-params">el</span>) </span>{
@@ -835,7 +836,7 @@
   }
 }
 </code></pre>
-<h4 id="processfor"><a name="processfor" class="plugin-anchor" href="#processfor"><i class="fa fa-link" aria-hidden="true"></i></a>processFor</h4>
+<h4 id="processfor">processFor</h4>
 <pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processFor</span> (<span class="hljs-params">el: ASTElement</span>) </span>{
   <span class="hljs-keyword">let</span> exp
   <span class="hljs-keyword">if</span> ((exp = getAndRemoveAttr(el, <span class="hljs-string">&apos;v-for&apos;</span>))) {
@@ -852,7 +853,7 @@
 
 }
 </code></pre>
-<h4 id="forparseresult"><a name="forparseresult" class="plugin-anchor" href="#forparseresult"><i class="fa fa-link" aria-hidden="true"></i></a>ForParseResult</h4>
+<h4 id="forparseresult">ForParseResult</h4>
 <pre><code class="lang-javascript">
 type ForParseResult = {
   <span class="hljs-keyword">for</span>: string;
@@ -861,7 +862,7 @@ type ForParseResult = {
   iterator2?: string;
 };
 </code></pre>
-<h4 id="parsefor"><a name="parsefor" class="plugin-anchor" href="#parsefor"><i class="fa fa-link" aria-hidden="true"></i></a>parseFor</h4>
+<h4 id="parsefor">parseFor</h4>
 <pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseFor</span> (<span class="hljs-params">exp: string</span>): ?<span class="hljs-title">ForParseResult</span> </span>{
   <span class="hljs-keyword">const</span> inMatch = exp.match(forAliasRE)
   <span class="hljs-keyword">if</span> (!inMatch) <span class="hljs-keyword">return</span>
@@ -889,7 +890,7 @@ type ForParseResult = {
   <span class="hljs-keyword">return</span> res
 }
 </code></pre>
-<h4 id="processif"><a name="processif" class="plugin-anchor" href="#processif"><i class="fa fa-link" aria-hidden="true"></i></a>processIf</h4>
+<h4 id="processif">processIf</h4>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processIf</span> (<span class="hljs-params">el</span>) </span>{
   <span class="hljs-keyword">const</span> exp = getAndRemoveAttr(el, <span class="hljs-string">&apos;v-if&apos;</span>)
   <span class="hljs-keyword">if</span> (exp) {
@@ -909,7 +910,7 @@ type ForParseResult = {
   }
 }
 </code></pre>
-<h4 id="processifconditions"><a name="processifconditions" class="plugin-anchor" href="#processifconditions"><i class="fa fa-link" aria-hidden="true"></i></a>processIfConditions</h4>
+<h4 id="processifconditions">processIfConditions</h4>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processIfConditions</span> (<span class="hljs-params">el, parent</span>) </span>{
   <span class="hljs-keyword">const</span> prev = findPrevElement(parent.children)
   <span class="hljs-keyword">if</span> (prev &amp;&amp; prev.if) {
@@ -926,7 +927,7 @@ type ForParseResult = {
   }
 }
 </code></pre>
-<h4 id="findprevelement"><a name="findprevelement" class="plugin-anchor" href="#findprevelement"><i class="fa fa-link" aria-hidden="true"></i></a>findPrevElement</h4>
+<h4 id="findprevelement">findPrevElement</h4>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findPrevElement</span> (<span class="hljs-params">children: Array&lt;any&gt;</span>): <span class="hljs-title">ASTElement</span> | <span class="hljs-title">void</span> </span>{
   <span class="hljs-keyword">let</span> i = children.length
   <span class="hljs-keyword">while</span> (i--) {
@@ -945,7 +946,7 @@ type ForParseResult = {
   }
 }
 </code></pre>
-<h4 id="addifcondition"><a name="addifcondition" class="plugin-anchor" href="#addifcondition"><i class="fa fa-link" aria-hidden="true"></i></a>addIfCondition</h4>
+<h4 id="addifcondition">addIfCondition</h4>
 <pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addIfCondition</span> (<span class="hljs-params">el: ASTElement, condition: ASTIfCondition</span>) </span>{
   <span class="hljs-keyword">if</span> (!el.ifConditions) {
     el.ifConditions = []
@@ -953,7 +954,7 @@ type ForParseResult = {
   el.ifConditions.push(condition)
 }
 </code></pre>
-<h4 id="processonce"><a name="processonce" class="plugin-anchor" href="#processonce"><i class="fa fa-link" aria-hidden="true"></i></a>processOnce</h4>
+<h4 id="processonce">processOnce</h4>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processOnce</span> (<span class="hljs-params">el</span>) </span>{
   <span class="hljs-keyword">const</span> once = getAndRemoveAttr(el, <span class="hljs-string">&apos;v-once&apos;</span>)
   <span class="hljs-keyword">if</span> (once != <span class="hljs-literal">null</span>) {
@@ -961,7 +962,7 @@ type ForParseResult = {
   }
 }
 </code></pre>
-<h4 id="processslotcontent"><a name="processslotcontent" class="plugin-anchor" href="#processslotcontent"><i class="fa fa-link" aria-hidden="true"></i></a>processSlotContent</h4>
+<h4 id="processslotcontent">processSlotContent</h4>
 <pre><code class="lang-javascript">
 <span class="hljs-comment">// pdd: el.slotScope&#x83B7;&#x53D6;scope&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x79F0;&#x800C;&#x5DF2;</span>
 <span class="hljs-comment">// handle content being passed to a component as slot,</span>
@@ -1081,7 +1082,7 @@ type ForParseResult = {
   }
 }
 </code></pre>
-<h4 id="getslotname"><a name="getslotname" class="plugin-anchor" href="#getslotname"><i class="fa fa-link" aria-hidden="true"></i></a>getSlotName</h4>
+<h4 id="getslotname">getSlotName</h4>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSlotName</span> (<span class="hljs-params">binding</span>) </span>{
   <span class="hljs-keyword">let</span> name = binding.name.replace(slotRE, <span class="hljs-string">&apos;&apos;</span>)
   <span class="hljs-keyword">if</span> (!name) {
@@ -1101,7 +1102,7 @@ type ForParseResult = {
     : { name: <span class="hljs-string">`&quot;<span class="hljs-subst">${name}</span>&quot;`</span>, dynamic: <span class="hljs-literal">false</span> }
 }
 </code></pre>
-<h4 id="processslotoutlet"><a name="processslotoutlet" class="plugin-anchor" href="#processslotoutlet"><i class="fa fa-link" aria-hidden="true"></i></a>processSlotOutlet</h4>
+<h4 id="processslotoutlet">processSlotOutlet</h4>
 <pre><code class="lang-javascript"><span class="hljs-comment">// pdd: slot&#x6807;&#x7B7E;&#x5904;&#x7406;  el.slotName&#x83B7;&#x53D6;</span>
 <span class="hljs-comment">// handle &lt;slot/&gt; outlets</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processSlotOutlet</span> (<span class="hljs-params">el</span>) </span>{
@@ -1118,7 +1119,7 @@ type ForParseResult = {
   }
 }
 </code></pre>
-<h4 id="processcomponent"><a name="processcomponent" class="plugin-anchor" href="#processcomponent"><i class="fa fa-link" aria-hidden="true"></i></a>processComponent</h4>
+<h4 id="processcomponent">processComponent</h4>
 <pre><code class="lang-javascript"><span class="hljs-comment">// pdd: &#x83B7;&#x53D6;is&#x5C5E;&#x6027; &lt;div :is=&quot;custom-component&quot;&gt;&lt;/div&gt;</span>
 <span class="hljs-comment">// pdd: &#x83B7;&#x53D6;inline-template&#x5C5E;&#x6027; &lt;custom-component inline-template&gt;&lt;/custom-component&gt;</span>
 <span class="hljs-comment">// pdd: inline-template&#x8868;&#x793A;&#x5F53;&#x505A;  &#x5F53;&#x505A;&#x6A21;&#x677F;&#x5904;&#x7406; </span>
@@ -1133,7 +1134,7 @@ type ForParseResult = {
   }
 }
 </code></pre>
-<h5 id="processattrs"><a name="processattrs" class="plugin-anchor" href="#processattrs"><i class="fa fa-link" aria-hidden="true"></i></a>processAttrs</h5>
+<h5 id="processattrs">processAttrs</h5>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processAttrs</span> (<span class="hljs-params">el</span>) </span>{
   <span class="hljs-keyword">const</span> list = el.attrsList
   <span class="hljs-keyword">let</span> i, l, name, rawName, value, modifiers, syncGen, isDynamic
@@ -1225,11 +1226,16 @@ type ForParseResult = {
             }
           }
         }
+        <span class="hljs-comment">// pdd: &#x5982;&#x679C;&#x6709;.prop&#x4FEE;&#x9970;&#x7B26;&#x4E14; .prop&#x4FEE;&#x9970;&#x7B26;&#x4E0D;&#x5E94;&#x7231;&#x88AB;props&#x89E3;&#x6790; &#x5E94;&#x8BE5;&#x7528;&#x4F5C;dom&#x7684;&#x5C5E;&#x6027;</span>
+        <span class="hljs-comment">// pdd: &#x9664;&#x4E86;&#x7279;&#x6B8A;&#x6807;&#x7B7E;&#x548C;&#x7279;&#x6B8A;&#x503C;  value+input   selected+option &#x8FD9;&#x4E2A;&#x53EF;&#x4EE5;&#x88AB;&#x89E3;&#x6790;&#x6210;prop</span>
+        <span class="hljs-comment">// pdd: &#x5426;&#x5219;&#x5F80;attra&#x6DFB;&#x52A0; &#x5F53;&#x6210;&#x666E;&#x901A;dom&#x5143;&#x7D20;&#x5904;&#x7406;</span>
         <span class="hljs-keyword">if</span> ((modifiers &amp;&amp; modifiers.prop) || (
           !el.component &amp;&amp; platformMustUseProp(el.tag, el.attrsMap.type, name)
         )) {
+          <span class="hljs-comment">// pdd: props&#x4E0A;&#x6302;&#x5728;&#x5BF9;&#x8C61;&#x96C6;&#x5408;  el.props = [{}]</span>
           addProp(el, name, value, list[i], isDynamic)
         } <span class="hljs-keyword">else</span> {
+          <span class="hljs-comment">// pdd: attrs&#x4E0A;&#x6302;&#x5728;&#x5BF9;&#x8C61;&#x96C6;&#x5408;  el.attrs = [{}]</span>
           addAttr(el, name, value, list[i], isDynamic)
         }
       } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (onRE.test(name)) { <span class="hljs-comment">// v-on</span>
@@ -1252,6 +1258,8 @@ type ForParseResult = {
             isDynamic = <span class="hljs-literal">true</span>
           }
         }
+        <span class="hljs-comment">// pdd: &#x6307;&#x4EE4;&#x5904;&#x7406;</span>
+        <span class="hljs-comment">// pdd: directives&#x4E0A;&#x6302;&#x5728;&#x5BF9;&#x8C61;&#x96C6;&#x5408;  el.directives = [{}]</span>
         addDirective(el, name, rawName, value, arg, isDynamic, modifiers, list[i])
         <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span> &amp;&amp; name === <span class="hljs-string">&apos;model&apos;</span>) {
           checkForAliasModel(el, value)
@@ -1259,6 +1267,7 @@ type ForParseResult = {
       }
     } <span class="hljs-keyword">else</span> {
       <span class="hljs-comment">// literal attribute</span>
+      <span class="hljs-comment">// pdd: src=&quot;{{}}&quot;  &#x6CA1;&#x6709;&#x5728;&#x4E0A;&#x8FF0;&#x5904;&#x7406;&#x4E2D;&#x5339;&#x914D;&#x7684;  &#x68C0;&#x67E5;&#x4E2D;&#x95F4;&#x662F;&#x5426;&#x6709;&#x63D2;&#x503C;&#x8868;&#x8FBE;&#x5F0F; &#x5982;&#x679C;&#x6709;&#x7ED9;&#x51FA;&#x63D0;&#x793A; &#x5DF2;&#x7ECF;&#x79FB;&#x9664;&#x8BE5;&#x529F;&#x80FD; &#x8BF7;&#x4F7F;&#x7528;v-bind&#x6307;&#x4EE4;&#x5B9E;&#x73B0;</span>
       <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
         <span class="hljs-keyword">const</span> res = parseText(value, delimiters)
         <span class="hljs-keyword">if</span> (res) {
@@ -1271,19 +1280,23 @@ type ForParseResult = {
           )
         }
       }
+      <span class="hljs-comment">// pdd: JSON.stringify(value)&#x5904;&#x7406;&#x6587;&#x672C;&#x503C;</span>
       addAttr(el, name, <span class="hljs-built_in">JSON</span>.stringify(value), list[i])
       <span class="hljs-comment">// #6887 firefox doesn&apos;t update muted state if set via attribute</span>
       <span class="hljs-comment">// even immediately after element creation</span>
+      <span class="hljs-comment">// pdd: &#x5355;&#x72EC;&#x5904;&#x7406;firefox video&#x6807;&#x7B7E;&#x4E0B;&#x7684;muted&#x5C5E;&#x6027;  &#x5177;&#x4F53;&#x6CA1;&#x6709;&#x8BD5;&#x9A8C;  &#x5E94;&#x8BE5;&#x662F;&#x8BF4;&#x9ED8;&#x8BA4;&#x64AD;&#x653E;&#x5668;&#x9759;&#x97F3;&#x64AD;&#x653E;&#x7684;&#x65F6;&#x5019;</span>
+      <span class="hljs-comment">// pdd: muted=&quot;muted&quot; chrome&#x662F;&#x9759;&#x97F3;&#x64AD;&#x653E;&#x6548;&#x679C;  &#x4F46;&#x662F;&#x706B;&#x72D0;&#x4E0D;&#x884C;  &#x9700;&#x8981;&#x5F3A;&#x5236;&#x6307;&#x5B9A;muted=true</span>
       <span class="hljs-keyword">if</span> (!el.component &amp;&amp;
           name === <span class="hljs-string">&apos;muted&apos;</span> &amp;&amp;
           platformMustUseProp(el.tag, el.attrsMap.type, name)) {
+        <span class="hljs-comment">// pdd: value=&quot;true&quot; &#x6267;&#x884C;&#x7684;&#x65F6;&#x5019; muted=true</span>
         addProp(el, name, <span class="hljs-string">&apos;true&apos;</span>, list[i])
       }
     }
   }
 }
 </code></pre>
-<h4 id="checkinfor"><a name="checkinfor" class="plugin-anchor" href="#checkinfor"><i class="fa fa-link" aria-hidden="true"></i></a>checkInFor</h4>
+<h4 id="checkinfor">checkInFor</h4>
 <pre><code class="lang-javascript">
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkInFor</span> (<span class="hljs-params">el: ASTElement</span>): <span class="hljs-title">boolean</span> </span>{
   <span class="hljs-keyword">let</span> parent = el
@@ -1296,7 +1309,7 @@ type ForParseResult = {
   <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
 }
 </code></pre>
-<h4 id="parsemodifiers"><a name="parsemodifiers" class="plugin-anchor" href="#parsemodifiers"><i class="fa fa-link" aria-hidden="true"></i></a>parseModifiers</h4>
+<h4 id="parsemodifiers">parseModifiers</h4>
 <pre><code class="lang-javascript">
 <span class="hljs-comment">// pdd: &#x89E3;&#x6790;&#x4FEE;&#x9970;&#x7B26;   v-bind:foo.stop.once.prevent=&quot;&quot; </span>
 <span class="hljs-comment">// pdd: &#x53C2;&#x6570;name=&quot;.stop.once.prevent&quot;</span>
@@ -1310,7 +1323,7 @@ type ForParseResult = {
   }
 }
 </code></pre>
-<h4 id="makeattrsmap"><a name="makeattrsmap" class="plugin-anchor" href="#makeattrsmap"><i class="fa fa-link" aria-hidden="true"></i></a>makeAttrsMap</h4>
+<h4 id="makeattrsmap">makeAttrsMap</h4>
 <pre><code class="lang-javascript">
 <span class="hljs-comment">// pdd: &#x751F;&#x6210;&#x4E00;&#x4E2A;attrs map  &#x5C5E;&#x6027;key&#x4E3A;&#x952E;  &#x503C;&#x4E3A;value&#x7684;map {v-show: &apos;ifShow&apos;, key: &apos;id&apos;}</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeAttrsMap</span> (<span class="hljs-params">attrs: Array&lt;Object&gt;</span>): <span class="hljs-title">Object</span> </span>{
@@ -1327,13 +1340,13 @@ type ForParseResult = {
   <span class="hljs-keyword">return</span> map
 }
 </code></pre>
-<h4 id="istexttag"><a name="istexttag" class="plugin-anchor" href="#istexttag"><i class="fa fa-link" aria-hidden="true"></i></a>isTextTag</h4>
+<h4 id="istexttag">isTextTag</h4>
 <pre><code class="lang-javascript"><span class="hljs-comment">// for script (e.g. type=&quot;x/template&quot;) or style, do not decode content</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isTextTag</span> (<span class="hljs-params">el</span>): <span class="hljs-title">boolean</span> </span>{
   <span class="hljs-keyword">return</span> el.tag === <span class="hljs-string">&apos;script&apos;</span> || el.tag === <span class="hljs-string">&apos;style&apos;</span>
 }
 </code></pre>
-<h4 id="isforbiddentag"><a name="isforbiddentag" class="plugin-anchor" href="#isforbiddentag"><i class="fa fa-link" aria-hidden="true"></i></a>isForbiddenTag</h4>
+<h4 id="isforbiddentag">isForbiddenTag</h4>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isForbiddenTag</span> (<span class="hljs-params">el</span>): <span class="hljs-title">boolean</span> </span>{
   <span class="hljs-keyword">return</span> (
     el.tag === <span class="hljs-string">&apos;style&apos;</span> ||
@@ -1344,7 +1357,7 @@ type ForParseResult = {
   )
 }
 </code></pre>
-<h4 id="guardiesvgbug"><a name="guardiesvgbug" class="plugin-anchor" href="#guardiesvgbug"><i class="fa fa-link" aria-hidden="true"></i></a>guardIESVGBug</h4>
+<h4 id="guardiesvgbug">guardIESVGBug</h4>
 <pre><code class="lang-javascript">
 <span class="hljs-keyword">const</span> ieNSBug = <span class="hljs-regexp">/^xmlns:NS\d+/</span>
 <span class="hljs-keyword">const</span> ieNSPrefix = <span class="hljs-regexp">/^NS\d+:/</span>
@@ -1362,8 +1375,10 @@ type ForParseResult = {
   <span class="hljs-keyword">return</span> res
 }
 </code></pre>
-<h4 id="checkforaliasmodel"><a name="checkforaliasmodel" class="plugin-anchor" href="#checkforaliasmodel"><i class="fa fa-link" aria-hidden="true"></i></a>checkForAliasModel</h4>
-<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkForAliasModel</span> (<span class="hljs-params">el, value</span>) </span>{
+<h4 id="checkforaliasmodel">checkForAliasModel</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">// pdd: &#x68C0;&#x67E5;v-for&#x4E2D;&#x7684;v-model&#x60C5;&#x51B5; &#x5982;&#x679C;&lt;input v-for=&quot;item in list&quot; v-model=&quot;item&quot;/&gt;  &#x5982;&#x679C;list = [1, 2, 3] &#x5219;b-model&#x4F1A;&#x5931;&#x6548;</span>
+<span class="hljs-comment">// pdd: &#x7ED9;&#x7528;&#x6237;&#x4E00;&#x4E2A;&#x63D0;&#x793A; &#x53EF;&#x4EE5;&#x6539;&#x4E3A;list = [{xx: 1}] v-model=&quot;item.xx&quot;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkForAliasModel</span> (<span class="hljs-params">el, value</span>) </span>{
   <span class="hljs-keyword">let</span> _el = el
   <span class="hljs-keyword">while</span> (_el) {
     <span class="hljs-keyword">if</span> (_el.for &amp;&amp; _el.alias === value) {
@@ -1423,7 +1438,7 @@ type ForParseResult = {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"compiler-parser-index","level":"1.4.2","depth":2,"next":{"title":"compiler-directives-bind","level":"1.4.3","depth":2,"path":"vue-release2.6.9/compiler-directives-bind.md","ref":"vue-release2.6.9/compiler-directives-bind.md","articles":[]},"previous":{"title":"compiler-helpers","level":"1.4.1","depth":2,"path":"vue-release2.6.9/compiler-helpers.md","ref":"vue-release2.6.9/compiler-helpers.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","github","edit-link","anchors","copy-code-button","github-buttons","expandable-chapters-small","insert-logo","custom-favicon"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"custom-favicon":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/didi/mpx/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"insert-logo":{"style":"background: none; width: 200px","url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png"},"expandable-chapters":{}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"vue-release2.6.9/compiler-parser-index.md","mtime":"2019-07-31T12:16:54.032Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-02T03:41:52.414Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"compiler-parser-index","level":"1.4.2","depth":2,"next":{"title":"compiler-directives-bind","level":"1.4.3","depth":2,"path":"vue-release2.6.9/compiler-directives-bind.md","ref":"vue-release2.6.9/compiler-directives-bind.md","articles":[]},"previous":{"title":"compiler-helpers","level":"1.4.1","depth":2,"path":"vue-release2.6.9/compiler-helpers.md","ref":"vue-release2.6.9/compiler-helpers.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/didi/mpx/tree/master/docs","label":"完善文档"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png","style":"background: none; width: 200px"}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"vue-release2.6.9/compiler-parser-index.md","mtime":"2019-08-07T06:37:51.870Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-07T07:15:29.501Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1431,34 +1446,6 @@ type ForParseResult = {
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

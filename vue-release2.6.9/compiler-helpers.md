@@ -36,7 +36,7 @@ export function pluckModuleFunction<F: Function> (
 export function addProp (el: ASTElement, name: string, value: string, range?: Range, dynamic?: boolean) {
   (el.props || (el.props = [])).push(rangeSetItem({ name, value, dynamic }, range))
   el.plain = false
-  // (el.props || (el.props = []))
+  // pdd: (el.props || (el.props = []))
   // pdd: props非空判断或初始化
 }
 ```
@@ -109,6 +109,7 @@ function prependModifierMarker (symbol: string, name: string, dynamic?: boolean)
 ```javascript
 
 // pdd: 添加handler
+// pdd: 挂在后的样子  el.events = {xx: [handler1, handler2]}
 export function addHandler (
   el: ASTElement,
   name: string,
@@ -185,6 +186,9 @@ export function addHandler (
 
   const handlers = events[name]
   /* istanbul ignore if */
+  // pdd: 如果本身就是数组类型 则前置或者追加handle
+  // pdd: 如果存在handle且是对象 则转化成数组  且追加handle
+  // pdd: 还未有handle 直接赋值 
   if (Array.isArray(handlers)) {
     important ? handlers.unshift(newHandler) : handlers.push(newHandler)
   } else if (handlers) {

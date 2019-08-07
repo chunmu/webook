@@ -223,7 +223,7 @@ export function parse (
     shouldDecodeNewlinesForHref: options.shouldDecodeNewlinesForHref,
     shouldKeepComment: options.comments,
     outputSourceRange: options.outputSourceRange,
-    start (tag, attrs, unary, start, end) {
+    start (tag, attrs, unary, start, end) {5
       // check namespace.
       // inherit parent ns if there is one
       const ns = (currentParent && currentParent.ns) || platformGetTagNamespace(tag)
@@ -303,15 +303,17 @@ export function parse (
           checkRootConstraints(root)
         }
       }
-
+      // pdd: 如果不是闭合标签 往堆栈里面push 并且绑定currentParent
       if (!unary) {
         currentParent = element
         stack.push(element)
       } else {
+        // pdd: 到结尾的时候处理对象的各种解析 这边处理的是自闭合标签
         closeElement(element)
       }
     },
-
+    // pdd: stack=[] 存储了所有的的非闭合元素
+    // pdd: 每调用一次end 处理一个stack中最后新的元素 
     end (tag, start, end) {
       const element = stack[stack.length - 1]
       // pop stack
@@ -454,6 +456,7 @@ function processRawAttrs (el) {
 #### processElement
 
 ```javascript
+// pdd: 解析开始
 export function processElement (
   element: ASTElement,
   options: CompilerOptions
@@ -950,11 +953,16 @@ function processAttrs (el) {
             }
           }
         }
+        // pdd: 如果有.prop修饰符且 .prop修饰符不应爱被props解析 应该用作dom的属性
+        // pdd: 除了特殊标签和特殊值  value+input   selected+option 这个可以被解析成prop
+        // pdd: 否则往attra添加 当成普通dom元素处理
         if ((modifiers && modifiers.prop) || (
           !el.component && platformMustUseProp(el.tag, el.attrsMap.type, name)
         )) {
+          // pdd: props上挂在对象集合  el.props = [{}]
           addProp(el, name, value, list[i], isDynamic)
         } else {
+          // pdd: attrs上挂在对象集合  el.attrs = [{}]
           addAttr(el, name, value, list[i], isDynamic)
         }
       } else if (onRE.test(name)) { // v-on
@@ -977,6 +985,8 @@ function processAttrs (el) {
             isDynamic = true
           }
         }
+        // pdd: 指令处理
+        // pdd: directives上挂在对象集合  el.directives = [{}]
         addDirective(el, name, rawName, value, arg, isDynamic, modifiers, list[i])
         if (process.env.NODE_ENV !== 'production' && name === 'model') {
           checkForAliasModel(el, value)
@@ -984,6 +994,7 @@ function processAttrs (el) {
       }
     } else {
       // literal attribute
+      // pdd: src="{{}}"  没有在上述处理中匹配的  检查中间是否有插值表达式 如果有给出提示 已经移除该功能 请使用v-bind指令实现
       if (process.env.NODE_ENV !== 'production') {
         const res = parseText(value, delimiters)
         if (res) {
@@ -996,12 +1007,16 @@ function processAttrs (el) {
           )
         }
       }
+      // pdd: JSON.stringify(value)处理文本值
       addAttr(el, name, JSON.stringify(value), list[i])
       // #6887 firefox doesn't update muted state if set via attribute
       // even immediately after element creation
+      // pdd: 单独处理firefox video标签下的muted属性  具体没有试验  应该是说默认播放器静音播放的时候
+      // pdd: muted="muted" chrome是静音播放效果  但是火狐不行  需要强制指定muted=true
       if (!el.component &&
           name === 'muted' &&
           platformMustUseProp(el.tag, el.attrsMap.type, name)) {
+        // pdd: value="true" 执行的时候 muted=true
         addProp(el, name, 'true', list[i])
       }
     }
@@ -1110,6 +1125,8 @@ function guardIESVGBug (attrs) {
 
 
 ```javascript
+// pdd: 检查v-for中的v-model情况 如果<input v-for="item in list" v-model="item"/>  如果list = [1, 2, 3] 则b-model会失效
+// pdd: 给用户一个提示 可以改为list = [{xx: 1}] v-model="item.xx"
 function checkForAliasModel (el, value) {
   let _el = el
   while (_el) {

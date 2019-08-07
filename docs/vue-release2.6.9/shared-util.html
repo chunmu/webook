@@ -1,0 +1,807 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>shared-util · mpx文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="滴滴出行webapp团队">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="shared-constants.html" />
+    
+    
+    <link rel="prev" href="compiler-directives-on.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../how-to-use-jira.html">
+            
+                <a href="../how-to-use-jira.html">
+            
+                    
+                    关于jira使用记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    javascript杂记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../javascript/apply-call-bind.html">
+            
+                <a href="../javascript/apply-call-bind.html">
+            
+                    
+                    apply&call&bind解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../javascript/base16-base32-base64.html">
+            
+                <a href="../javascript/base16-base32-base64.html">
+            
+                    
+                    base16&base32&base64
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    vue-release2.6.9
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="compiler-helpers.html">
+            
+                <a href="compiler-helpers.html">
+            
+                    
+                    compiler-helpers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="compiler-parser-index.html">
+            
+                <a href="compiler-parser-index.html">
+            
+                    
+                    compiler-parser-index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="compiler-directives-bind.html">
+            
+                <a href="compiler-directives-bind.html">
+            
+                    
+                    compiler-directives-bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="compiler-directives-index.html">
+            
+                <a href="compiler-directives-index.html">
+            
+                    
+                    compiler-directives-index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="compiler-directives-model.html">
+            
+                <a href="compiler-directives-model.html">
+            
+                    
+                    compiler-directives-model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="compiler-directives-on.html">
+            
+                <a href="compiler-directives-on.html">
+            
+                    
+                    compiler-directives-on
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.7" data-path="shared-util.html">
+            
+                <a href="shared-util.html">
+            
+                    
+                    shared-util
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="shared-constants.html">
+            
+                <a href="shared-constants.html">
+            
+                    
+                    shared-constants
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >shared-util</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h4 id="emptyobject">emptyObject</h4>
+<pre><code class="lang-javascript">
+<span class="hljs-comment">// pdd: &#x5173;&#x4E8E;&#x51BB;&#x7ED3; &#x4E0D;&#x53EF;&#x6269;&#x5C55;&#x7B49;&#x8BE6;&#x7EC6;&#x89E3;&#x91CA; &#x53EF;&#x4EE5;&#x53C2;&#x8003;https://segmentfault.com/a/1190000003894119</span>
+<span class="hljs-comment">// pdd: &#x5BF9;&#x8C61;&#x4E0D;&#x53EF;&#x6269;&#x5C55;&#x4E0E;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x4E0D;&#x53EF;&#x914D;&#x7F6E;&#x662F;&#x6709;&#x533A;&#x522B;&#x7684;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> emptyObject = <span class="hljs-built_in">Object</span>.freeze({})
+</code></pre>
+<h4 id="isundef">isUndef</h4>
+<pre><code class="lang-javascript">
+// These helpers produce better VM code in JS engines due to their
+// explicitness and function inlining.
+export function isUndef (v: any): boolean %checks {
+  return v === undefined || v === null
+}
+</code></pre>
+<h4 id="isdef">isDef</h4>
+<pre><code class="lang-javascript">
+export function isDef (v: any): boolean %checks {
+  return v !== undefined &amp;&amp; v !== null
+}
+</code></pre>
+<h4 id="istrue">isTrue</h4>
+<pre><code class="lang-javascript">
+export function isTrue (v: any): boolean %checks {
+  return v === true
+}
+</code></pre>
+<h4 id="isfalse">isFalse</h4>
+<pre><code class="lang-javascript">
+export function isFalse (v: any): boolean %checks {
+  return v === false
+}
+</code></pre>
+<h4 id="isprimitive">isPrimitive</h4>
+<pre><code class="lang-javascript">// pdd&#xFF1A; &#x5224;&#x65AD;&#x662F;&#x4E0D;&#x662F;&#x57FA;&#x7840;&#x6570;&#x636E;&#x7C7B;&#x578B;
+/**
+ * Check if value is primitive. 
+ */
+export function isPrimitive (value: any): boolean %checks {
+  return (
+    typeof value === &apos;string&apos; ||
+    typeof value === &apos;number&apos; ||
+    // $flow-disable-line
+    typeof value === &apos;symbol&apos; ||
+    typeof value === &apos;boolean&apos;
+  )
+}
+</code></pre>
+<h4 id="isobject">isObject</h4>
+<pre><code class="lang-javascript">/**
+ * Quick object check - this is primarily used to tell
+ * Objects from primitive values when we know the value
+ * is a JSON-compliant type.
+ */
+export function isObject (obj: mixed): boolean %checks {
+  return obj !== null &amp;&amp; typeof obj === &apos;object&apos;
+}
+</code></pre>
+<h4 id="torawtype">toRawType</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Get the raw type string of a value, e.g., [object Object].
+ */</span>
+<span class="hljs-keyword">const</span> _toString = <span class="hljs-built_in">Object</span>.prototype.toString
+
+<span class="hljs-comment">// pdd: Function Object Boolean Number</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toRawType</span> (<span class="hljs-params">value: any</span>): <span class="hljs-title">string</span> </span>{
+  <span class="hljs-comment">// pdd: [Object Object] [Object Function] [Object Boolean] [Object Number]</span>
+  <span class="hljs-keyword">return</span> _toString.call(value).slice(<span class="hljs-number">8</span>, <span class="hljs-number">-1</span>)
+}
+</code></pre>
+<h4 id="isplainobject">isPlainObject</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">// pdd: &#x662F;&#x5426;&#x662F;&#x771F;&#x6B63;&#x7684;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;</span>
+<span class="hljs-comment">/**
+ * Strict object type check. Only returns true
+ * for plain JavaScript objects.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isPlainObject</span> (<span class="hljs-params">obj: any</span>): <span class="hljs-title">boolean</span> </span>{ 
+  <span class="hljs-keyword">return</span> _toString.call(obj) === <span class="hljs-string">&apos;[object Object]&apos;</span>
+}
+</code></pre>
+<h4 id="isregexp">isRegExp</h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isRegExp</span> (<span class="hljs-params">v: any</span>): <span class="hljs-title">boolean</span> </span>{
+  <span class="hljs-keyword">return</span> _toString.call(v) === <span class="hljs-string">&apos;[object RegExp]&apos;</span>
+}
+</code></pre>
+<h4 id="isvalidarrayindex">isValidArrayIndex</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Check if val is a valid array index.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isValidArrayIndex</span> (<span class="hljs-params">val: any</span>): <span class="hljs-title">boolean</span> </span>{
+  <span class="hljs-keyword">const</span> n = <span class="hljs-built_in">parseFloat</span>(<span class="hljs-built_in">String</span>(val))
+  <span class="hljs-keyword">return</span> n &gt;= <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-built_in">Math</span>.floor(n) === n &amp;&amp; <span class="hljs-built_in">isFinite</span>(val)
+}
+</code></pre>
+<h4 id="ispromise">isPromise</h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isPromise</span> (<span class="hljs-params">val: any</span>): <span class="hljs-title">boolean</span> </span>{
+  <span class="hljs-keyword">return</span> (
+    isDef(val) &amp;&amp;
+    <span class="hljs-keyword">typeof</span> val.then === <span class="hljs-string">&apos;function&apos;</span> &amp;&amp;
+    <span class="hljs-keyword">typeof</span> val.catch === <span class="hljs-string">&apos;function&apos;</span>
+  )
+}
+</code></pre>
+<h4 id="tostring">toString</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Convert a value to a string that is actually rendered.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toString</span> (<span class="hljs-params">val: any</span>): <span class="hljs-title">string</span> </span>{
+  <span class="hljs-keyword">return</span> val == <span class="hljs-literal">null</span>
+    ? <span class="hljs-string">&apos;&apos;</span>
+    : <span class="hljs-built_in">Array</span>.isArray(val) || (isPlainObject(val) &amp;&amp; val.toString === _toString)
+      ? <span class="hljs-built_in">JSON</span>.stringify(val, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>)
+      : <span class="hljs-built_in">String</span>(val)
+}
+</code></pre>
+<h4 id="tonumber">toNumber</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Convert an input value to a number for persistence.
+ * If the conversion fails, return original string.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toNumber</span> (<span class="hljs-params">val: string</span>): <span class="hljs-title">number</span> | <span class="hljs-title">string</span> </span>{
+  <span class="hljs-keyword">const</span> n = <span class="hljs-built_in">parseFloat</span>(val)
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">isNaN</span>(n) ? val : n
+}
+</code></pre>
+<h4 id="makemap">makeMap</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Make a map and return a function for checking if a key
+ * is in that map.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeMap</span> (<span class="hljs-params">
+  str: string,
+  expectsLowerCase?: boolean
+</span>): (<span class="hljs-params">key: string</span>) =&gt; <span class="hljs-title">true</span> | <span class="hljs-title">void</span> </span>{
+  <span class="hljs-keyword">const</span> map = <span class="hljs-built_in">Object</span>.create(<span class="hljs-literal">null</span>)
+  <span class="hljs-keyword">const</span> list: <span class="hljs-built_in">Array</span>&lt;string&gt; = str.split(<span class="hljs-string">&apos;,&apos;</span>)
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; list.length; i++) {
+    map[list[i]] = <span class="hljs-literal">true</span>
+  }
+  <span class="hljs-keyword">return</span> expectsLowerCase
+    ? val =&gt; map[val.toLowerCase()]
+    : val =&gt; map[val]
+}
+</code></pre>
+<h4 id="isbuiltintag">isBuiltInTag</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Check if a tag is a built-in tag.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> isBuiltInTag = makeMap(<span class="hljs-string">&apos;slot,component&apos;</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<h4 id="isreservedattribute">isReservedAttribute</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Check if an attribute is a reserved attribute.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> isReservedAttribute = makeMap(<span class="hljs-string">&apos;key,ref,slot,slot-scope,is&apos;</span>)
+</code></pre>
+<h4 id="remove">remove</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Remove an item from an array.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span> (<span class="hljs-params">arr: Array&lt;any&gt;, item: any</span>): <span class="hljs-title">Array</span>&lt;<span class="hljs-title">any</span>&gt; | <span class="hljs-title">void</span> </span>{
+  <span class="hljs-keyword">if</span> (arr.length) {
+    <span class="hljs-keyword">const</span> index = arr.indexOf(item)
+    <span class="hljs-keyword">if</span> (index &gt; <span class="hljs-number">-1</span>) {
+      <span class="hljs-keyword">return</span> arr.splice(index, <span class="hljs-number">1</span>)
+    }
+  }
+}
+</code></pre>
+<h4 id="hasown">hasOwn</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Check whether an object has the property.
+ */</span>
+<span class="hljs-keyword">const</span> hasOwnProperty = <span class="hljs-built_in">Object</span>.prototype.hasOwnProperty
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hasOwn</span> (<span class="hljs-params">obj: Object | Array&lt;*&gt;, key: string</span>): <span class="hljs-title">boolean</span> </span>{
+  <span class="hljs-keyword">return</span> hasOwnProperty.call(obj, key)
+}
+</code></pre>
+<h4 id="cached">cached</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Create a cached version of a pure function.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cached</span>&lt;<span class="hljs-title">F</span>: <span class="hljs-title">Function</span>&gt; (<span class="hljs-params">fn: F</span>): <span class="hljs-title">F</span> </span>{
+  <span class="hljs-keyword">const</span> cache = <span class="hljs-built_in">Object</span>.create(<span class="hljs-literal">null</span>)
+  <span class="hljs-keyword">return</span> (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cachedFn</span> (<span class="hljs-params">str: string</span>) </span>{
+    <span class="hljs-keyword">const</span> hit = cache[str]
+    <span class="hljs-keyword">return</span> hit || (cache[str] = fn(str))
+  }: any)
+}
+</code></pre>
+<h4 id="camelize">camelize</h4>
+<pre><code class="lang-javascript">
+<span class="hljs-comment">// pdd: &#x628A;&#x4E2D;&#x5212;&#x7EBF;string&#x8F6C;&#x6210;&#x9A7C;&#x5CF0;string</span>
+<span class="hljs-comment">// pdd: xx-yy = xxYy</span>
+<span class="hljs-comment">/**
+ * Camelize a hyphen-delimited string.
+ */</span>
+<span class="hljs-keyword">const</span> camelizeRE = <span class="hljs-regexp">/-(\w)/g</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> camelize = cached((str: string): string =&gt; {
+  <span class="hljs-keyword">return</span> str.replace(camelizeRE, (_, c) =&gt; {
+    <span class="hljs-comment">// pdd: _ = &apos;-y&apos;</span>
+    <span class="hljs-comment">// pdd: c = &apos;y&apos;</span>
+    <span class="hljs-keyword">return</span> c ? c.toUpperCase() : <span class="hljs-string">&apos;&apos;</span>
+  })
+})
+</code></pre>
+<h4 id="capitalize">capitalize</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Capitalize a string.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> capitalize = cached((str: string): string =&gt; {
+  <span class="hljs-keyword">return</span> str.charAt(<span class="hljs-number">0</span>).toUpperCase() + str.slice(<span class="hljs-number">1</span>)
+})
+</code></pre>
+<h4 id="hyphenate">hyphenate</h4>
+<pre><code class="lang-javascript">
+<span class="hljs-comment">// pdd: &#x5C06;&#x9A7C;&#x5CF0;&#x8F6C;&#x6210;&#x4E2D;&#x5212;&#x7EBF;&#x5F62;&#x5F0F;string</span>
+<span class="hljs-comment">// pdd: xxYy =&gt; xx-yy </span>
+<span class="hljs-comment">/**
+ * Hyphenate a camelCase string.
+ */</span>
+<span class="hljs-keyword">const</span> hyphenateRE = <span class="hljs-regexp">/\B([A-Z])/g</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> hyphenate = cached((str: string): string =&gt; {
+  <span class="hljs-keyword">return</span> str.replace(hyphenateRE, <span class="hljs-string">&apos;-$1&apos;</span>).toLowerCase()
+})
+</code></pre>
+<h4 id="polyfillbind">polyfillBind</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Simple bind polyfill for environments that do not support it,
+ * e.g., PhantomJS 1.x. Technically, we don&apos;t need this anymore
+ * since native bind is now performant enough in most browsers.
+ * But removing it would mean breaking code that was able to run in
+ * PhantomJS 1.x, so this must be kept for backward compatibility.
+ */</span>
+
+<span class="hljs-comment">/* istanbul ignore next */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">polyfillBind</span> (<span class="hljs-params">fn: Function, ctx: Object</span>): <span class="hljs-title">Function</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">boundFn</span> (<span class="hljs-params">a</span>) </span>{
+    <span class="hljs-keyword">const</span> l = <span class="hljs-built_in">arguments</span>.length
+    <span class="hljs-keyword">return</span> l
+      ? l &gt; <span class="hljs-number">1</span>
+        ? fn.apply(ctx, <span class="hljs-built_in">arguments</span>)
+        : fn.call(ctx, a)
+      : fn.call(ctx)
+  }
+
+  boundFn._length = fn.length
+  <span class="hljs-keyword">return</span> boundFn
+}
+</code></pre>
+<h4 id="nativebind">nativeBind</h4>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">nativeBind</span> (<span class="hljs-params">fn: Function, ctx: Object</span>): <span class="hljs-title">Function</span> </span>{
+  <span class="hljs-keyword">return</span> fn.bind(ctx)
+}
+</code></pre>
+<h4 id="nativebind">nativeBind</h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> bind = <span class="hljs-built_in">Function</span>.prototype.bind
+  ? nativeBind
+  : polyfillBind
+</code></pre>
+<h4 id="toarray">toArray</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Convert an Array-like object to a real Array.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toArray</span> (<span class="hljs-params">list: any, start?: number</span>): <span class="hljs-title">Array</span>&lt;<span class="hljs-title">any</span>&gt; </span>{
+  start = start || <span class="hljs-number">0</span>
+  <span class="hljs-keyword">let</span> i = list.length - start
+  <span class="hljs-keyword">const</span> ret: <span class="hljs-built_in">Array</span>&lt;any&gt; = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(i)
+  <span class="hljs-keyword">while</span> (i--) {
+    ret[i] = list[i + start]
+  }
+  <span class="hljs-keyword">return</span> ret
+}
+</code></pre>
+<h4 id="extend">extend</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Mix properties into target object.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">extend</span> (<span class="hljs-params">to: Object, _from: ?Object</span>): <span class="hljs-title">Object</span> </span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> key <span class="hljs-keyword">in</span> _from) {
+    to[key] = _from[key]
+  }
+  <span class="hljs-keyword">return</span> to
+}
+</code></pre>
+<h4 id="toobject">toObject</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Merge an Array of Objects into a single Object.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toObject</span> (<span class="hljs-params">arr: Array&lt;any&gt;</span>): <span class="hljs-title">Object</span> </span>{
+  <span class="hljs-keyword">const</span> res = {}
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) {
+    <span class="hljs-keyword">if</span> (arr[i]) {
+      extend(res, arr[i])
+    }
+  }
+  <span class="hljs-keyword">return</span> res
+}
+</code></pre>
+<h4 id="noop">noop</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/* eslint-disable no-unused-vars */</span>
+
+<span class="hljs-comment">/**
+ * Perform no operation.
+ * Stubbing args to make Flow happy without leaving useless transpiled code
+ * with ...rest (https://flow.org/blog/2017/05/07/Strict-Function-Call-Arity/).
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">noop</span> (<span class="hljs-params">a?: any, b?: any, c?: any</span>) </span>{}
+</code></pre>
+<h4 id="no">no</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Always return false.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> no = (a?: any, b?: any, c?: any) =&gt; <span class="hljs-literal">false</span>
+</code></pre>
+<h4 id="identity">identity</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Return the same value.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> identity = (_: any) =&gt; _
+</code></pre>
+<h4 id="genstatickeys">genStaticKeys</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Generate a string containing static keys from compiler modules.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">genStaticKeys</span> (<span class="hljs-params">modules: Array&lt;ModuleOptions&gt;</span>): <span class="hljs-title">string</span> </span>{
+  <span class="hljs-keyword">return</span> modules.reduce((keys, m) =&gt; {
+    <span class="hljs-keyword">return</span> keys.concat(m.staticKeys || [])
+  }, []).join(<span class="hljs-string">&apos;,&apos;</span>)
+}
+</code></pre>
+<h4 id="looseequal">looseEqual</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Check if two values are loosely equal - that is,
+ * if they are plain objects, do they have the same shape?
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">looseEqual</span> (<span class="hljs-params">a: any, b: any</span>): <span class="hljs-title">boolean</span> </span>{
+  <span class="hljs-keyword">if</span> (a === b) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+  <span class="hljs-keyword">const</span> isObjectA = isObject(a)
+  <span class="hljs-keyword">const</span> isObjectB = isObject(b)
+  <span class="hljs-keyword">if</span> (isObjectA &amp;&amp; isObjectB) {
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">const</span> isArrayA = <span class="hljs-built_in">Array</span>.isArray(a)
+      <span class="hljs-keyword">const</span> isArrayB = <span class="hljs-built_in">Array</span>.isArray(b)
+      <span class="hljs-keyword">if</span> (isArrayA &amp;&amp; isArrayB) {
+        <span class="hljs-keyword">return</span> a.length === b.length &amp;&amp; a.every((e, i) =&gt; {
+          <span class="hljs-keyword">return</span> looseEqual(e, b[i])
+        })
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (a <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Date</span> &amp;&amp; b <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Date</span>) {
+        <span class="hljs-keyword">return</span> a.getTime() === b.getTime()
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!isArrayA &amp;&amp; !isArrayB) {
+        <span class="hljs-keyword">const</span> keysA = <span class="hljs-built_in">Object</span>.keys(a)
+        <span class="hljs-keyword">const</span> keysB = <span class="hljs-built_in">Object</span>.keys(b)
+        <span class="hljs-keyword">return</span> keysA.length === keysB.length &amp;&amp; keysA.every(key =&gt; {
+          <span class="hljs-keyword">return</span> looseEqual(a[key], b[key])
+        })
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">/* istanbul ignore next */</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+      }
+    } <span class="hljs-keyword">catch</span> (e) {
+      <span class="hljs-comment">/* istanbul ignore next */</span>
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    }
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!isObjectA &amp;&amp; !isObjectB) {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">String</span>(a) === <span class="hljs-built_in">String</span>(b)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+  }
+}
+</code></pre>
+<h4 id="looseindexof">looseIndexOf</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Return the first index at which a loosely equal value can be
+ * found in the array (if value is a plain object, the array must
+ * contain an object of the same shape), or -1 if it is not present.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">looseIndexOf</span> (<span class="hljs-params">arr: Array&lt;mixed&gt;, val: mixed</span>): <span class="hljs-title">number</span> </span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) {
+    <span class="hljs-keyword">if</span> (looseEqual(arr[i], val)) <span class="hljs-keyword">return</span> i
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
+}
+</code></pre>
+<h4 id="once">once</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Ensure a function is called only once. //pdd: once&#x7684;&#x5B9E;&#x73B0;
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">once</span> (<span class="hljs-params">fn: Function</span>): <span class="hljs-title">Function</span> </span>{
+  <span class="hljs-keyword">let</span> called = <span class="hljs-literal">false</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (!called) {
+      called = <span class="hljs-literal">true</span>
+      fn.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">arguments</span>)
+    }
+  }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="compiler-directives-on.html" class="navigation navigation-prev " aria-label="Previous page: compiler-directives-on">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="shared-constants.html" class="navigation navigation-next " aria-label="Next page: shared-constants">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"shared-util","level":"1.4.7","depth":2,"next":{"title":"shared-constants","level":"1.4.8","depth":2,"path":"vue-release2.6.9/shared-constants.md","ref":"vue-release2.6.9/shared-constants.md","articles":[]},"previous":{"title":"compiler-directives-on","level":"1.4.6","depth":2,"path":"vue-release2.6.9/compiler-directives-on.md","ref":"vue-release2.6.9/compiler-directives-on.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/didi/mpx/tree/master/docs","label":"完善文档"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png","style":"background: none; width: 200px"}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"vue-release2.6.9/shared-util.md","mtime":"2019-08-07T07:03:28.003Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-07T07:15:29.501Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

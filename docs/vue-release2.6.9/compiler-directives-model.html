@@ -17,22 +17,6 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
-                
-            
-                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -65,7 +49,6 @@
         
     
     
-    
     <meta name="HandheldFriendly" content="true"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -79,17 +62,6 @@
     
     <link rel="prev" href="compiler-directives-index.html" />
     
-
-    <style>
-    @media only screen and (max-width: 640px) {
-        .book-header .hidden-mobile {
-            display: none;
-        }
-    }
-    </style>
-    <script>
-        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]};
-    </script>
 
     </head>
     <body>
@@ -280,6 +252,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.7" data-path="shared-util.html">
+            
+                <a href="shared-util.html">
+            
+                    
+                    shared-util
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="shared-constants.html">
+            
+                <a href="shared-constants.html">
+            
+                    
+                    shared-constants
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -330,7 +328,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h4 id="gencomponentmodel"><a name="gencomponentmodel" class="plugin-anchor" href="#gencomponentmodel"><i class="fa fa-link" aria-hidden="true"></i></a>genComponentModel</h4>
+                                <h4 id="gencomponentmodel">genComponentModel</h4>
 <pre><code class="lang-javascript">
 <span class="hljs-comment">/**
  * Cross-platform code generation for component v-model
@@ -362,7 +360,7 @@
   }
 }
 </code></pre>
-<h4 id="genassignmentcode"><a name="genassignmentcode" class="plugin-anchor" href="#genassignmentcode"><i class="fa fa-link" aria-hidden="true"></i></a>genAssignmentCode</h4>
+<h4 id="genassignmentcode">genAssignmentCode</h4>
 <pre><code class="lang-javascript">
 <span class="hljs-comment">/**
  * Cross-platform codegen helper for generating v-model value assignment code.
@@ -388,7 +386,7 @@
   }
 }
 </code></pre>
-<h4 id="modelparseresult"><a name="modelparseresult" class="plugin-anchor" href="#modelparseresult"><i class="fa fa-link" aria-hidden="true"></i></a>ModelParseResult</h4>
+<h4 id="modelparseresult">ModelParseResult</h4>
 <pre><code class="lang-javascript">
 <span class="hljs-comment">/**
  * Parse a v-model expression into a base path and a final key segment.
@@ -412,7 +410,7 @@ type ModelParseResult = {
   key: string | <span class="hljs-literal">null</span>
 }
 </code></pre>
-<h4 id="parsemodel"><a name="parsemodel" class="plugin-anchor" href="#parsemodel"><i class="fa fa-link" aria-hidden="true"></i></a>parseModel</h4>
+<h4 id="parsemodel">parseModel</h4>
 <pre><code class="lang-javascript">
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseModel</span> (<span class="hljs-params">val: string</span>): <span class="hljs-title">ModelParseResult</span> </span>{
   <span class="hljs-comment">// Fix https://github.com/vuejs/vue/pull/7730</span>
@@ -454,24 +452,24 @@ type ModelParseResult = {
   }
 }
 </code></pre>
-<h4 id="next"><a name="next" class="plugin-anchor" href="#next"><i class="fa fa-link" aria-hidden="true"></i></a>next</h4>
+<h4 id="next">next</h4>
 <pre><code class="lang-javascript">
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">next</span> (<span class="hljs-params"></span>): <span class="hljs-title">number</span> </span>{
   <span class="hljs-keyword">return</span> str.charCodeAt(++index)
 }
 </code></pre>
-<h4 id="eof"><a name="eof" class="plugin-anchor" href="#eof"><i class="fa fa-link" aria-hidden="true"></i></a>eof</h4>
+<h4 id="eof">eof</h4>
 <pre><code class="lang-javascript">
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">eof</span> (<span class="hljs-params"></span>): <span class="hljs-title">boolean</span> </span>{
   <span class="hljs-keyword">return</span> index &gt;= len
 }
 </code></pre>
-<h4 id="isstringstart"><a name="isstringstart" class="plugin-anchor" href="#isstringstart"><i class="fa fa-link" aria-hidden="true"></i></a>isStringStart</h4>
+<h4 id="isstringstart">isStringStart</h4>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isStringStart</span> (<span class="hljs-params">chr: number</span>): <span class="hljs-title">boolean</span> </span>{
   <span class="hljs-keyword">return</span> chr === <span class="hljs-number">0x22</span> || chr === <span class="hljs-number">0x27</span>
 }
 </code></pre>
-<h4 id="parsebracket"><a name="parsebracket" class="plugin-anchor" href="#parsebracket"><i class="fa fa-link" aria-hidden="true"></i></a>parseBracket</h4>
+<h4 id="parsebracket">parseBracket</h4>
 <pre><code class="lang-javascript">
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseBracket</span> (<span class="hljs-params">chr: number</span>): <span class="hljs-title">void</span> </span>{
   <span class="hljs-keyword">let</span> inBracket = <span class="hljs-number">1</span>
@@ -491,7 +489,7 @@ type ModelParseResult = {
   }
 }
 </code></pre>
-<h4 id="parsestring"><a name="parsestring" class="plugin-anchor" href="#parsestring"><i class="fa fa-link" aria-hidden="true"></i></a>parseString</h4>
+<h4 id="parsestring">parseString</h4>
 <pre><code class="lang-javascript">
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseString</span> (<span class="hljs-params">chr: number</span>): <span class="hljs-title">void</span> </span>{
   <span class="hljs-keyword">const</span> stringQuote = chr
@@ -546,7 +544,7 @@ type ModelParseResult = {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"compiler-directives-model","level":"1.4.5","depth":2,"next":{"title":"compiler-directives-on","level":"1.4.6","depth":2,"path":"vue-release2.6.9/compiler-directives-on.md","ref":"vue-release2.6.9/compiler-directives-on.md","articles":[]},"previous":{"title":"compiler-directives-index","level":"1.4.4","depth":2,"path":"vue-release2.6.9/compiler-directives-index.md","ref":"vue-release2.6.9/compiler-directives-index.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","github","edit-link","anchors","copy-code-button","github-buttons","expandable-chapters-small","insert-logo","custom-favicon"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"custom-favicon":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/didi/mpx/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"insert-logo":{"style":"background: none; width: 200px","url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png"},"expandable-chapters":{}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"vue-release2.6.9/compiler-directives-model.md","mtime":"2019-07-31T12:54:43.187Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-02T03:41:52.414Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"compiler-directives-model","level":"1.4.5","depth":2,"next":{"title":"compiler-directives-on","level":"1.4.6","depth":2,"path":"vue-release2.6.9/compiler-directives-on.md","ref":"vue-release2.6.9/compiler-directives-on.md","articles":[]},"previous":{"title":"compiler-directives-index","level":"1.4.4","depth":2,"path":"vue-release2.6.9/compiler-directives-index.md","ref":"vue-release2.6.9/compiler-directives-index.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/didi/mpx/tree/master/docs","label":"完善文档"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png","style":"background: none; width: 200px"}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"vue-release2.6.9/compiler-directives-model.md","mtime":"2019-07-31T12:54:43.187Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-07T07:15:29.501Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -554,34 +552,6 @@ type ModelParseResult = {
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

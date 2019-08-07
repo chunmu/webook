@@ -12,3 +12,5 @@
   * [compiler-directives-index](vue-release2.6.9/compiler-directives-index.md)
   * [compiler-directives-model](vue-release2.6.9/compiler-directives-model.md)
   * [compiler-directives-on](vue-release2.6.9/compiler-directives-on.md)
+  * [shared-util](vue-release2.6.9/shared-util.md)
+  * [shared-constants](vue-release2.6.9/shared-constants.md)

@@ -17,22 +17,6 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
-                
-            
-                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -65,7 +49,6 @@
         
     
     
-    
     <meta name="HandheldFriendly" content="true"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -79,17 +62,6 @@
     
     <link rel="prev" href="readme.html" />
     
-
-    <style>
-    @media only screen and (max-width: 640px) {
-        .book-header .hidden-mobile {
-            display: none;
-        }
-    }
-    </style>
-    <script>
-        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]};
-    </script>
 
     </head>
     <body>
@@ -280,6 +252,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.7" data-path="shared-util.html">
+            
+                <a href="shared-util.html">
+            
+                    
+                    shared-util
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="shared-constants.html">
+            
+                <a href="shared-constants.html">
+            
+                    
+                    shared-constants
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -336,12 +334,12 @@
 
 type Range = { start?: number, end?: number };
 </code></pre>
-<h4 id="basewarn"><a name="basewarn" class="plugin-anchor" href="#basewarn"><i class="fa fa-link" aria-hidden="true"></i></a>baseWarn</h4>
+<h4 id="basewarn">baseWarn</h4>
 <pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">baseWarn</span> (<span class="hljs-params">msg: string, range?: Range</span>) </span>{
   <span class="hljs-built_in">console</span>.error(<span class="hljs-string">`[Vue compiler]: <span class="hljs-subst">${msg}</span>`</span>)
 }
 </code></pre>
-<h4 id="pluckmodulefunction"><a name="pluckmodulefunction" class="plugin-anchor" href="#pluckmodulefunction"><i class="fa fa-link" aria-hidden="true"></i></a>pluckModuleFunction</h4>
+<h4 id="pluckmodulefunction">pluckModuleFunction</h4>
 <pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pluckModuleFunction</span>&lt;<span class="hljs-title">F</span>: <span class="hljs-title">Function</span>&gt; (<span class="hljs-params">
   modules: ?Array&lt;Object&gt;,
   key: string
@@ -353,15 +351,15 @@ type Range = { start?: number, end?: number };
     <span class="hljs-comment">// pdd: &#x8FC7;&#x6EE4;&#x51FA;&#x771F;&#x503C;&#x5C5E;&#x6027;</span>
 }
 </code></pre>
-<h4 id="addprop"><a name="addprop" class="plugin-anchor" href="#addprop"><i class="fa fa-link" aria-hidden="true"></i></a>addProp</h4>
+<h4 id="addprop">addProp</h4>
 <pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addProp</span> (<span class="hljs-params">el: ASTElement, name: string, value: string, range?: Range, dynamic?: boolean</span>) </span>{
   (el.props || (el.props = [])).push(rangeSetItem({ name, value, dynamic }, range))
   el.plain = <span class="hljs-literal">false</span>
-  <span class="hljs-comment">// (el.props || (el.props = []))</span>
+  <span class="hljs-comment">// pdd: (el.props || (el.props = []))</span>
   <span class="hljs-comment">// pdd: props&#x975E;&#x7A7A;&#x5224;&#x65AD;&#x6216;&#x521D;&#x59CB;&#x5316;</span>
 }
 </code></pre>
-<h4 id="addattr"><a name="addattr" class="plugin-anchor" href="#addattr"><i class="fa fa-link" aria-hidden="true"></i></a>addAttr</h4>
+<h4 id="addattr">addAttr</h4>
 <pre><code class="lang-javascript"><span class="hljs-comment">// pdd: &#x975E;&#x539F;&#x751F;attrs&#x7528;&#x7684;&#x662F;dynamicAttrs/attrs  &#x539F;&#x751F;&#x7684;&#x662F;attrsList</span>
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addAttr</span> (<span class="hljs-params">el: ASTElement, name: string, value: any, range?: Range, dynamic?: boolean</span>) </span>{
   <span class="hljs-keyword">const</span> attrs = dynamic
@@ -373,7 +371,7 @@ type Range = { start?: number, end?: number };
     <span class="hljs-comment">// pdd: attrs&#x975E;&#x7A7A;&#x5224;&#x65AD;&#x6216;&#x521D;&#x59CB;&#x5316;</span>
 }
 </code></pre>
-<h4 id="addrawattr"><a name="addrawattr" class="plugin-anchor" href="#addrawattr"><i class="fa fa-link" aria-hidden="true"></i></a>addRawAttr</h4>
+<h4 id="addrawattr">addRawAttr</h4>
 <pre><code class="lang-javascript"><span class="hljs-comment">// add a raw attr (use this in preTransforms)</span>
 <span class="hljs-comment">// pdd: &#x975E;&#x539F;&#x751F;attrs&#x7528;&#x7684;&#x662F;dynamicAttrs/attrs  &#x539F;&#x751F;&#x7684;&#x662F;attrsList</span>
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addRawAttr</span> (<span class="hljs-params">el: ASTElement, name: string, value: any, range?: Range</span>) </span>{
@@ -381,7 +379,7 @@ type Range = { start?: number, end?: number };
   el.attrsList.push(rangeSetItem({ name, value }, range))
 }
 </code></pre>
-<h4 id="adddirective"><a name="adddirective" class="plugin-anchor" href="#adddirective"><i class="fa fa-link" aria-hidden="true"></i></a>addDirective</h4>
+<h4 id="adddirective">addDirective</h4>
 <pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addDirective</span> (<span class="hljs-params">
   el: ASTElement,
   name: string,
@@ -404,7 +402,7 @@ type Range = { start?: number, end?: number };
   <span class="hljs-comment">// pdd: &#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x6765;&#x6307;&#x4EE4;&#x662F;&#x7ED1;&#x5B9A;&#x5728;el&#x4E0A;&#x7684;</span>
 }
 </code></pre>
-<h4 id="prependmodifiermarker"><a name="prependmodifiermarker" class="plugin-anchor" href="#prependmodifiermarker"><i class="fa fa-link" aria-hidden="true"></i></a>prependModifierMarker</h4>
+<h4 id="prependmodifiermarker">prependModifierMarker</h4>
 <pre><code class="lang-javascript"><span class="hljs-comment">// pdd: &#x6682;&#x65F6;&#x4E0D;&#x77E5;&#x9053;&#x6709;&#x5565;&#x7528;</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prependModifierMarker</span> (<span class="hljs-params">symbol: string, name: string, dynamic?: boolean</span>): <span class="hljs-title">string</span> </span>{
   <span class="hljs-keyword">return</span> dynamic
@@ -412,9 +410,10 @@ type Range = { start?: number, end?: number };
     : symbol + name <span class="hljs-comment">// mark the event as captured</span>
 }
 </code></pre>
-<h4 id="addhandler"><a name="addhandler" class="plugin-anchor" href="#addhandler"><i class="fa fa-link" aria-hidden="true"></i></a>addHandler</h4>
+<h4 id="addhandler">addHandler</h4>
 <pre><code class="lang-javascript">
 <span class="hljs-comment">// pdd: &#x6DFB;&#x52A0;handler</span>
+<span class="hljs-comment">// pdd: &#x6302;&#x5728;&#x540E;&#x7684;&#x6837;&#x5B50;  el.events = {xx: [handler1, handler2]}</span>
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addHandler</span> (<span class="hljs-params">
   el: ASTElement,
   name: string,
@@ -491,6 +490,9 @@ type Range = { start?: number, end?: number };
 
   <span class="hljs-keyword">const</span> handlers = events[name]
   <span class="hljs-comment">/* istanbul ignore if */</span>
+  <span class="hljs-comment">// pdd: &#x5982;&#x679C;&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x6570;&#x7EC4;&#x7C7B;&#x578B; &#x5219;&#x524D;&#x7F6E;&#x6216;&#x8005;&#x8FFD;&#x52A0;handle</span>
+  <span class="hljs-comment">// pdd: &#x5982;&#x679C;&#x5B58;&#x5728;handle&#x4E14;&#x662F;&#x5BF9;&#x8C61; &#x5219;&#x8F6C;&#x5316;&#x6210;&#x6570;&#x7EC4;  &#x4E14;&#x8FFD;&#x52A0;handle</span>
+  <span class="hljs-comment">// pdd: &#x8FD8;&#x672A;&#x6709;handle &#x76F4;&#x63A5;&#x8D4B;&#x503C; </span>
   <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Array</span>.isArray(handlers)) {
     important ? handlers.unshift(newHandler) : handlers.push(newHandler)
   } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (handlers) {
@@ -502,7 +504,7 @@ type Range = { start?: number, end?: number };
   el.plain = <span class="hljs-literal">false</span>
 }
 </code></pre>
-<h4 id="getrawbindingattr"><a name="getrawbindingattr" class="plugin-anchor" href="#getrawbindingattr"><i class="fa fa-link" aria-hidden="true"></i></a>getRawBindingAttr</h4>
+<h4 id="getrawbindingattr">getRawBindingAttr</h4>
 <pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRawBindingAttr</span> (<span class="hljs-params">
   el: ASTElement,
   name: string
@@ -512,7 +514,7 @@ type Range = { start?: number, end?: number };
     el.rawAttrsMap[name]
 }
 </code></pre>
-<h4 id="getbindingattr"><a name="getbindingattr" class="plugin-anchor" href="#getbindingattr"><i class="fa fa-link" aria-hidden="true"></i></a>getBindingAttr</h4>
+<h4 id="getbindingattr">getBindingAttr</h4>
 <pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBindingAttr</span> (<span class="hljs-params">
   el: ASTElement,
   name: string,
@@ -534,7 +536,7 @@ type Range = { start?: number, end?: number };
   }
 }
 </code></pre>
-<h4 id="getandremoveattr"><a name="getandremoveattr" class="plugin-anchor" href="#getandremoveattr"><i class="fa fa-link" aria-hidden="true"></i></a>getAndRemoveAttr</h4>
+<h4 id="getandremoveattr">getAndRemoveAttr</h4>
 <pre><code class="lang-javascript"><span class="hljs-comment">// note: this only removes the attr from the Array (attrsList) so that it</span>
 <span class="hljs-comment">// doesn&apos;t get processed by processAttrs.</span>
 <span class="hljs-comment">// By default it does NOT remove it from the map (attrsMap) because the map is</span>
@@ -560,7 +562,7 @@ type Range = { start?: number, end?: number };
   <span class="hljs-keyword">return</span> val
 }
 </code></pre>
-<h4 id="getandremoveattrbyregex"><a name="getandremoveattrbyregex" class="plugin-anchor" href="#getandremoveattrbyregex"><i class="fa fa-link" aria-hidden="true"></i></a>getAndRemoveAttrByRegex</h4>
+<h4 id="getandremoveattrbyregex">getAndRemoveAttrByRegex</h4>
 <pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAndRemoveAttrByRegex</span> (<span class="hljs-params">
   el: ASTElement,
   name: RegExp
@@ -575,7 +577,7 @@ type Range = { start?: number, end?: number };
   }
 }
 </code></pre>
-<h4 id="rangesetitem"><a name="rangesetitem" class="plugin-anchor" href="#rangesetitem"><i class="fa fa-link" aria-hidden="true"></i></a>rangeSetItem</h4>
+<h4 id="rangesetitem">rangeSetItem</h4>
 <pre><code class="lang-javascript"><span class="hljs-comment">// pdd: &#x8BBE;&#x7F6E;&#x8D77;&#x6B62;&#x7D22;&#x5F15;</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rangeSetItem</span> (<span class="hljs-params">
   item: any,
@@ -635,7 +637,7 @@ type Range = { start?: number, end?: number };
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"compiler-helpers","level":"1.4.1","depth":2,"next":{"title":"compiler-parser-index","level":"1.4.2","depth":2,"path":"vue-release2.6.9/compiler-parser-index.md","ref":"vue-release2.6.9/compiler-parser-index.md","articles":[]},"previous":{"title":"vue-release2.6.9","level":"1.4","depth":1,"path":"vue-release2.6.9/readme.md","ref":"vue-release2.6.9/readme.md","articles":[{"title":"compiler-helpers","level":"1.4.1","depth":2,"path":"vue-release2.6.9/compiler-helpers.md","ref":"vue-release2.6.9/compiler-helpers.md","articles":[]},{"title":"compiler-parser-index","level":"1.4.2","depth":2,"path":"vue-release2.6.9/compiler-parser-index.md","ref":"vue-release2.6.9/compiler-parser-index.md","articles":[]},{"title":"compiler-directives-bind","level":"1.4.3","depth":2,"path":"vue-release2.6.9/compiler-directives-bind.md","ref":"vue-release2.6.9/compiler-directives-bind.md","articles":[]},{"title":"compiler-directives-index","level":"1.4.4","depth":2,"path":"vue-release2.6.9/compiler-directives-index.md","ref":"vue-release2.6.9/compiler-directives-index.md","articles":[]},{"title":"compiler-directives-model","level":"1.4.5","depth":2,"path":"vue-release2.6.9/compiler-directives-model.md","ref":"vue-release2.6.9/compiler-directives-model.md","articles":[]},{"title":"compiler-directives-on","level":"1.4.6","depth":2,"path":"vue-release2.6.9/compiler-directives-on.md","ref":"vue-release2.6.9/compiler-directives-on.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","github","edit-link","anchors","copy-code-button","github-buttons","expandable-chapters-small","insert-logo","custom-favicon"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"custom-favicon":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/didi/mpx/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"insert-logo":{"style":"background: none; width: 200px","url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png"},"expandable-chapters":{}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"vue-release2.6.9/compiler-helpers.md","mtime":"2019-07-31T13:04:25.891Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-02T03:41:52.414Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"compiler-helpers","level":"1.4.1","depth":2,"next":{"title":"compiler-parser-index","level":"1.4.2","depth":2,"path":"vue-release2.6.9/compiler-parser-index.md","ref":"vue-release2.6.9/compiler-parser-index.md","articles":[]},"previous":{"title":"vue-release2.6.9","level":"1.4","depth":1,"path":"vue-release2.6.9/readme.md","ref":"vue-release2.6.9/readme.md","articles":[{"title":"compiler-helpers","level":"1.4.1","depth":2,"path":"vue-release2.6.9/compiler-helpers.md","ref":"vue-release2.6.9/compiler-helpers.md","articles":[]},{"title":"compiler-parser-index","level":"1.4.2","depth":2,"path":"vue-release2.6.9/compiler-parser-index.md","ref":"vue-release2.6.9/compiler-parser-index.md","articles":[]},{"title":"compiler-directives-bind","level":"1.4.3","depth":2,"path":"vue-release2.6.9/compiler-directives-bind.md","ref":"vue-release2.6.9/compiler-directives-bind.md","articles":[]},{"title":"compiler-directives-index","level":"1.4.4","depth":2,"path":"vue-release2.6.9/compiler-directives-index.md","ref":"vue-release2.6.9/compiler-directives-index.md","articles":[]},{"title":"compiler-directives-model","level":"1.4.5","depth":2,"path":"vue-release2.6.9/compiler-directives-model.md","ref":"vue-release2.6.9/compiler-directives-model.md","articles":[]},{"title":"compiler-directives-on","level":"1.4.6","depth":2,"path":"vue-release2.6.9/compiler-directives-on.md","ref":"vue-release2.6.9/compiler-directives-on.md","articles":[]},{"title":"shared-util","level":"1.4.7","depth":2,"path":"vue-release2.6.9/shared-util.md","ref":"vue-release2.6.9/shared-util.md","articles":[]},{"title":"shared-constants","level":"1.4.8","depth":2,"path":"vue-release2.6.9/shared-constants.md","ref":"vue-release2.6.9/shared-constants.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/didi/mpx"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"favicon.ico","github-buttons":{"buttons":[{"user":"didi","repo":"mpx","type":"star","size":"small","count":true},{"user":"didi","repo":"mpx","type":"fork","size":"small","count":true}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/didi/mpx/tree/master/docs","label":"完善文档"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"url":"https://dpubstatic.udache.com/static/dpubimg/cd8de8e4-e4f4-4f0a-9c53-f833bc30ba69.png","style":"background: none; width: 200px"}},"theme":"default","author":"滴滴出行webapp团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"intro","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mpx文档","gitbook":"*","description":"mpx是一款增强型小程序框架，极致性能优化，提供双向数据绑定，样式绑定，方法内联传参等方便开发者使用的特性。"},"file":{"path":"vue-release2.6.9/compiler-helpers.md","mtime":"2019-08-07T03:47:01.013Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-07T07:15:29.501Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -643,34 +645,6 @@ type Range = { start?: number, end?: number };
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
